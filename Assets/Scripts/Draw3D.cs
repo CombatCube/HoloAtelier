@@ -87,4 +87,13 @@ public class Draw3D : MonoBehaviour {
         // Send the stroke to the other HoloLens.
         CustomMessages.Instance.SendDraw3DStroke(lastPoints);
     }
+
+    void OnUndo()
+    {
+        if(GestureManager.Instance.IsManipulating)
+        {
+            return;
+        }
+        GameObject.Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 1).gameObject);
+    }
 }
