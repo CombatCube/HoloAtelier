@@ -17,8 +17,8 @@ public class CustomMessages : Singleton<CustomMessages>
     public enum TestMessageID : byte
     {
         HeadTransform = MessageID.UserMessageIDStart,
-        Max,
-        Draw3DStroke
+        Draw3DStroke,
+        Max
     }
 
     public enum UserMessageChannels
@@ -137,7 +137,7 @@ public class CustomMessages : Singleton<CustomMessages>
             this.serverConnection.Broadcast(
                 msg,
                 MessagePriority.Immediate,
-                MessageReliability.UnreliableSequenced,
+                MessageReliability.Reliable,
                 MessageChannel.Avatar);
         }
     }

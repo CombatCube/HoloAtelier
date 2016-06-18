@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 using HoloToolkit.Unity;
 using HoloToolkit.Sharing;
-using System;
+using System.Collections.Generic;
 
 public class Draw3D : MonoBehaviour {
     //private Vector3 manipulationPreviousPosition;
@@ -30,19 +29,24 @@ public class Draw3D : MonoBehaviour {
     private void OnReceive3DStroke(NetworkInMessage msg)
     {
         Debug.Log("Received Draw3DStroke.");
+        
+        // Eat the ID section
+        long userID = msg.ReadInt64();
+
         GameObject lineObject = new GameObject();
         lineObject.transform.SetParent(gameObject.transform);
         LineRenderer line = lineObject.AddComponent<LineRenderer>();
         line.material = DrawMaterial;
         line.useWorldSpace = true;
         line.SetWidth(DrawThreshold, DrawThreshold);
-        Vector3[] points = new Vector3[msg.GetSize()/3];
-        for (int i = 0;  msg.GetUnreadBitsCount() > 0; i++)
+        var list = new List<Vector3>();
+        while (msg.GetUnreadBitsCount() > 0)
         {
-            points[i] = CustomMessages.Instance.ReadVector3(msg);
+            list.Add(CustomMessages.Instance.ReadVector3(msg));
         }
-        line.SetVertexCount(points.Length);
-        line.SetPositions(points);
+        var lineArr = list.ToArray();
+        line.SetVertexCount(lineArr.Length);
+        line.SetPositions(lineArr);
     }
 
     // Update is called once per frame
@@ -85,6 +89,7 @@ public class Draw3D : MonoBehaviour {
     void PerformManipulationCompleted()
     {
         // Send the stroke to the other HoloLens.
+        Debug.Log("Sending Draw3DStroke.");
         CustomMessages.Instance.SendDraw3DStroke(lastPoints);
     }
 
