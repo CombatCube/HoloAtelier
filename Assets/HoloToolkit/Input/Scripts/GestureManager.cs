@@ -60,7 +60,7 @@ namespace HoloToolkit.Unity
 
         void Start()
         {
-            Transition(ManipulationRecognizer);
+            Transition(TapRecognizer);
             UIManager.Instance.ModeChanged += OnModeChanged;
         }
 
@@ -68,6 +68,10 @@ namespace HoloToolkit.Unity
         {
             switch (mcea.newMode)
             {
+                case UIManager.Mode.Select:
+                    OverrideFocusedObject = null;
+                    Transition(TapRecognizer);
+                    break;
                 case UIManager.Mode.FreeDraw:
                     OverrideFocusedObject = Canvas;
                     Transition(ManipulationRecognizer);
@@ -161,6 +165,8 @@ namespace HoloToolkit.Unity
                 // If gaze hits a hologram, set the focused object to that game object.
                 // Also if the caller has not decided to override the focused object.
                 focusedObject = GazeManager.Instance.HitInfo.collider.gameObject;
+
+                // TODO: If looking at the UI panel, switch to the TapRecognizer.
             }
             else
             {

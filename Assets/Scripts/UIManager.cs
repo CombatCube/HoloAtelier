@@ -12,6 +12,7 @@ public partial class UIManager : Singleton<UIManager>
 
     public enum Mode
     {
+        Select,
         GazeDraw,
         FreeDraw,
         Other
@@ -40,7 +41,7 @@ public partial class UIManager : Singleton<UIManager>
     {
         if (ActiveMode == Mode.Other)
         {
-            SetActiveMode(Mode.FreeDraw);
+            SetActiveMode(Mode.Select);
         }
     }
 
@@ -51,6 +52,11 @@ public partial class UIManager : Singleton<UIManager>
         ModeChangedEventArgs mcea = new ModeChangedEventArgs();
         mcea.newMode = mode;
         modeChangedEvent(this, mcea);
+    }
+
+    public void OnSelect()
+    {
+        SetActiveMode(Mode.Select);
     }
 
     public void OnFreeDraw()

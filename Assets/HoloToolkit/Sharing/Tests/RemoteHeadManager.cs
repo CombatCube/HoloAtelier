@@ -23,7 +23,7 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
     /// <summary>
     /// Keep a list of the remote heads, indexed by XTools userID
     /// </summary>
-    Dictionary<long, RemoteHeadInfo> remoteHeads = new Dictionary<long, RemoteHeadInfo>();
+    public Dictionary<long, RemoteHeadInfo> remoteHeads = new Dictionary<long, RemoteHeadInfo>();
 
     void Start()
     {
