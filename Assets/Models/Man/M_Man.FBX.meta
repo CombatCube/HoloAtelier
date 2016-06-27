@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 1f20e403152433146b951cab8c18af54
+timeCreated: 1466110930
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: M_Man_Body
+    100002: M_Man_Eyelashes
+    100004: M_Man_Eyes
+    100006: M_Man_Skeleton
+    100008: M_Man_Skeleton_01
+    100010: M_Man_Skeleton_02
+    100012: M_Man_Skeleton_03
+    100014: M_Man_Skeleton_04
+    100016: M_Man_Skeleton_05
+    100018: M_Man_Skeleton_06
+    100020: M_Man_Skeleton_07
+    100022: M_Man_Skeleton_08
+    100024: M_Man_Underwear
+    100026: //RootNode
+    400000: M_Man_Body
+    400002: M_Man_Eyelashes
+    400004: M_Man_Eyes
+    400006: M_Man_Skeleton
+    400008: M_Man_Skeleton_01
+    400010: M_Man_Skeleton_02
+    400012: M_Man_Skeleton_03
+    400014: M_Man_Skeleton_04
+    400016: M_Man_Skeleton_05
+    400018: M_Man_Skeleton_06
+    400020: M_Man_Skeleton_07
+    400022: M_Man_Skeleton_08
+    400024: M_Man_Underwear
+    400026: //RootNode
+    2300000: M_Man_Body
+    2300002: M_Man_Eyelashes
+    2300004: M_Man_Eyes
+    2300006: M_Man_Skeleton_01
+    2300008: M_Man_Skeleton_02
+    2300010: M_Man_Skeleton_03
+    2300012: M_Man_Skeleton_04
+    2300014: M_Man_Skeleton_05
+    2300016: M_Man_Skeleton_06
+    2300018: M_Man_Skeleton_07
+    2300020: M_Man_Skeleton_08
+    2300022: M_Man_Underwear
+    3300000: M_Man_Body
+    3300002: M_Man_Eyelashes
+    3300004: M_Man_Eyes
+    3300006: M_Man_Skeleton_01
+    3300008: M_Man_Skeleton_02
+    3300010: M_Man_Skeleton_03
+    3300012: M_Man_Skeleton_04
+    3300014: M_Man_Skeleton_05
+    3300016: M_Man_Skeleton_06
+    3300018: M_Man_Skeleton_07
+    3300020: M_Man_Skeleton_08
+    3300022: M_Man_Underwear
+    4300000: M_Man_Eyelashes
+    4300002: M_Man_Body
+    4300004: M_Man_Eyes
+    4300006: M_Man_Underwear
+    4300008: M_Man_Skeleton_01
+    4300010: M_Man_Skeleton_02
+    4300012: M_Man_Skeleton_03
+    4300014: M_Man_Skeleton_04
+    4300016: M_Man_Skeleton_05
+    4300018: M_Man_Skeleton_06
+    4300020: M_Man_Skeleton_07
+    4300022: M_Man_Skeleton_08
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
