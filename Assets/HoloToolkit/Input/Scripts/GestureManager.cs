@@ -39,7 +39,6 @@ namespace HoloToolkit.Unity
         private GameObject focusedObject;
 
         public bool IsManipulating { get; private set; }
-        private bool gazeDraw;
         private Vector3 manipulationStartPos;
         private Vector3 cameraHandOffset;
 
@@ -68,22 +67,13 @@ namespace HoloToolkit.Unity
         {
             switch (mcea.newMode)
             {
-                case UIManager.Mode.Select:
-                    OverrideFocusedObject = null;
+                case UIManager.Mode.Highlight:
                     Transition(TapRecognizer);
                     break;
                 case UIManager.Mode.FreeDraw:
-                    OverrideFocusedObject = Canvas;
                     Transition(ManipulationRecognizer);
-                    gazeDraw = false;
-                    break;
-                case UIManager.Mode.GazeDraw:
-                    OverrideFocusedObject = Canvas;
-                    Transition(ManipulationRecognizer);
-                    gazeDraw = true;
                     break;
                 default:
-                    OverrideFocusedObject = null;
                     Transition(TapRecognizer);
                     break;
             }
@@ -100,33 +90,29 @@ namespace HoloToolkit.Unity
         private void GestureRecognizer_ManipulationStartedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
             IsManipulating = true;
-            if (gazeDraw)
-            {
-                manipulationStartPos = GazeManager.Instance.HitInfo.point;
-                Canvas.SendMessage("PerformManipulationStart", manipulationStartPos + cumulativeDelta);
-            }
-            else
-            {
-                HandsManager.Instance.Hand.properties.location.TryGetPosition(out manipulationStartPos);
-                Canvas.SendMessage("PerformManipulationStart", manipulationStartPos + cumulativeDelta);
-            }
+            HandsManager.Instance.Hand.properties.location.TryGetPosition(out manipulationStartPos);
+            Canvas.SendMessage("PerformManipulationStart", Canvas.transform.InverseTransformPoint(manipulationStartPos + cumulativeDelta));
         }
+
         private void GestureRecognizer_ManipulationUpdatedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
             if (IsManipulating)
             {
-                Vector3 v = manipulationStartPos + cumulativeDelta;
+                Vector3 v = Canvas.transform.InverseTransformPoint(manipulationStartPos + cumulativeDelta);
                 Canvas.SendMessage("PerformManipulationUpdate", v);
             }
         }
+
         private void GestureRecognizer_ManipulationCompletedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
             IsManipulating = false;
             Canvas.SendMessage("PerformManipulationCompleted");
         }
+
         private void GestureRecognizer_ManipulationCanceledEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
-            IsManipulating = false;
+            //IsManipulating = false;
+            //Canvas.SendMessage("PerformManipulationCanceled");
         }
 
         /// <summary>

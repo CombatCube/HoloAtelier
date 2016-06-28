@@ -37,13 +37,14 @@ public class Draw3D : MonoBehaviour {
         lineObject.transform.SetParent(gameObject.transform);
         LineRenderer line = lineObject.AddComponent<LineRenderer>();
         line.material = DrawMaterial;
-        line.useWorldSpace = true;
+        line.useWorldSpace = false;
         line.SetWidth(DrawThreshold, DrawThreshold);
         var list = new List<Vector3>();
         while (msg.GetUnreadBitsCount() > 0)
         {
             list.Add(CustomMessages.Instance.ReadVector3(msg));
         }
+
         var lineArr = list.ToArray();
         line.SetVertexCount(lineArr.Length);
         line.SetPositions(lineArr);
@@ -58,9 +59,10 @@ public class Draw3D : MonoBehaviour {
     {
         lastLineObject = new GameObject();
         lastLineObject.transform.SetParent(gameObject.transform);
+        lastLineObject.transform.localPosition = Vector3.zero;
         lastLine = lastLineObject.AddComponent<LineRenderer>();
         lastLine.material = DrawMaterial;
-        lastLine.useWorldSpace = true;
+        lastLine.useWorldSpace = false;
         lastLine.SetWidth(DrawThreshold, DrawThreshold);
         lastLine.SetVertexCount(1);
 
@@ -91,6 +93,13 @@ public class Draw3D : MonoBehaviour {
         // Send the stroke to the other HoloLens.
         Debug.Log("Sending Draw3DStroke.");
         CustomMessages.Instance.SendDraw3DStroke(lastPoints);
+    }
+
+    void PerformManipulationCanceled()
+    {
+        // Send the stroke to the other HoloLens.
+        Debug.Log("Canceled Draw3DStroke.");
+        GameObject.Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 1).gameObject);
     }
 
     void OnUndo()

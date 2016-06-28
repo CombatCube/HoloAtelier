@@ -99,13 +99,13 @@ public partial class CursorManager : Singleton<CursorManager>
         }
         switch (mcea.newMode)
         {
+            case UIManager.Mode.Highlight:
+                ActiveCursor = CursorRing;
+                cursorAtHand = true;
+                break;
             case UIManager.Mode.FreeDraw:
                 ActiveCursor = CursorDraw;
                 cursorAtHand = true;
-                break;
-            case UIManager.Mode.GazeDraw:
-                ActiveCursor = CursorDraw;
-                cursorAtHand = false;
                 break;
             default:
                 break;

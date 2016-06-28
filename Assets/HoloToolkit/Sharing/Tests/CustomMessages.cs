@@ -141,7 +141,7 @@ public class CustomMessages : Singleton<CustomMessages>
             this.serverConnection.Broadcast(
                 msg,
                 MessagePriority.Immediate,
-                MessageReliability.Reliable,
+                MessageReliability.ReliableSequenced,
                 MessageChannel.Avatar);
         }
     }

@@ -25,7 +25,7 @@ public class AppStateManager : Singleton<AppStateManager>
 
     void Start()
     {
-        UIManager.Instance.SetActiveMode(UIManager.Mode.Select);
+        UIManager.Instance.SetActiveMode(UIManager.Mode.Highlight);
         // We start in the 'picking avatar' mode.
         //CurrentAppState = AppState.PickingAvatar;
         CurrentAppState = AppState.WaitingForAnchor;

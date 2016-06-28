@@ -25,7 +25,7 @@ public class HologramPlacement : Singleton<HologramPlacement>
     void Start()
     {
         // When we first start, we need to disable the model to avoid it obstructing the user picking a hat.
-        DisableModel();
+        //DisableModel();
 
         // We care about getting updates for the model transform.
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.StageTransform] = this.OnStageTransfrom;
@@ -127,8 +127,8 @@ public class HologramPlacement : Singleton<HologramPlacement>
     void Update()
     {
         // Wait till users pick an avatar to enable renderers.
-        if (disabledRenderers.Count > 0)
-        {
+        //if (disabledRenderers.Count > 0)
+        //{
             if (/*!PlayerAvatarStore.Instance.PickerActive &&*/
             ImportExportAnchorManager.Instance.AnchorEstablished)
             {
@@ -143,7 +143,7 @@ public class HologramPlacement : Singleton<HologramPlacement>
                     //GetComponent<EnergyHubBase>().SendMessage("OnSelect");
                 }
             }
-        }
+        //}
         else if (GotTransform == false)
         {
             transform.position = Vector3.Lerp(transform.position, ProposeTransformPosition(), 0.2f);

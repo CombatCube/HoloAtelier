@@ -12,10 +12,8 @@ public partial class UIManager : Singleton<UIManager>
 
     public enum Mode
     {
-        Select,
-        GazeDraw,
-        FreeDraw,
-        Other
+        Highlight,
+        FreeDraw
     }
 
     public event EventHandler<ModeChangedEventArgs> ModeChanged;
@@ -29,7 +27,7 @@ public partial class UIManager : Singleton<UIManager>
     // Use this for initialization
     void Start ()
     {
-        ActiveMode = Mode.Other;
+        ActiveMode = Mode.Highlight;
     }
 	
 	// Update is called once per frame
@@ -39,10 +37,7 @@ public partial class UIManager : Singleton<UIManager>
 
     void LateUpdate()
     {
-        if (ActiveMode == Mode.Other)
-        {
-            SetActiveMode(Mode.Select);
-        }
+
     }
 
     public void SetActiveMode(Mode mode)
@@ -54,9 +49,14 @@ public partial class UIManager : Singleton<UIManager>
         modeChangedEvent(this, mcea);
     }
 
-    public void OnSelect()
+    //public void OnLayers()
+    //{
+    //    gameObject.GetComponent<LayersPanel>().SetActive(true);
+    //}
+
+    public void OnHighlight()
     {
-        SetActiveMode(Mode.Select);
+        SetActiveMode(Mode.Highlight);
     }
 
     public void OnFreeDraw()
@@ -64,8 +64,4 @@ public partial class UIManager : Singleton<UIManager>
         SetActiveMode(Mode.FreeDraw);
     }
 
-    public void OnGazeDraw()
-    {
-        SetActiveMode(Mode.GazeDraw);
-    }
 }
