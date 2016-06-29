@@ -8,6 +8,7 @@ public class Draw3D : MonoBehaviour {
     private GameObject lastLineObject;
     private LineRenderer lastLine;
     private Vector3[] lastPoints;
+    public GameObject DrawCanvas;
     public Material DrawMaterial;
     public float DrawThreshold;
 
@@ -26,6 +27,11 @@ public class Draw3D : MonoBehaviour {
         // TODO: Send already-drawn strokes
     }
 
+    public void Activate()
+    {
+        ToolManager.Instance.SetActiveTool(gameObject);
+    }
+
     private void OnReceive3DStroke(NetworkInMessage msg)
     {
         Debug.Log("Received Draw3DStroke.");
@@ -34,7 +40,7 @@ public class Draw3D : MonoBehaviour {
         long userID = msg.ReadInt64();
 
         GameObject lineObject = new GameObject();
-        lineObject.transform.SetParent(gameObject.transform, false);
+        lineObject.transform.SetParent(DrawCanvas.transform, false);
         LineRenderer line = lineObject.AddComponent<LineRenderer>();
         line.material = DrawMaterial;
         line.useWorldSpace = false;
@@ -52,13 +58,24 @@ public class Draw3D : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-	
-	}
+        if (HandsManager.Instance.HandDetected) {
+            GetComponent<MeshRenderer>().enabled = true;
+            Vector3 pos;
+            HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
+            gameObject.transform.position = pos;
+            Quaternion v = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
+            gameObject.transform.rotation = v;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
 
-    void PerformManipulationStart(Vector3 position)
+void PerformManipulationStart(Vector3 position)
     {
         lastLineObject = new GameObject();
-        lastLineObject.transform.SetParent(gameObject.transform, false);
+        lastLineObject.transform.SetParent(DrawCanvas.transform, false);
         lastLine = lastLineObject.AddComponent<LineRenderer>();
         lastLine.material = DrawMaterial;
         lastLine.useWorldSpace = false;
@@ -96,9 +113,8 @@ public class Draw3D : MonoBehaviour {
 
     void PerformManipulationCanceled()
     {
-        // Send the stroke to the other HoloLens.
         Debug.Log("Canceled Draw3DStroke.");
-        GameObject.Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 1).gameObject);
+        Destroy(DrawCanvas.transform.GetChild(DrawCanvas.transform.childCount - 1).gameObject);
     }
 
     void OnUndo()
@@ -107,6 +123,6 @@ public class Draw3D : MonoBehaviour {
         {
             return;
         }
-        GameObject.Destroy(gameObject.transform.GetChild(gameObject.transform.childCount - 1).gameObject);
+        Destroy(DrawCanvas.transform.GetChild(DrawCanvas.transform.childCount - 1).gameObject);
     }
 }

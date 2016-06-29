@@ -24,7 +24,6 @@ namespace HoloToolkit.Unity
         {
             get; set;
         }
-        public GameObject Canvas;
         /// <summary>
         /// Gets the currently focused object, or null if none.
         /// </summary>
@@ -33,66 +32,61 @@ namespace HoloToolkit.Unity
             get { return focusedObject; }
         }
 
-        private GestureRecognizer TapRecognizer;
-        private GestureRecognizer ManipulationRecognizer;
-        private GestureRecognizer ActiveRecognizer;
+        private GestureRecognizer recognizer;
         private GameObject focusedObject;
+        private GameObject activeTool;
 
         public bool IsManipulating { get; private set; }
         private Vector3 manipulationStartPos;
-        private Vector3 cameraHandOffset;
 
         void Awake()
         {
-            // Create a new GestureRecognizer. Sign up for tapped events.
-            TapRecognizer = new GestureRecognizer();
-            TapRecognizer.SetRecognizableGestures(GestureSettings.Tap);
-            TapRecognizer.TappedEvent += GestureRecognizer_TappedEvent;
-
-            ManipulationRecognizer = new GestureRecognizer();
-            ManipulationRecognizer.SetRecognizableGestures(GestureSettings.ManipulationTranslate);
-            ManipulationRecognizer.ManipulationStartedEvent += GestureRecognizer_ManipulationStartedEvent;
-            ManipulationRecognizer.ManipulationUpdatedEvent += GestureRecognizer_ManipulationUpdatedEvent;
-            ManipulationRecognizer.ManipulationCompletedEvent += GestureRecognizer_ManipulationCompletedEvent;
-            ManipulationRecognizer.ManipulationCanceledEvent += GestureRecognizer_ManipulationCanceledEvent;
+            recognizer = new GestureRecognizer();
+            recognizer.SetRecognizableGestures(GestureSettings.ManipulationTranslate | GestureSettings.Tap);
+            recognizer.TappedEvent += GestureRecognizer_TappedEvent;
+            recognizer.ManipulationStartedEvent += GestureRecognizer_ManipulationStartedEvent;
+            recognizer.ManipulationUpdatedEvent += GestureRecognizer_ManipulationUpdatedEvent;
+            recognizer.ManipulationCompletedEvent += GestureRecognizer_ManipulationCompletedEvent;
+            recognizer.ManipulationCanceledEvent += GestureRecognizer_ManipulationCanceledEvent;
         }
 
         void Start()
         {
-            Transition(TapRecognizer);
-            UIManager.Instance.ModeChanged += OnModeChanged;
+            ToolManager.Instance.ToolChanged += OnToolChanged;
+            recognizer.StartCapturingGestures();
         }
 
-        private void OnModeChanged(object sender, UIManager.ModeChangedEventArgs mcea)
+        private void OnToolChanged(object sender, ToolManager.ToolChangedEventArgs e)
         {
-            switch (mcea.newMode)
+            if (recognizer != null)
             {
-                case UIManager.Mode.Highlight:
-                    Transition(TapRecognizer);
-                    break;
-                case UIManager.Mode.FreeDraw:
-                    OverrideFocusedObject = Canvas;
-                    Transition(ManipulationRecognizer);
-                    break;
-                default:
-                    Transition(TapRecognizer);
-                    break;
+                recognizer.CancelGestures();
             }
+            activeTool = e.newTool;
         }
 
         private void GestureRecognizer_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
         {
-            if (focusedObject != null)
+            if (activeTool != null)
+            {
+                activeTool.SendMessage("OnSelect");
+            }
+            else
             {
                 focusedObject.SendMessage("OnSelect");
             }
+            Debug.Log("Tapped.");
         }
 
         private void GestureRecognizer_ManipulationStartedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
             IsManipulating = true;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out manipulationStartPos);
-            focusedObject.SendMessage("PerformManipulationStart", manipulationStartPos + cumulativeDelta);
+            if (activeTool != null)
+            {
+                activeTool.SendMessage("PerformManipulationStart", manipulationStartPos + cumulativeDelta);
+                Debug.Log("Manipulation started.");
+            }
         }
 
         private void GestureRecognizer_ManipulationUpdatedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
@@ -100,45 +94,31 @@ namespace HoloToolkit.Unity
             if (IsManipulating)
             {
                 Vector3 v = manipulationStartPos + cumulativeDelta;
-                focusedObject.SendMessage("PerformManipulationUpdate", v);
+                if (activeTool != null)
+                {
+                    activeTool.SendMessage("PerformManipulationUpdate", v);
+                }
             }
         }
 
         private void GestureRecognizer_ManipulationCompletedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
             IsManipulating = false;
-            Canvas.SendMessage("PerformManipulationCompleted");
+            if (activeTool != null)
+            {
+                activeTool.SendMessage("PerformManipulationCompleted");
+            }
+            Debug.Log("Manipulation completed.");
         }
 
         private void GestureRecognizer_ManipulationCanceledEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
-            //IsManipulating = false;
-            //Canvas.SendMessage("PerformManipulationCanceled");
-        }
-
-        /// <summary>
-        /// Transition to a new GestureRecognizer.
-        /// </summary>
-        /// <param name="newRecognizer">The GestureRecognizer to transition to.</param>
-        public void Transition(GestureRecognizer newRecognizer)
-        {
-            if (newRecognizer == null)
+            IsManipulating = false;
+            if (activeTool != null)
             {
-                return;
+                activeTool.SendMessage("PerformManipulationCanceled");
             }
-
-            if (ActiveRecognizer != null)
-            {
-                if (ActiveRecognizer == newRecognizer)
-                {
-                    return;
-                }
-
-                ActiveRecognizer.CancelGestures();
-                ActiveRecognizer.StopCapturingGestures();
-            }
-            newRecognizer.StartCapturingGestures();
-            ActiveRecognizer = newRecognizer;
+            Debug.Log("Manipulation canceled.");
         }
 
         void LateUpdate()
@@ -152,8 +132,6 @@ namespace HoloToolkit.Unity
                 // If gaze hits a hologram, set the focused object to that game object.
                 // Also if the caller has not decided to override the focused object.
                 focusedObject = GazeManager.Instance.HitInfo.collider.gameObject;
-
-                // TODO: If looking at the UI panel, switch to the TapRecognizer.
             }
             else
             {
@@ -165,21 +143,20 @@ namespace HoloToolkit.Unity
             {
                 // If the currently focused object doesn't match the old focused object, cancel the current gesture.
                 // Start looking for new gestures.  This is to prevent applying gestures from one hologram to another.
-                ActiveRecognizer.CancelGestures();
-                ActiveRecognizer.StartCapturingGestures();
+                recognizer.CancelGestures();
+                recognizer.StartCapturingGestures();
             }
         }
 
         void OnDestroy()
         {
-            ActiveRecognizer.StopCapturingGestures();
+            recognizer.StopCapturingGestures();
 
-            TapRecognizer.TappedEvent -= GestureRecognizer_TappedEvent;
-
-            ManipulationRecognizer.ManipulationStartedEvent -= GestureRecognizer_ManipulationStartedEvent;
-            ManipulationRecognizer.ManipulationUpdatedEvent -= GestureRecognizer_ManipulationUpdatedEvent;
-            ManipulationRecognizer.ManipulationCompletedEvent -= GestureRecognizer_ManipulationCompletedEvent;
-            ManipulationRecognizer.ManipulationCanceledEvent -= GestureRecognizer_ManipulationCanceledEvent;
+            recognizer.TappedEvent -= GestureRecognizer_TappedEvent;
+            recognizer.ManipulationStartedEvent -= GestureRecognizer_ManipulationStartedEvent;
+            recognizer.ManipulationUpdatedEvent -= GestureRecognizer_ManipulationUpdatedEvent;
+            recognizer.ManipulationCompletedEvent -= GestureRecognizer_ManipulationCompletedEvent;
+            recognizer.ManipulationCanceledEvent -= GestureRecognizer_ManipulationCanceledEvent;
         }
     }
 }

@@ -25,14 +25,9 @@ public class AppStateManager : Singleton<AppStateManager>
 
     void Start()
     {
-        UIManager.Instance.SetActiveMode(UIManager.Mode.Highlight);
         // We start in the 'picking avatar' mode.
         //CurrentAppState = AppState.PickingAvatar;
         CurrentAppState = AppState.WaitingForAnchor;
-        // Spatial mapping should be disabled when we start up so as not
-        // to distract from the avatar picking.
-        SpatialMappingManager.Instance.StopObserver();
-        SpatialMappingManager.Instance.gameObject.SetActive(false);
 
         // On device we start by showing the avatar picker.
         //PlayerAvatarStore.Instance.SpawnAvatarPicker();
@@ -66,7 +61,6 @@ public class AppStateManager : Singleton<AppStateManager>
                 {
                     CurrentAppState = AppState.WaitingForStageTransform;
                     GestureManager.Instance.OverrideFocusedObject = HologramPlacement.Instance.gameObject;
-
                     SpatialMappingManager.Instance.gameObject.SetActive(true);
                     SpatialMappingManager.Instance.DrawVisualMeshes = true;
                     SpatialMappingManager.Instance.StartObserver();
