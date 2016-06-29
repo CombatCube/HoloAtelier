@@ -71,6 +71,7 @@ namespace HoloToolkit.Unity
                     Transition(TapRecognizer);
                     break;
                 case UIManager.Mode.FreeDraw:
+                    OverrideFocusedObject = Canvas;
                     Transition(ManipulationRecognizer);
                     break;
                 default:
@@ -91,15 +92,15 @@ namespace HoloToolkit.Unity
         {
             IsManipulating = true;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out manipulationStartPos);
-            Canvas.SendMessage("PerformManipulationStart", Canvas.transform.InverseTransformPoint(manipulationStartPos + cumulativeDelta));
+            focusedObject.SendMessage("PerformManipulationStart", manipulationStartPos + cumulativeDelta);
         }
 
         private void GestureRecognizer_ManipulationUpdatedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
             if (IsManipulating)
             {
-                Vector3 v = Canvas.transform.InverseTransformPoint(manipulationStartPos + cumulativeDelta);
-                Canvas.SendMessage("PerformManipulationUpdate", v);
+                Vector3 v = manipulationStartPos + cumulativeDelta;
+                focusedObject.SendMessage("PerformManipulationUpdate", v);
             }
         }
 
@@ -173,7 +174,7 @@ namespace HoloToolkit.Unity
         {
             ActiveRecognizer.StopCapturingGestures();
 
-            TapRecognizer.TappedEvent += GestureRecognizer_TappedEvent;
+            TapRecognizer.TappedEvent -= GestureRecognizer_TappedEvent;
 
             ManipulationRecognizer.ManipulationStartedEvent -= GestureRecognizer_ManipulationStartedEvent;
             ManipulationRecognizer.ManipulationUpdatedEvent -= GestureRecognizer_ManipulationUpdatedEvent;

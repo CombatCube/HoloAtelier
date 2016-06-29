@@ -34,7 +34,7 @@ public class Draw3D : MonoBehaviour {
         long userID = msg.ReadInt64();
 
         GameObject lineObject = new GameObject();
-        lineObject.transform.SetParent(gameObject.transform);
+        lineObject.transform.SetParent(gameObject.transform, false);
         LineRenderer line = lineObject.AddComponent<LineRenderer>();
         line.material = DrawMaterial;
         line.useWorldSpace = false;
@@ -58,8 +58,7 @@ public class Draw3D : MonoBehaviour {
     void PerformManipulationStart(Vector3 position)
     {
         lastLineObject = new GameObject();
-        lastLineObject.transform.SetParent(gameObject.transform);
-        lastLineObject.transform.localPosition = Vector3.zero;
+        lastLineObject.transform.SetParent(gameObject.transform, false);
         lastLine = lastLineObject.AddComponent<LineRenderer>();
         lastLine.material = DrawMaterial;
         lastLine.useWorldSpace = false;
@@ -67,7 +66,7 @@ public class Draw3D : MonoBehaviour {
         lastLine.SetVertexCount(1);
 
         Vector3[] points = new Vector3[1];
-        points[0] = position;
+        points[0] = lastLineObject.transform.InverseTransformPoint(position);
         lastLine.SetPositions(points);
         lastPoints = points;
     }
@@ -77,10 +76,10 @@ public class Draw3D : MonoBehaviour {
         if (GestureManager.Instance.IsManipulating)
         {
             int nextPointIdx = lastPoints.Length;
-            if ((lastPoints[nextPointIdx - 1] - position).magnitude > DrawThreshold) {
+            if ((lastPoints[nextPointIdx - 1] - lastLineObject.transform.InverseTransformPoint(position)).magnitude > DrawThreshold) {
                 Vector3[] points = new Vector3[lastPoints.Length + 1];
                 lastPoints.CopyTo(points, 0);
-                points[nextPointIdx] = position;
+                points[nextPointIdx] = lastLineObject.transform.InverseTransformPoint(position);
                 lastLine.SetVertexCount(lastPoints.Length + 1);
                 lastLine.SetPositions(points);
                 lastPoints = points;
