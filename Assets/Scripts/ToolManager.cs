@@ -22,7 +22,7 @@ public partial class ToolManager : Singleton<ToolManager>
     // Use this for initialization
     void Start ()
     {
-        
+        SetActiveTool(null);
     }
 	
 	// Update is called once per frame
@@ -41,8 +41,11 @@ public partial class ToolManager : Singleton<ToolManager>
         {
             ActiveTool.SetActive(false);
         }
+        if (tool != null)
+        {
+            tool.SetActive(true);
+        }
         ActiveTool = tool;
-        tool.SetActive(true);
         EventHandler<ToolChangedEventArgs> toolChangedEvent = ToolChanged;
         ToolChangedEventArgs tcea = new ToolChangedEventArgs();
         tcea.newTool = tool;

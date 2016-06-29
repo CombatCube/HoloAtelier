@@ -37,10 +37,7 @@ public class AppStateManager : Singleton<AppStateManager>
     {
         // If we fall back to waiting for anchor, everything needed to 
         // get us into setting the target transform state will be setup.
-        //if (CurrentAppState != AppState.PickingAvatar)
-        //{
-            CurrentAppState = AppState.WaitingForAnchor;
-        //}
+        CurrentAppState = AppState.WaitingForAnchor;
     }
 
     void Update()
@@ -71,7 +68,11 @@ public class AppStateManager : Singleton<AppStateManager>
                 if (HologramPlacement.Instance.GotTransform)
                 {
                     CurrentAppState = AppState.Ready;
+                    GestureManager.Instance.OverrideFocusedObject = null;
+                    SpatialMappingManager.Instance.DrawVisualMeshes = false;
                 }
+                break;
+            case AppState.Ready:
                 break;
         }
     }

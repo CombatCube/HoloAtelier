@@ -16,12 +16,7 @@ public class HologramPlacement : Singleton<HologramPlacement>
     /// When the experience starts, we disable all of the rendering of the model.
     /// </summary>
     List<MeshRenderer> disabledRenderers = new List<MeshRenderer>();
-
-    /// <summary>
-    /// We use a voice command to enable moving the target.
-    /// </summary>
-    KeywordRecognizer keywordRecognizer;
-
+    
     void Start()
     {
         // When we first start, we need to disable the model to avoid it obstructing the user picking a hat.
@@ -35,13 +30,6 @@ public class HologramPlacement : Singleton<HologramPlacement>
 
         // And if the users want to reset the stage transform.
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.ResetStage] = this.OnResetStage;
-
-        // Setup a keyword recognizer to enable resetting the target location.
-        List<string> keywords = new List<string>();
-        keywords.Add("Reset Target");
-        keywordRecognizer = new KeywordRecognizer(keywords.ToArray());
-        keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
-        keywordRecognizer.Start();
     }
 
     /// <summary>
@@ -68,9 +56,6 @@ public class HologramPlacement : Singleton<HologramPlacement>
 
         // Other devices in the experience need to know about this as well.
         CustomMessages.Instance.SendResetStage();
-
-        // And we need to reset the object to its start animation state.
-        //GetComponent<EnergyHubBase>().ResetAnimation();
     }
 
     /// <summary>
@@ -126,35 +111,21 @@ public class HologramPlacement : Singleton<HologramPlacement>
 
     void Update()
     {
-        // Wait till users pick an avatar to enable renderers.
-        //if (disabledRenderers.Count > 0)
-        //{
-            if (/*!PlayerAvatarStore.Instance.PickerActive &&*/
-            ImportExportAnchorManager.Instance.AnchorEstablished)
-            {
-                // After which we want to start rendering.
-                EnableModel();
+        if (ImportExportAnchorManager.Instance.AnchorEstablished)
+        {
+            //EnableModel();
 
-                // And if we've already been sent the relative transform, we will use it.
-                if (GotTransform)
-                {
-                    // This triggers the animation sequence for the model and
-                    // puts the cool materials on the model.
-                    //GetComponent<EnergyHubBase>().SendMessage("OnSelect");
-                }
-            }
-        //}
-        else if (GotTransform == false)
+        }
+        if (GotTransform == false)
         {
             transform.position = Vector3.Lerp(transform.position, ProposeTransformPosition(), 0.2f);
+            transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Vector3.up);
         }
     }
 
     Vector3 ProposeTransformPosition()
     {
         Vector3 retval;
-        // We need to know how many users are in the experience with good transforms.
-        Vector3 cumulatedPosition = Camera.main.transform.position;
 
         // Have the model act as the 'cursor' ...
         // We prefer to put the model on a real world surface.
@@ -177,7 +148,7 @@ public class HologramPlacement : Singleton<HologramPlacement>
     {
         // Note that we have a transform.
         GotTransform = true;
-
+        Debug.Log("Created transform.");
         // And send it to our friends.
         CustomMessages.Instance.SendStageTransform(transform.localPosition, transform.localRotation);
     }
@@ -202,6 +173,7 @@ public class HologramPlacement : Singleton<HologramPlacement>
         }
 
         GotTransform = true;
+        Debug.Log("Received transform.");
     }
 
     /// <summary>
