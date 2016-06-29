@@ -20,7 +20,17 @@ public class HoloCapture : MonoBehaviour {
 	void Update () {
 	
 	}
-    
+
+    public void Activate()
+    {
+        ToolManager.Instance.SetActiveTool(gameObject);
+    }
+
+    void OnSelect()
+    {
+        OnTakePicture();
+    }
+
     void OnTakePicture()
     {
         Debug.Log("OnTakePicture called");
