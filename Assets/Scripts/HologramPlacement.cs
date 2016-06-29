@@ -119,7 +119,9 @@ public class HologramPlacement : Singleton<HologramPlacement>
         if (GotTransform == false)
         {
             transform.position = Vector3.Lerp(transform.position, ProposeTransformPosition(), 0.2f);
-            transform.rotation = Quaternion.LookRotation(Camera.main.transform.forward, Vector3.up);
+            var fwd = Camera.main.transform.forward;
+            fwd.y = 0;
+            transform.rotation = Quaternion.LookRotation(fwd);
         }
     }
 
