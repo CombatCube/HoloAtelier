@@ -16,15 +16,15 @@ public class RemoteHead : MonoBehaviour {
     void OnSelect()
     {
         Debug.Log("Remote Head tapped!");
-        if (RemoteHeadManager.Instance.activeHead != gameObject)
-        {
-            RemoteHeadManager.Instance.activeHead = gameObject;
-            ToolManager.Instance.SetActiveTool(gameObject);
-        }
-        else
-        {
-            RemoteHeadManager.Instance.activeHead = null;
-            ToolManager.Instance.SetActiveTool(null);
-        }
+        //if (RemoteHeadManager.Instance.activeHead != gameObject)
+        //{
+        //    RemoteHeadManager.Instance.activeHead = gameObject;
+        //    ToolManager.Instance.SetActiveTool(gameObject);
+        //}
+        //else
+        //{
+        //    RemoteHeadManager.Instance.activeHead = null;
+        //    ToolManager.Instance.SetActiveTool(null);
+        //}
     }
 }
