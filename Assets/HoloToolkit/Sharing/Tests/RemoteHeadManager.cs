@@ -5,6 +5,7 @@ using HoloToolkit.Sharing;
 using HoloToolkit.Unity;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 /// <summary>
 /// Broadcasts the head transform of the local user to other users in the session,
@@ -14,16 +15,20 @@ using UnityEngine;
 /// </summary>
 public class RemoteHeadManager : Singleton<RemoteHeadManager>
 {
+    public GameObject remoteHeadObject;
     public class RemoteHeadInfo
     {
         public long UserID;
         public GameObject HeadObject;
     }
 
+    public GameObject activeHead = null;
+    public GameObject RemotePerspectiveTool;
     /// <summary>
     /// Keep a list of the remote heads, indexed by XTools userID
     /// </summary>
     public Dictionary<long, RemoteHeadInfo> remoteHeads = new Dictionary<long, RemoteHeadInfo>();
+    bool cameraReset = true;
 
     void Start()
     {
@@ -43,6 +48,27 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
         Quaternion headRotation = Quaternion.Inverse(this.transform.rotation) * headTransform.rotation;
 
         CustomMessages.Instance.SendHeadTransform(headPosition, headRotation);
+
+        if (activeHead != null)
+        {
+            cameraReset = false;
+            Camera.main.gameObject.transform.SetParent(activeHead.transform, true);
+            Camera.main.gameObject.transform.localPosition = Vector3.Lerp(Camera.main.gameObject.transform.localPosition, Vector3.zero, 0.02f);
+        }
+        else
+        {
+            ResetCamera();
+        }
+    }
+
+    private void ResetCamera()
+    {
+        if (!cameraReset)
+        {
+            Camera.main.gameObject.transform.SetParent(null, false);
+            Camera.main.gameObject.transform.position = UnityEngine.VR.InputTracking.GetLocalPosition(UnityEngine.VR.VRNode.Head);
+            cameraReset = true;
+        }
     }
 
     /// <summary>
@@ -112,9 +138,8 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
     /// <returns></returns>
     GameObject CreateRemoteHead()
     {
-        GameObject newHeadObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject newHeadObj = Instantiate(remoteHeadObject);
         newHeadObj.transform.parent = this.gameObject.transform;
-        newHeadObj.transform.localScale = Vector3.one * 0.2f;
         return newHeadObj;
     }
 
@@ -126,5 +151,14 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
 	void RemoveRemoteHead(GameObject remoteHeadObject)
     {
         DestroyImmediate(remoteHeadObject);
+    }
+
+    public void SetActiveHead(GameObject go)
+    {
+        activeHead = go;
+        if (go != null)
+        {
+            RemotePerspectiveTool.GetComponent<RemotePerspective>().Activate();
+        }
     }
 }
