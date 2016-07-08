@@ -128,8 +128,9 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
         Quaternion headRot = CustomMessages.Instance.ReadQuaternion(msg);
 
         RemoteHeadInfo headInfo = GetRemoteHeadInfo(userID);
-        headInfo.HeadObject.transform.localPosition = headPos;
+
         headInfo.HeadObject.transform.localRotation = headRot;
+        headInfo.HeadObject.GetComponent<GazeStabilizer>().UpdateHeadStability(headPos, headRot);
     }
 
     /// <summary>

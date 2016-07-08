@@ -20,6 +20,7 @@ public class CustomMessages : Singleton<CustomMessages>
         Draw3DStroke,
         StageTransform,
         ResetStage,
+        Image,
         UserAvatar,
         Max
     }
@@ -178,6 +179,29 @@ public class CustomMessages : Singleton<CustomMessages>
                 msg,
                 MessagePriority.Immediate,
                 MessageReliability.ReliableOrdered,
+                MessageChannel.Avatar);
+        }
+    }
+
+
+    public void SendImage(List<byte> rawImage)
+    {
+        // If we are connected to a session, broadcast our head info
+        if (this.serverConnection != null && this.serverConnection.IsConnected())
+        {
+            // Create an outgoing network message to contain all the info we want to send
+            NetworkOutMessage msg = CreateMessage((byte)TestMessageID.Image);
+
+            foreach (byte b in rawImage)
+            {
+                msg.Write(b);
+            }
+
+            // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
+            this.serverConnection.Broadcast(
+                msg,
+                MessagePriority.Immediate,
+                MessageReliability.ReliableSequenced,
                 MessageChannel.Avatar);
         }
     }

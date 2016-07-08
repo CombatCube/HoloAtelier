@@ -2,22 +2,22 @@
 using System.Collections;
 using UnityEngine.VR.WSA.WebCam;
 using System.Linq;
+using HoloToolkit.Sharing;
+using System;
+using System.Collections.Generic;
 
 // Takes a picture upon selection and changes the texture to it.
 public class HoloCapture : MonoBehaviour {
     PhotoCapture photoCaptureObject = null;
-    public Material captureMaterial;
-    public Material cubeMaterial;
     // Use this for initialization
     void Start ()
     {
-        Debug.Log("Start called");
-        captureMaterial.mainTexture = Texture2D.whiteTexture;
-        cubeMaterial.color = new Color(0f, 0f, 1f);
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+
+    // Update is called once per frame
+    void Update () {
 	
 	}
 
@@ -40,9 +40,8 @@ public class HoloCapture : MonoBehaviour {
     void OnPhotoCaptureCreated(PhotoCapture captureObject)
     {
         Debug.Log("OnPhotoCaptureCreated called");
-        captureMaterial.mainTexture = Texture2D.blackTexture;
-        cubeMaterial.color = new Color(1f, 1f, 0f);
-
+        PictureManager.Instance.SetPicture(Texture2D.blackTexture);
+        
         photoCaptureObject = captureObject;
 
         Resolution cameraResolution = PhotoCapture.SupportedResolutions.OrderByDescending((res) => res.width * res.height).First();
@@ -88,11 +87,9 @@ public class HoloCapture : MonoBehaviour {
             // Copy the raw image data into our target texture
             photoCaptureFrame.UploadImageDataToTexture(targetTexture);
             // Do as we wish with the texture such as apply it to a material, etc.
-            captureMaterial.mainTexture = targetTexture;
-        }
-        else
-        {
-            cubeMaterial.color = new Color(1f, 0f, 0f);
+            PictureManager.Instance.SetPicture(targetTexture);
+            byte[] rawImage = targetTexture.GetRawTextureData();
+            CustomMessages.Instance.SendImage(rawImage.ToList());
         }
         // Clean up
         photoCaptureObject.StopPhotoModeAsync(OnStoppedPhotoMode);

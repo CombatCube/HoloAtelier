@@ -13,7 +13,7 @@ namespace HoloToolkit.Sharing
         /// </summary>
         public ClientRole ClientRole = ClientRole.Primary;
 
-        private string ServerAddress = "10.159.23.101";
+        private string ServerAddress = "10.159.23.21";
         public int ServerPort = 20602;
 
         private SharingManager sharingMgr;

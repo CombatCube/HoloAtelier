@@ -36,7 +36,7 @@ namespace HoloToolkit.Unity
         private GameObject focusedObject;
         private GameObject activeTool;
 
-        public bool IsManipulating { get; private set; }
+        public GameObject manipulationTarget { get; private set; }
         private Vector3 manipulationStartPos;
 
         void Awake()
@@ -80,45 +80,47 @@ namespace HoloToolkit.Unity
 
         private void GestureRecognizer_ManipulationStartedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
-            IsManipulating = true;
+            manipulationTarget = focusedObject;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out manipulationStartPos);
+            Vector3 v = manipulationStartPos + cumulativeDelta;
             if (activeTool != null)
             {
-                activeTool.SendMessage("PerformManipulationStart", manipulationStartPos + cumulativeDelta);
-                Debug.Log("Manipulation started.");
+                manipulationTarget = activeTool;
             }
+            if (manipulationTarget != null)
+            {
+                manipulationTarget.SendMessage("PerformManipulationStart", v);
+            }
+            Debug.Log("Manipulation started.");
         }
 
         private void GestureRecognizer_ManipulationUpdatedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
-            if (IsManipulating)
+            if (manipulationTarget != null)
             {
                 Vector3 v = manipulationStartPos + cumulativeDelta;
-                if (activeTool != null)
-                {
-                    activeTool.SendMessage("PerformManipulationUpdate", v);
-                }
+                manipulationTarget.SendMessage("PerformManipulationUpdate", v);
             }
         }
 
         private void GestureRecognizer_ManipulationCompletedEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
-            IsManipulating = false;
-            if (activeTool != null)
+            if (manipulationTarget != null)
             {
-                activeTool.SendMessage("PerformManipulationCompleted");
+                manipulationTarget.SendMessage("PerformManipulationCompleted");
+                Debug.Log("Manipulation completed.");
             }
-            Debug.Log("Manipulation completed.");
+            manipulationTarget = null;
         }
 
         private void GestureRecognizer_ManipulationCanceledEvent(InteractionSourceKind source, Vector3 cumulativeDelta, Ray headRay)
         {
-            IsManipulating = false;
-            if (activeTool != null)
+            if (manipulationTarget != null)
             {
-                activeTool.SendMessage("PerformManipulationCanceled");
+                manipulationTarget.SendMessage("PerformManipulationCanceled");
+                Debug.Log("Manipulation canceled.");
             }
-            Debug.Log("Manipulation canceled.");
+            manipulationTarget = null;
         }
 
         void LateUpdate()
@@ -143,7 +145,7 @@ namespace HoloToolkit.Unity
             {
                 // If the currently focused object doesn't match the old focused object, cancel the current gesture.
                 // Start looking for new gestures.  This is to prevent applying gestures from one hologram to another.
-                if (!IsManipulating)
+                if (manipulationTarget == null)
                 {
                     recognizer.CancelGestures();
                     recognizer.StartCapturingGestures();

@@ -72,7 +72,7 @@ public class Draw3D : MonoBehaviour {
         }
     }
 
-void PerformManipulationStart(Vector3 position)
+    void PerformManipulationStart(Vector3 position)
     {
         lastLineObject = new GameObject();
         lastLineObject.transform.SetParent(DrawCanvas.transform, false);
@@ -90,7 +90,7 @@ void PerformManipulationStart(Vector3 position)
 
     void PerformManipulationUpdate(Vector3 position)
     {
-        if (GestureManager.Instance.IsManipulating)
+        if (GestureManager.Instance.manipulationTarget != null)
         {
             int nextPointIdx = lastPoints.Length;
             if ((lastPoints[nextPointIdx - 1] - lastLineObject.transform.InverseTransformPoint(position)).magnitude > DrawThreshold) {
@@ -114,12 +114,12 @@ void PerformManipulationStart(Vector3 position)
     void PerformManipulationCanceled()
     {
         Debug.Log("Canceled Draw3DStroke.");
-        Destroy(DrawCanvas.transform.GetChild(DrawCanvas.transform.childCount - 1).gameObject);
+        CustomMessages.Instance.SendDraw3DStroke(lastPoints);
     }
 
     void OnUndo()
     {
-        if(GestureManager.Instance.IsManipulating)
+        if(GestureManager.Instance.manipulationTarget != null)
         {
             return;
         }

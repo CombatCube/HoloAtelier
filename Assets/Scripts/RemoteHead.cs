@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
-using System.Collections;
+using HoloToolkit.Unity;
 
 public class RemoteHead : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    private GazeStabilizer gazeStabilizer;
+
+    void Awake()
+    {
+        gazeStabilizer = GetComponent<GazeStabilizer>();
+    }
+
+    // Use this for initialization
+    void Start () {
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        transform.localPosition = gazeStabilizer.StableHeadPosition;
 	}
 
     void OnSelect()
