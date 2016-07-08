@@ -102,7 +102,7 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
         RemoteHeadInfo headInfo;
 
         // Get the head info if its already in the list, otherwise add it
-        if (!this.remoteHeads.TryGetValue(userID, out headInfo))
+        if (!this.remoteHeads.TryGetValue(userID, out headInfo) && userID != CustomMessages.Instance.localUserID)
         {
             headInfo = new RemoteHeadInfo();
             headInfo.UserID = userID;
