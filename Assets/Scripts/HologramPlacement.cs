@@ -22,6 +22,9 @@ public class HologramPlacement : Singleton<HologramPlacement>
         // When we first start, we need to disable the model to avoid it obstructing the user picking a hat.
         //DisableModel();
 
+#if UNITY_EDITOR
+        GotTransform = true;
+#endif
         // We care about getting updates for the model transform.
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.StageTransform] = this.OnStageTransform;
 
