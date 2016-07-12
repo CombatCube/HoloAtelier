@@ -8,6 +8,8 @@ public class Draw3D : MonoBehaviour {
     private GameObject lastLineObject;
     private LineRenderer lastLine;
     private Vector3[] lastPoints;
+    private float penOffset = 0.1f;
+
     public GameObject DrawCanvas;
     public Material DrawMaterial;
     public float DrawThreshold;
@@ -67,8 +69,13 @@ public class Draw3D : MonoBehaviour {
     void Update () {
         if (HandsManager.Instance.HandDetected) {
             GetComponent<MeshRenderer>().enabled = true;
+            foreach (MeshRenderer m in GetComponentsInChildren<MeshRenderer>())
+            {
+                m.enabled = true;
+            }
             Vector3 pos;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
+            pos += penOffset * (Camera.main.transform.forward);
             gameObject.transform.position = pos;
             Quaternion v = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
             gameObject.transform.rotation = v;
@@ -76,7 +83,17 @@ public class Draw3D : MonoBehaviour {
         else
         {
             GetComponent<MeshRenderer>().enabled = false;
+            foreach (MeshRenderer m in GetComponentsInChildren<MeshRenderer>())
+            {
+                m.enabled = false;
+            }
         }
+    }
+
+    void OnSelect()
+    {
+        // Pass through to gazed object
+        GestureManager.Instance.FocusedObject.SendMessage("OnSelect");
     }
 
     void PerformManipulationStart(Vector3 position)
@@ -90,7 +107,7 @@ public class Draw3D : MonoBehaviour {
         lastLine.SetVertexCount(1);
 
         Vector3[] points = new Vector3[1];
-        points[0] = lastLineObject.transform.InverseTransformPoint(position);
+        points[0] = lastLineObject.transform.InverseTransformPoint(gameObject.transform.position);
         lastLine.SetPositions(points);
         lastPoints = points;
     }
@@ -100,10 +117,10 @@ public class Draw3D : MonoBehaviour {
         if (GestureManager.Instance.manipulationTarget != null)
         {
             int nextPointIdx = lastPoints.Length;
-            if ((lastPoints[nextPointIdx - 1] - lastLineObject.transform.InverseTransformPoint(position)).magnitude > DrawThreshold) {
+            if ((lastPoints[nextPointIdx - 1] - lastLineObject.transform.InverseTransformPoint(gameObject.transform.position)).magnitude > DrawThreshold) {
                 Vector3[] points = new Vector3[lastPoints.Length + 1];
                 lastPoints.CopyTo(points, 0);
-                points[nextPointIdx] = lastLineObject.transform.InverseTransformPoint(position);
+                points[nextPointIdx] = lastLineObject.transform.InverseTransformPoint(gameObject.transform.position);
                 lastLine.SetVertexCount(lastPoints.Length + 1);
                 lastLine.SetPositions(points);
                 lastPoints = points;

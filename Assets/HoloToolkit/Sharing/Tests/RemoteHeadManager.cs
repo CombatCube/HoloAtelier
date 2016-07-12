@@ -15,6 +15,11 @@ using System;
 /// </summary>
 public class RemoteHeadManager : Singleton<RemoteHeadManager>
 {
+    public enum PerspectiveMode
+    {
+        Live, Static
+    }
+    public PerspectiveMode perspectiveMode;
     public GameObject remoteHeadObject;
     public class RemoteHeadInfo
     {
@@ -22,7 +27,7 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
         public GameObject HeadObject;
     }
 
-    public GameObject activeHead = null;
+    private GameObject activeHead = null;
     public GameObject RemotePerspectiveTool;
     /// <summary>
     /// Keep a list of the remote heads, indexed by XTools userID
@@ -51,9 +56,19 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
 
         if (activeHead != null)
         {
+            switch(perspectiveMode)
+            {
+                case PerspectiveMode.Live:
+                    Camera.main.gameObject.transform.SetParent(activeHead.transform, true);
+                    Camera.main.gameObject.transform.localPosition = Vector3.Lerp(Camera.main.gameObject.transform.localPosition, Vector3.zero, 0.02f);
+                    break;
+                case PerspectiveMode.Static:
+                    Camera.main.gameObject.transform.SetParent(activeHead.transform, true);
+                    Camera.main.gameObject.transform.localPosition = Vector3.Lerp(Camera.main.gameObject.transform.localPosition, Vector3.zero, 0.02f);
+                    break;
+            }
             cameraReset = false;
-            Camera.main.gameObject.transform.SetParent(activeHead.transform, true);
-            Camera.main.gameObject.transform.localPosition = Vector3.Lerp(Camera.main.gameObject.transform.localPosition, Vector3.zero, 0.02f);
+
         }
         else
         {

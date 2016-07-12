@@ -53,7 +53,7 @@ public class ObjectIcons : MonoBehaviour {
     float lastTime;
     float timeLimit = 2;
 
-    void OnMouseOver() {           
+    void OnGazeEnter() {           
         mouseEnter = true;
         if ((Time.time > lastTime + 1) && timeLimit > 0)
         {
@@ -68,7 +68,7 @@ public class ObjectIcons : MonoBehaviour {
         
     }
 
-    void OnMouseExit()
+    void OnGazeExit()
     {
         mouseEnter = false;
         chatBubble.SetActive(false);
@@ -76,7 +76,7 @@ public class ObjectIcons : MonoBehaviour {
 
     }
 
-    void OnMouseUp() {
+    void OnSelect() {
         if (currentIcon != this.gameObject)
         {
             currentIcon = this.gameObject;

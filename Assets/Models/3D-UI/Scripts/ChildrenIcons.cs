@@ -11,12 +11,12 @@ public class ChildrenIcons : MonoBehaviour {
         objectColor = this.GetComponent<MeshRenderer>().material.color;
     }
 
-    void OnMouseEnter()
+    void OnGazeEnter()
     {
         this.GetComponent<MeshRenderer>().material.color = Color.yellow;
     }
 
-    void OnMouseExit()
+    void OnGazeExit()
     {
         this.GetComponent<MeshRenderer>().material.color = objectColor;
     }

@@ -10,7 +10,7 @@ public class GlobalSwitch : MonoBehaviour {
         uiSet.SetActive(false);
     }
 
-    void OnMouseUp() {
+    void OnSelect() {
         if (!uiSet.activeInHierarchy)
         {
             uiSetVisible = true;
