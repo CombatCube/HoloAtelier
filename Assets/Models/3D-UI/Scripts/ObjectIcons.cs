@@ -68,7 +68,7 @@ public class ObjectIcons : MonoBehaviour {
         
     }
 
-    void OnGazeExit()
+    void OnGazeLeave()
     {
         mouseEnter = false;
         chatBubble.SetActive(false);

@@ -16,7 +16,7 @@ public class ChildrenIcons : MonoBehaviour {
         this.GetComponent<MeshRenderer>().material.color = Color.yellow;
     }
 
-    void OnGazeExit()
+    void OnGazeLeave()
     {
         this.GetComponent<MeshRenderer>().material.color = objectColor;
     }
