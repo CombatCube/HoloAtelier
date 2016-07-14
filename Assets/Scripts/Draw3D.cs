@@ -10,6 +10,14 @@ public class Draw3D : MonoBehaviour {
     private Vector3[] lastPoints;
     private float penOffset = 0.1f;
 
+    public enum DrawMode
+    {
+        Draw3D,
+        Draw2D
+    }
+    public DrawMode DrawType;
+
+    // Set DrawCanvas to be the GameObject whose origin will be the reference for strokes.
     public GameObject DrawCanvas;
     public Material DrawMaterial;
     public float DrawThreshold;
@@ -75,8 +83,16 @@ public class Draw3D : MonoBehaviour {
             }
             Vector3 pos;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
-            pos += penOffset * (Camera.main.transform.forward);
-            gameObject.transform.position = pos;
+            if (DrawType == DrawMode.Draw3D)
+            {
+                pos += penOffset * (Camera.main.transform.forward);
+                gameObject.transform.position = pos;
+            }
+            else if (DrawType == DrawMode.Draw2D)
+            {
+                gameObject.transform.position = Vector3.ProjectOnPlane(pos, DrawCanvas.transform.up);
+            }
+
             Quaternion v = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
             gameObject.transform.rotation = v;
         }
