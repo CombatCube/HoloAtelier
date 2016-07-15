@@ -53,36 +53,30 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
         Quaternion headRotation = Quaternion.Inverse(this.transform.rotation) * headTransform.rotation;
 
         CustomMessages.Instance.SendHeadTransform(headPosition, headRotation);
+    }
 
+    public void SetLiveView()
+    {
+        perspectiveMode = PerspectiveMode.Live;
         if (activeHead != null)
         {
-            switch(perspectiveMode)
-            {
-                case PerspectiveMode.Live:
-                    Camera.main.gameObject.transform.SetParent(activeHead.transform, true);
-                    Camera.main.gameObject.transform.localPosition = Vector3.Lerp(Camera.main.gameObject.transform.localPosition, Vector3.zero, 0.02f);
-                    break;
-                case PerspectiveMode.Static:
-                    Camera.main.gameObject.transform.SetParent(activeHead.transform, true);
-                    Camera.main.gameObject.transform.localPosition = Vector3.Lerp(Camera.main.gameObject.transform.localPosition, Vector3.zero, 0.02f);
-                    break;
-            }
-            cameraReset = false;
-
-        }
-        else
-        {
-            ResetCamera();
+            Camera.main.gameObject.transform.SetParent(activeHead.transform, true);
+            Camera.main.transform.localPosition = Vector3.zero;
+            Camera.main.transform.localEulerAngles = Vector3.zero;
         }
     }
 
-    private void ResetCamera()
+    public void SetStaticView()
     {
-        if (!cameraReset)
+        perspectiveMode = PerspectiveMode.Static;
+        if (activeHead != null)
         {
-            Camera.main.gameObject.transform.SetParent(null, false);
-            Camera.main.gameObject.transform.position = UnityEngine.VR.InputTracking.GetLocalPosition(UnityEngine.VR.VRNode.Head);
-            cameraReset = true;
+            GameObject dummyParent = new GameObject();
+            dummyParent.transform.position = activeHead.transform.position;
+            dummyParent.transform.rotation = activeHead.transform.rotation;
+            Camera.main.gameObject.transform.SetParent(dummyParent.transform, true);
+            Camera.main.transform.localPosition = Vector3.zero;
+            Camera.main.transform.localEulerAngles = Vector3.zero;
         }
     }
 
@@ -171,10 +165,36 @@ public class RemoteHeadManager : Singleton<RemoteHeadManager>
 
     public void SetActiveHead(GameObject go)
     {
-        activeHead = go;
         if (go != null)
         {
+            if (activeHead != null)
+            {
+                activeHead.GetComponent<MeshRenderer>().enabled = true;
+            }
+            go.GetComponent<MeshRenderer>().enabled = false;
+            activeHead = go;
+            
+            if (perspectiveMode == PerspectiveMode.Live)
+            {
+                Camera.main.gameObject.transform.SetParent(activeHead.transform, true);
+            }
+            else if(perspectiveMode == PerspectiveMode.Static)
+            {
+                GameObject dummyParent = new GameObject();
+                dummyParent.transform.position = activeHead.transform.position;
+                dummyParent.transform.rotation = activeHead.transform.rotation;
+                Camera.main.gameObject.transform.SetParent(dummyParent.transform, true);
+            }
+            Camera.main.transform.localPosition = Vector3.zero;
+            Camera.main.transform.localEulerAngles = Vector3.zero;
             RemotePerspectiveTool.GetComponent<RemotePerspective>().Activate();
+        }
+        else
+        {
+            activeHead.GetComponent<MeshRenderer>().enabled = true;
+            activeHead = null;
+            Camera.main.gameObject.transform.SetParent(null, false);
+            Camera.main.gameObject.transform.position = UnityEngine.VR.InputTracking.GetLocalPosition(UnityEngine.VR.VRNode.Head);
         }
     }
 }

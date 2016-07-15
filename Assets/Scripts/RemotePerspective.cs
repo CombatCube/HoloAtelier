@@ -26,4 +26,5 @@ public class RemotePerspective : MonoBehaviour {
         RemoteHeadManager.Instance.SetActiveHead(null);
         ToolManager.Instance.SetActiveTool(lastTool);
     }
+
 }
