@@ -89,7 +89,7 @@ public class DrawCanvas : MonoBehaviour {
             list.Add(CustomMessages.Instance.ReadVector3(msg));
         }
 
-        var lineArr = list.ToArray();
+        DrawLine(list.ToArray());
         
     }
 

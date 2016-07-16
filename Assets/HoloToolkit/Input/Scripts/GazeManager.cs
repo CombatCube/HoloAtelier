@@ -38,6 +38,11 @@ namespace HoloToolkit.Unity
         /// </summary>
         public Vector3 Normal { get; private set; }
 
+        /// <summary>
+        /// Object currently being focused on.
+        /// </summary>
+        public GameObject FocusedObject { get; private set; }
+
         [Tooltip("Checking enables SetFocusPointForFrame to set the stabilization plane.")]
         public bool SetStabilizationPlane = true;
         [Tooltip("Lerp speed when moving focus point closer.")]
@@ -45,27 +50,16 @@ namespace HoloToolkit.Unity
         [Tooltip("Lerp speed when moving focus point farther away.")]
         public float LerpStabilizationPlanePowerFarther = 7.0f;
 
-        private GazeStabilizer gazeStabilizer;
         private Vector3 gazeOrigin;
         private Vector3 gazeDirection;
         private float lastHitDistance = 15.0f;
-        private GameObject focusedObject;
-
-        void Awake()
-        {
-            gazeStabilizer = GetComponent<GazeStabilizer>();
-        }
 
         private void Update()
         {
             gazeOrigin = Camera.main.transform.position;
             gazeDirection = Camera.main.transform.forward;
 
-            gazeStabilizer.UpdateHeadStability(gazeOrigin, Camera.main.transform.rotation);
-            gazeOrigin = gazeStabilizer.StableHeadPosition;
-
             UpdateRaycast();
-
             UpdateStabilizationPlane();
         }
 
@@ -82,7 +76,7 @@ namespace HoloToolkit.Unity
                            MaxGazeDistance,
                            RaycastLayerMask);
 
-            GameObject oldFocusedObject = focusedObject;
+            GameObject oldFocusedObject = FocusedObject;
             // Update the HitInfo property so other classes can use this hit information.
             HitInfo = hitInfo;
 
@@ -92,50 +86,50 @@ namespace HoloToolkit.Unity
                 Position = hitInfo.point;
                 Normal = hitInfo.normal;
                 lastHitDistance = hitInfo.distance;
-                focusedObject = hitInfo.collider.gameObject;
+                FocusedObject = hitInfo.collider.gameObject;
             }
             else
             {
                 // If the raycast does not hit a hologram, default the position to last hit distance in front of the user,
                 // and the normal to face the user.
                 Position = gazeOrigin + (gazeDirection * lastHitDistance);
-                Normal = gazeDirection;
-                focusedObject = null;
+                Normal = -gazeDirection;
+                FocusedObject = null;
             }
 
             // Check if the currently hit object has changed
-            if (oldFocusedObject != focusedObject)
+            if (oldFocusedObject != FocusedObject)
             {
                 if (oldFocusedObject != null)
                 {
                     oldFocusedObject.SendMessage("OnGazeLeave", SendMessageOptions.DontRequireReceiver);
                 }
-                if (focusedObject != null)
+                if (FocusedObject != null)
                 {
-                    focusedObject.SendMessage("OnGazeEnter", SendMessageOptions.DontRequireReceiver);
+                    FocusedObject.SendMessage("OnGazeEnter", SendMessageOptions.DontRequireReceiver);
                 }
             }
         }
 
         /// <summary>
-        /// Updates the focus point for every frame.
+        /// Adds the stabilization plane modifier if it's enabled and if it doesn't exist yet.
         /// </summary>
         private void UpdateStabilizationPlane()
         {
+            // We want to use the stabilization logic.
             if (SetStabilizationPlane)
             {
-                // Calculate the delta between camera's position and current hit position.
-                float focusPointDistance = (gazeOrigin - Position).magnitude;
-                float lerpPower = focusPointDistance > lastHitDistance
-                    ? LerpStabilizationPlanePowerFarther
-                    : LerpStabilizationPlanePowerCloser;
+                // Check if it exists in the scene.
+                if (StabilizationPlaneModifier.Instance == null)
+                {
+                    // If not, add it to us.
+                    gameObject.AddComponent<StabilizationPlaneModifier>();
+                }
+            }
 
-                // Smoothly move the focus point from previous hit position to new position.
-                lastHitDistance = Mathf.Lerp(lastHitDistance, focusPointDistance, lerpPower * Time.deltaTime);
-
-                Vector3 newFocusPointPosition = gazeOrigin + (gazeDirection * lastHitDistance);
-
-                HolographicSettings.SetFocusPointForFrame(newFocusPointPosition, -gazeDirection);
+            if (StabilizationPlaneModifier.Instance)
+            {
+                StabilizationPlaneModifier.Instance.SetStabilizationPlane = SetStabilizationPlane;
             }
         }
     }
