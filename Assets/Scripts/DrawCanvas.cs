@@ -10,6 +10,10 @@ public class DrawCanvas : MonoBehaviour {
 
     private GameObject lastLineObject;
     private Vector3[] lastPoints;
+
+    public MeshRenderer Quad;
+    public Draw3D DrawTool;
+
     public enum DrawMode
     {
         Draw3D,
@@ -28,6 +32,19 @@ public class DrawCanvas : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public void ShowCanvas()
+    {
+        if (Quad != null)
+        {
+            Quad.enabled = true;
+        }
+    }
+
+    void OnSelect()
+    {
+        DrawTool.DrawCanvas = this;
+    }
 
     public void StartLine(Vector3 position)
     {

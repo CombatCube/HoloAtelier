@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Draw3D : MonoBehaviour {
     //private Vector3 manipulationPreviousPosition;
     private float penOffset = 0.1f;
-
+    private bool planeCreate = false;
     // Set DrawCanvas to be the GameObject whose origin will be the reference for strokes.
     public DrawCanvas DrawCanvas;
 
@@ -26,28 +26,19 @@ public class Draw3D : MonoBehaviour {
 
     public void Activate()
     {
-        Transform mesh = DrawCanvas.transform.FindChild("Quad");
         if (ToolManager.Instance.ActiveTool != gameObject)
         {
-            if (mesh != null)
-            {
-                mesh.gameObject.SetActive(true);
-            }
             ToolManager.Instance.SetActiveTool(gameObject);
         }
         else
         {
-            if (mesh != null)
-            {
-                mesh.gameObject.SetActive(false);
-            }
             ToolManager.Instance.SetActiveTool(null);
         }
     }
 
     // Update is called once per frame
     void Update () {
-        if (HandsManager.Instance.HandDetected) {
+        if (HandsManager.Instance.HandDetected && !HandsManager.Instance.TwoHandsDetected) {
             GetComponentInChildren<MeshRenderer>().enabled = true;
             Vector3 pos;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
@@ -71,7 +62,7 @@ public class Draw3D : MonoBehaviour {
         }
         else
         {
-            GetComponentInChildren<MeshRenderer>().enabled = true;
+            GetComponentInChildren<MeshRenderer>().enabled = false;
         }
     }
 

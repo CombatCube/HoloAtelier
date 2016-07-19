@@ -12,6 +12,7 @@ namespace HoloToolkit.Unity
     public partial class HandsManager : Singleton<HandsManager>
     {
         public InteractionSourceState Hand;
+        public InteractionSourceState[] Hands;
         /// <summary>
         /// HandDetected tracks the hand detected state.
         /// Returns true if the list of tracked hands is not empty.
@@ -19,6 +20,11 @@ namespace HoloToolkit.Unity
         public bool HandDetected
         {
             get { return trackedHands.Count > 0; }
+        }
+
+        public bool TwoHandsDetected
+        {
+            get { return trackedHands.Count > 1; }
         }
 
         private HashSet<uint> trackedHands = new HashSet<uint>();
@@ -38,7 +44,14 @@ namespace HoloToolkit.Unity
                 return;
             }
             trackedHands.Add(state.source.id);
-            Hand = state;
+            if (trackedHands.Count > 1)
+            {
+                Hands = InteractionManager.GetCurrentReading();
+            }
+            else
+            {
+                Hand = state;
+            }
         }
 
         private void InteractionManager_SourceUpdated(InteractionSourceState state)
@@ -48,7 +61,10 @@ namespace HoloToolkit.Unity
             {
                 return;
             }
-
+            if (trackedHands.Count > 1)
+            {
+                Hands = InteractionManager.GetCurrentReading();
+            }
             Hand = state;
         }
 
@@ -64,6 +80,7 @@ namespace HoloToolkit.Unity
             {
                 trackedHands.Remove(state.source.id);
             }
+
         }
 
         void OnDestroy()

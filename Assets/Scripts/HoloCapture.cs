@@ -23,7 +23,14 @@ public class HoloCapture : MonoBehaviour {
 
     public void Activate()
     {
-        ToolManager.Instance.SetActiveTool(gameObject);
+        if (ToolManager.Instance.ActiveTool != gameObject)
+        {
+            ToolManager.Instance.SetActiveTool(gameObject);
+        }
+        else
+        {
+            ToolManager.Instance.SetActiveTool(null);
+        }
     }
 
     void OnSelect()
@@ -93,6 +100,7 @@ public class HoloCapture : MonoBehaviour {
         }
         // Clean up
         photoCaptureObject.StopPhotoModeAsync(OnStoppedPhotoMode);
+        
     }
 
 }
