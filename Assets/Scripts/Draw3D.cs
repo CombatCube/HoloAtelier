@@ -9,7 +9,7 @@ public class Draw3D : MonoBehaviour {
     private bool planeCreate = false;
     // Set DrawCanvas to be the GameObject whose origin will be the reference for strokes.
     public DrawCanvas DrawCanvas;
-
+    public Transform Tablet;
 
     // Use this for initialization
     void Start () {
@@ -49,12 +49,24 @@ public class Draw3D : MonoBehaviour {
             }
             else if (DrawCanvas.DrawType == DrawCanvas.DrawMode.Draw2D)
             {
-                // Get hand position relative to canvas origin.
-                Vector3 localPos = DrawCanvas.transform.InverseTransformPoint(pos);
-                // Project down onto canvas plane.
-                Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
-                // Set world pos of tool to drawing location.
-                gameObject.transform.position = DrawCanvas.transform.TransformPoint(planePos);
+                if (Tablet != null)
+                {
+                    // Get hand position relative to TABLET origin.
+                    Vector3 localPos = Tablet.transform.InverseTransformPoint(pos);
+                    // Project down onto TABLET plane.
+                    Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
+                    // Set world pos of tool to drawing location.
+                    gameObject.transform.position = DrawCanvas.transform.TransformPoint(planePos);
+                }
+                else
+                {
+                    // Get hand position relative to canvas origin.
+                    Vector3 localPos = DrawCanvas.transform.InverseTransformPoint(pos);
+                    // Project down onto canvas plane.
+                    Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
+                    // Set world pos of tool to drawing location.
+                    gameObject.transform.position = DrawCanvas.transform.TransformPoint(planePos);
+                }
             }
 
             Quaternion v = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
