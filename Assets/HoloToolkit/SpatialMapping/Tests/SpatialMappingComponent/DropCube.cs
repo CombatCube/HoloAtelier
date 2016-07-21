@@ -6,11 +6,11 @@ using UnityEngine.VR.WSA.Input;
 /// </summary>
 public class DropCube : MonoBehaviour
 {
-    GestureRecognizer recognizer;
+    UnityEngine.VR.WSA.Input.GestureRecognizer recognizer;
 
     void Start ()
     {
-        recognizer = new GestureRecognizer();
+        recognizer = new UnityEngine.VR.WSA.Input.GestureRecognizer();
         recognizer.SetRecognizableGestures(GestureSettings.Tap);
         recognizer.TappedEvent += Recognizer_TappedEvent;
         recognizer.StartCapturingGestures();

@@ -7,14 +7,14 @@ using System;
 
 public class TextToSpeechManagerTest : MonoBehaviour
 {
-    private GestureRecognizer gestureRecognizer;
+    private UnityEngine.VR.WSA.Input.GestureRecognizer gestureRecognizer;
     public TextToSpeechManager textToSpeechManager;
 
     // Use this for initialization
     void Start ()
     {
         // Set up a GestureRecognizer to detect Select gestures.
-        gestureRecognizer = new GestureRecognizer();
+        gestureRecognizer = new UnityEngine.VR.WSA.Input.GestureRecognizer();
         gestureRecognizer.TappedEvent += GestureRecognizer_TappedEvent;
         gestureRecognizer.StartCapturingGestures();
 

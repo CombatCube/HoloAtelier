@@ -32,7 +32,7 @@ namespace HoloToolkit.Unity
             get { return focusedObject; }
         }
 
-        private GestureRecognizer recognizer;
+        private UnityEngine.VR.WSA.Input.GestureRecognizer recognizer;
         private GameObject focusedObject;
         private GameObject activeTool;
 
@@ -41,7 +41,7 @@ namespace HoloToolkit.Unity
 
         void Awake()
         {
-            recognizer = new GestureRecognizer();
+            recognizer = new UnityEngine.VR.WSA.Input.GestureRecognizer();
             recognizer.SetRecognizableGestures(GestureSettings.ManipulationTranslate | GestureSettings.Tap);
             recognizer.TappedEvent += GestureRecognizer_TappedEvent;
             recognizer.ManipulationStartedEvent += GestureRecognizer_ManipulationStartedEvent;
