@@ -1766,7 +1766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RecognizerStart: 1
   KeywordsAndResponses:
-  - Keyword: Send
+  - Keyword: Send Message
     KeyCode: 0
     Response:
       m_PersistentCalls:

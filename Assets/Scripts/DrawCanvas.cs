@@ -25,7 +25,7 @@ public class DrawCanvas : MonoBehaviour {
     // Use this for initialization
     void Start () {
         // We care about getting updates for the anchor transform.
-        CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Draw3DStroke] = this.OnReceive3DStroke;
+        //CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Draw3DStroke] = this.OnReceive3DStroke;
     }
 	
 	// Update is called once per frame
@@ -86,28 +86,6 @@ public class DrawCanvas : MonoBehaviour {
         line.SetWidth(DrawThreshold, DrawThreshold);
         line.SetVertexCount(points.Length);
         line.SetPositions(points);
-    }
-
-    private void OnReceive3DStroke(NetworkInMessage msg)
-    {
-        Debug.Log("Received Draw3DStroke.");
-
-        // Eat the ID section
-        long userID = msg.ReadInt64();
-
-        long mode = msg.ReadInt64();
-        if (mode != (byte)DrawType)
-        {
-            return;
-        }
-        var list = new List<Vector3>();
-        while (msg.GetUnreadBitsCount() > 0)
-        {
-            list.Add(CustomMessages.Instance.ReadVector3(msg));
-        }
-
-        DrawLine(list.ToArray());
-        
     }
 
     public void ClearCanvas()
