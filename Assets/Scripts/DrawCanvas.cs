@@ -3,6 +3,7 @@ using HoloToolkit.Unity;
 using HoloToolkit.Sharing;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class DrawCanvas : MonoBehaviour {
 
@@ -24,8 +25,7 @@ public class DrawCanvas : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        // We care about getting updates for the anchor transform.
-        //CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Draw3DStroke] = this.OnReceive3DStroke;
+
     }
 	
 	// Update is called once per frame
@@ -105,6 +105,11 @@ public class DrawCanvas : MonoBehaviour {
 
     public void SendStroke()
     {
-        CustomMessages.Instance.SendDraw3DStroke(lastPoints, DrawType);
+        CustomMessages.Instance.SendDraw3DStroke(
+            GetInstanceID(),
+            transform.localPosition,
+            transform.localRotation,
+            lastPoints
+        );
     }
 }
