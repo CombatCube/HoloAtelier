@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class Draw3D : MonoBehaviour {
     //private Vector3 manipulationPreviousPosition;
     private float penOffset = 0.1f;
-    private bool planeCreate = false;
     // Set DrawCanvas to be the GameObject whose origin will be the reference for strokes.
     public DrawCanvas DrawCanvas;
     public Transform Tablet;

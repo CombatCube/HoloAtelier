@@ -109,6 +109,7 @@ public class DrawCanvas : MonoBehaviour {
             GetInstanceID(),
             transform.localPosition,
             transform.localRotation,
+            transform.localScale,
             lastPoints
         );
     }

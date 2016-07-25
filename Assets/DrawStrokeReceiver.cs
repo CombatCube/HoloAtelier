@@ -2,13 +2,23 @@
 using System.Collections;
 using HoloToolkit.Sharing;
 using System.Collections.Generic;
-using System;
 
 public class DrawStrokeReceiver : MonoBehaviour {
 
     public DrawCanvas CanvasObject;
+    public Material ReceivedCanvasMaterial;
+    private class CanvasKey {
+        long userID;
+        long canvasID;
 
-    Dictionary<Tuple<long, long>, DrawCanvas> canvases;
+        public CanvasKey(long userID, long canvasID)
+        {
+            this.userID = userID;
+            this.canvasID = canvasID;
+        }
+    }
+
+    Dictionary<CanvasKey, DrawCanvas> canvases = new Dictionary<CanvasKey, DrawCanvas>();
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +38,7 @@ public class DrawStrokeReceiver : MonoBehaviour {
         long canvasID = msg.ReadInt64();
         Vector3 localPosition = CustomMessages.Instance.ReadVector3(msg);
         Quaternion localRotation = CustomMessages.Instance.ReadQuaternion(msg);
+        Vector3 localScale = CustomMessages.Instance.ReadVector3(msg);
         var list = new List<Vector3>();
         while (msg.GetUnreadBitsCount() > 0)
         {
@@ -35,27 +46,28 @@ public class DrawStrokeReceiver : MonoBehaviour {
         }
 
         DrawCanvas canvas;
-        Tuple<long, long> key = new Tuple<long, long>(userID, canvasID);
+        CanvasKey key = new CanvasKey(userID, canvasID);
         if (canvases.ContainsKey(key))
         {
             canvas = canvases[key];
         }
         else
         {
-            canvas = CreateNewCanvas(userID, canvasID, localPosition, localRotation);
+            canvas = CreateNewCanvas(userID, canvasID, localPosition, localRotation, localScale);
         }
 
         canvas.DrawLine(list.ToArray());
     }
 
-    DrawCanvas CreateNewCanvas(long userID, long canvasID, Vector3 localPosition, Quaternion localRotation)
+    DrawCanvas CreateNewCanvas(long userID, long canvasID, Vector3 localPosition, Quaternion localRotation, Vector3 localScale)
     {
         DrawCanvas newCanvasObject = Instantiate(CanvasObject);
         newCanvasObject.transform.SetParent(this.gameObject.transform, false);
         newCanvasObject.transform.localPosition = localPosition;
         newCanvasObject.transform.localRotation = localRotation;
-        newCanvasObject.transform.localScale = Vector3.one;
-        canvases.Add(new Tuple<long, long>(userID, canvasID), newCanvasObject);
+        newCanvasObject.transform.localScale = localScale;
+        newCanvasObject.GetComponent<MeshRenderer>().material = ReceivedCanvasMaterial;
+        canvases.Add(new CanvasKey(userID, canvasID), newCanvasObject);
         return newCanvasObject;
     }
 }
