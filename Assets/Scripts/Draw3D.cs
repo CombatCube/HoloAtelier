@@ -6,9 +6,8 @@ using System.Collections.Generic;
 public class Draw3D : MonoBehaviour {
     //private Vector3 manipulationPreviousPosition;
     private float penOffset = 0.1f;
-    // Set DrawCanvas to be the GameObject whose origin will be the reference for strokes.
-    public DrawCanvas DrawCanvas;
     public Transform Tablet;
+    DrawCanvas ActiveCanvas;
 
     // Use this for initialization
     void Start () {
@@ -37,16 +36,17 @@ public class Draw3D : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (HandsManager.Instance.HandDetected && !HandsManager.Instance.TwoHandsDetected) {
+        ActiveCanvas = NoteManager.Instance.ActiveNote.GetComponentInChildren<DrawCanvas>();
+        if (HandsManager.Instance.HandDetected) {
             GetComponentInChildren<MeshRenderer>().enabled = true;
             Vector3 pos;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
-            if (DrawCanvas.DrawType == DrawCanvas.DrawMode.Draw3D)
+            if (ActiveCanvas.DrawType == DrawCanvas.DrawMode.Draw3D)
             {
                 pos += penOffset * (Camera.main.transform.forward);
                 gameObject.transform.position = pos;
             }
-            else if (DrawCanvas.DrawType == DrawCanvas.DrawMode.Draw2D)
+            else if (ActiveCanvas.DrawType == DrawCanvas.DrawMode.Draw2D)
             {
                 if (Tablet != null)
                 {
@@ -55,16 +55,16 @@ public class Draw3D : MonoBehaviour {
                     // Project down onto TABLET plane.
                     Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
                     // Set world pos of tool to drawing location.
-                    gameObject.transform.position = DrawCanvas.transform.TransformPoint(planePos);
+                    gameObject.transform.position = ActiveCanvas.transform.TransformPoint(planePos);
                 }
                 else
                 {
                     // Get hand position relative to canvas origin.
-                    Vector3 localPos = DrawCanvas.transform.InverseTransformPoint(pos);
+                    Vector3 localPos = ActiveCanvas.transform.InverseTransformPoint(pos);
                     // Project down onto canvas plane.
                     Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
                     // Set world pos of tool to drawing location.
-                    gameObject.transform.position = DrawCanvas.transform.TransformPoint(planePos);
+                    gameObject.transform.position = ActiveCanvas.transform.TransformPoint(planePos);
                 }
             }
 
@@ -85,14 +85,14 @@ public class Draw3D : MonoBehaviour {
 
     void PerformManipulationStart(Vector3 position)
     {
-        DrawCanvas.StartLine(gameObject.transform.position);
+        ActiveCanvas.StartLine(gameObject.transform.position);
     }
 
     void PerformManipulationUpdate(Vector3 position)
     {
         if (GestureManager.Instance.manipulationTarget != null)
         {
-            DrawCanvas.UpdateLine(gameObject.transform.position);
+            ActiveCanvas.UpdateLine(gameObject.transform.position);
         }
     }
 
@@ -100,13 +100,13 @@ public class Draw3D : MonoBehaviour {
     {
         // Send the stroke to the other HoloLens.
         Debug.Log("Sending Draw3DStroke.");
-        DrawCanvas.SendStroke();
+        ActiveCanvas.SendStroke();
     }
 
     void PerformManipulationCanceled()
     {
         Debug.Log("Canceled Draw3DStroke.");
-        DrawCanvas.SendStroke();
+        ActiveCanvas.SendStroke();
     }
 
 }

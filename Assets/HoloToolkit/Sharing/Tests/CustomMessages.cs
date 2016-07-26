@@ -126,14 +126,15 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendDraw3DStroke(long canvasID, Vector3 localPosition, Quaternion localRotation, Vector3 localScale, Vector3[] positions)
+    public void SendDraw3DStroke(long noteID, byte drawType, Vector3 localPosition, Quaternion localRotation, Vector3 localScale, Vector3[] positions)
     {
         // If we are connected to a session, broadcast our head info
         if (this.serverConnection != null && this.serverConnection.IsConnected())
         {
             // Create an outgoing network message to contain all the info we want to send
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.Draw3DStroke);
-            msg.Write(canvasID);
+            msg.Write(noteID);
+            msg.Write(drawType);
             AppendTransform(msg, localPosition, localRotation);
             AppendVector3(msg, localScale);
             foreach (Vector3 v in positions)

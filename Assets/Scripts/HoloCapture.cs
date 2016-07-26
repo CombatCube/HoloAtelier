@@ -36,6 +36,7 @@ public class HoloCapture : MonoBehaviour {
     void OnSelect()
     {
         OnTakePicture();
+        ToolManager.Instance.SetActiveTool(null);
     }
 
     void OnTakePicture()

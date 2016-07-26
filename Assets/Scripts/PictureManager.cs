@@ -7,12 +7,12 @@ using HoloToolkit.Unity;
 
 public class PictureManager : Singleton<PictureManager> {
 
+    public DrawCanvas Picture;
     public Material CaptureMaterial;
 
     // Use this for initialization
     void Start ()
     {
-        CaptureMaterial.mainTexture = Texture2D.whiteTexture;
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Image] = this.OnReceiveImage;
     }
 	
@@ -23,6 +23,7 @@ public class PictureManager : Singleton<PictureManager> {
 
     public void SetPicture(Texture2D targetTexture)
     {
+        Picture.GetComponent<MeshRenderer>().enabled = true;
         CaptureMaterial.mainTexture = targetTexture;
     }
 

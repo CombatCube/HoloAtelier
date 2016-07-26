@@ -5,6 +5,7 @@ using System.Collections;
 public class DrawingRecognizer : MonoBehaviour {
 
     public GestureBehaviour GestureBehaviour;
+    public Material CubeMaterial;
 
 	// Use this for initialization
 	void Start ()
@@ -27,15 +28,17 @@ public class DrawingRecognizer : MonoBehaviour {
         Debug.Log("Gesture is " + r.Name + " and scored: " + r.Score);
         if (r.Score > 0.01f)
         {
-            if (r.Name == "rectangle")
+            if (r.Name == "square")
             {
                 GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
                 float length = g.GetOriginalPathLength();
                 Debug.Log("Path length: " + length);
                 cube.transform.localScale *= (length / 4f);
-                cube.transform.position = GestureBehaviour.transform.position;
+                cube.transform.position = GestureBehaviour.transform.position + (Vector3)g.GetOriginalCenter();
                 cube.transform.rotation = GestureBehaviour.transform.localRotation;
                 cube.transform.SetParent(gameObject.transform, true);
+                cube.GetComponent<MeshRenderer>().material = CubeMaterial;
+                cube.AddComponent<Rigidbody>();
             }
             if (r.Name == "circle")
             {
@@ -43,9 +46,11 @@ public class DrawingRecognizer : MonoBehaviour {
                 float length = g.GetOriginalPathLength();
                 Debug.Log("Path length: " + length);
                 sphere.transform.localScale *= (length / Mathf.PI);
-                sphere.transform.position = GestureBehaviour.transform.position;
+                sphere.transform.position = GestureBehaviour.transform.position + (Vector3)g.GetOriginalCenter();
                 sphere.transform.rotation = GestureBehaviour.transform.localRotation;
                 sphere.transform.SetParent(gameObject.transform, true);
+                sphere.GetComponent<MeshRenderer>().material = CubeMaterial;
+                sphere.AddComponent<Rigidbody>();
             }
         }
     }

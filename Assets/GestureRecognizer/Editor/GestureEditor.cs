@@ -286,7 +286,6 @@ namespace GestureRecognizer
         private void DrawGestureList()
         {
 			GUILayout.Label(currentLibrary.name, EditorStyles.boldLabel);
-
             for (int i = 0; i < currentLibrary.Gestures.Count; i++)
             {
                 if (currentGesture == currentLibrary.Gestures[i])

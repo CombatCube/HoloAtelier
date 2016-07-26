@@ -12,1674 +12,6 @@ MonoBehaviour:
   m_Name: shapes
   m_EditorClassIdentifier: 
   Gestures:
-  - Name: rectangle
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.4627192, y: -0.2618723}
-    - StrokeID: 0
-      Position: {x: -0.4627192, y: -0.2124226}
-    - StrokeID: 0
-      Position: {x: -0.4652084, y: -0.16321938}
-    - StrokeID: 0
-      Position: {x: -0.46846634, y: -0.11409228}
-    - StrokeID: 0
-      Position: {x: -0.46846634, y: -0.064642586}
-    - StrokeID: 0
-      Position: {x: -0.46846634, y: -0.015192886}
-    - StrokeID: 0
-      Position: {x: -0.46846634, y: 0.034256812}
-    - StrokeID: 0
-      Position: {x: -0.4664794, y: 0.08359646}
-    - StrokeID: 0
-      Position: {x: -0.46054134, y: 0.13268311}
-    - StrokeID: 0
-      Position: {x: -0.45697206, y: 0.18187915}
-    - StrokeID: 0
-      Position: {x: -0.45697206, y: 0.23132885}
-    - StrokeID: 0
-      Position: {x: -0.45857397, y: 0.28061992}
-    - StrokeID: 0
-      Position: {x: -0.44061044, y: 0.31903315}
-    - StrokeID: 0
-      Position: {x: -0.3930204, y: 0.32433462}
-    - StrokeID: 0
-      Position: {x: -0.34357068, y: 0.32433462}
-    - StrokeID: 0
-      Position: {x: -0.294121, y: 0.32433462}
-    - StrokeID: 0
-      Position: {x: -0.2446713, y: 0.32433462}
-    - StrokeID: 0
-      Position: {x: -0.19569725, y: 0.33008176}
-    - StrokeID: 0
-      Position: {x: -0.14624755, y: 0.33008176}
-    - StrokeID: 0
-      Position: {x: -0.09679786, y: 0.33008176}
-    - StrokeID: 0
-      Position: {x: -0.04734816, y: 0.33008176}
-    - StrokeID: 0
-      Position: {x: 0.0021015366, y: 0.33008176}
-    - StrokeID: 0
-      Position: {x: 0.051551234, y: 0.33008176}
-    - StrokeID: 0
-      Position: {x: 0.10076484, y: 0.32675973}
-    - StrokeID: 0
-      Position: {x: 0.15004219, y: 0.32433462}
-    - StrokeID: 0
-      Position: {x: 0.19949189, y: 0.32433462}
-    - StrokeID: 0
-      Position: {x: 0.24894159, y: 0.32433462}
-    - StrokeID: 0
-      Position: {x: 0.29839128, y: 0.32433462}
-    - StrokeID: 0
-      Position: {x: 0.3472719, y: 0.33008176}
-    - StrokeID: 0
-      Position: {x: 0.3967216, y: 0.33008176}
-    - StrokeID: 0
-      Position: {x: 0.4454685, y: 0.32409847}
-    - StrokeID: 0
-      Position: {x: 0.46858984, y: 0.28054476}
-    - StrokeID: 0
-      Position: {x: 0.47897175, y: 0.23249787}
-    - StrokeID: 0
-      Position: {x: 0.47980952, y: 0.18310772}
-    - StrokeID: 0
-      Position: {x: 0.484365, y: 0.13391033}
-    - StrokeID: 0
-      Position: {x: 0.48555666, y: 0.08452663}
-    - StrokeID: 0
-      Position: {x: 0.48555666, y: 0.03507693}
-    - StrokeID: 0
-      Position: {x: 0.48555666, y: -0.014372765}
-    - StrokeID: 0
-      Position: {x: 0.48555666, y: -0.06382246}
-    - StrokeID: 0
-      Position: {x: 0.47980952, y: -0.112796515}
-    - StrokeID: 0
-      Position: {x: 0.47980952, y: -0.16224621}
-    - StrokeID: 0
-      Position: {x: 0.47499755, y: -0.21121943}
-    - StrokeID: 0
-      Position: {x: 0.4675224, y: -0.26008958}
-    - StrokeID: 0
-      Position: {x: 0.4585917, y: -0.3087196}
-    - StrokeID: 0
-      Position: {x: 0.42060456, y: -0.33292472}
-    - StrokeID: 0
-      Position: {x: 0.37257642, y: -0.32893142}
-    - StrokeID: 0
-      Position: {x: 0.32407612, y: -0.31934354}
-    - StrokeID: 0
-      Position: {x: 0.27483767, y: -0.31679076}
-    - StrokeID: 0
-      Position: {x: 0.22565235, y: -0.31359643}
-    - StrokeID: 0
-      Position: {x: 0.17620265, y: -0.31359643}
-    - StrokeID: 0
-      Position: {x: 0.12675297, y: -0.31359643}
-    - StrokeID: 0
-      Position: {x: 0.07730327, y: -0.31359643}
-    - StrokeID: 0
-      Position: {x: 0.02785357, y: -0.31359643}
-    - StrokeID: 0
-      Position: {x: -0.021596126, y: -0.31359643}
-    - StrokeID: 0
-      Position: {x: -0.07078625, y: -0.3177657}
-    - StrokeID: 0
-      Position: {x: -0.120137714, y: -0.31934354}
-    - StrokeID: 0
-      Position: {x: -0.16917898, y: -0.32509068}
-    - StrokeID: 0
-      Position: {x: -0.21848264, y: -0.32714555}
-    - StrokeID: 0
-      Position: {x: -0.26766995, y: -0.3308378}
-    - StrokeID: 0
-      Position: {x: -0.31711963, y: -0.3308378}
-    - StrokeID: 0
-      Position: {x: -0.36656934, y: -0.3308378}
-    - StrokeID: 0
-      Position: {x: -0.41601902, y: -0.3308378}
-    - StrokeID: 0
-      Position: {x: -0.46546873, y: -0.3308378}
-    - StrokeID: 0
-      Position: {x: -0.5144428, y: -0.32509077}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 41, y: 75}
-    - StrokeID: 0
-      Position: {x: 41, y: 81}
-    - StrokeID: 0
-      Position: {x: 41, y: 90}
-    - StrokeID: 0
-      Position: {x: 40, y: 95}
-    - StrokeID: 0
-      Position: {x: 40, y: 101}
-    - StrokeID: 0
-      Position: {x: 40, y: 111}
-    - StrokeID: 0
-      Position: {x: 40, y: 122}
-    - StrokeID: 0
-      Position: {x: 40, y: 132}
-    - StrokeID: 0
-      Position: {x: 41, y: 141}
-    - StrokeID: 0
-      Position: {x: 42, y: 148}
-    - StrokeID: 0
-      Position: {x: 42, y: 154}
-    - StrokeID: 0
-      Position: {x: 42, y: 162}
-    - StrokeID: 0
-      Position: {x: 42, y: 168}
-    - StrokeID: 0
-      Position: {x: 41, y: 173}
-    - StrokeID: 0
-      Position: {x: 46, y: 177}
-    - StrokeID: 0
-      Position: {x: 55, y: 177}
-    - StrokeID: 0
-      Position: {x: 61, y: 177}
-    - StrokeID: 0
-      Position: {x: 67, y: 177}
-    - StrokeID: 0
-      Position: {x: 73, y: 177}
-    - StrokeID: 0
-      Position: {x: 79, y: 177}
-    - StrokeID: 0
-      Position: {x: 85, y: 178}
-    - StrokeID: 0
-      Position: {x: 92, y: 178}
-    - StrokeID: 0
-      Position: {x: 102, y: 178}
-    - StrokeID: 0
-      Position: {x: 108, y: 178}
-    - StrokeID: 0
-      Position: {x: 117, y: 178}
-    - StrokeID: 0
-      Position: {x: 126, y: 178}
-    - StrokeID: 0
-      Position: {x: 135, y: 178}
-    - StrokeID: 0
-      Position: {x: 142, y: 177}
-    - StrokeID: 0
-      Position: {x: 148, y: 177}
-    - StrokeID: 0
-      Position: {x: 155, y: 177}
-    - StrokeID: 0
-      Position: {x: 161, y: 177}
-    - StrokeID: 0
-      Position: {x: 169, y: 177}
-    - StrokeID: 0
-      Position: {x: 176, y: 177}
-    - StrokeID: 0
-      Position: {x: 181, y: 178}
-    - StrokeID: 0
-      Position: {x: 187, y: 178}
-    - StrokeID: 0
-      Position: {x: 194, y: 178}
-    - StrokeID: 0
-      Position: {x: 199, y: 177}
-    - StrokeID: 0
-      Position: {x: 202, y: 172}
-    - StrokeID: 0
-      Position: {x: 204, y: 167}
-    - StrokeID: 0
-      Position: {x: 205, y: 160}
-    - StrokeID: 0
-      Position: {x: 205, y: 151}
-    - StrokeID: 0
-      Position: {x: 206, y: 142}
-    - StrokeID: 0
-      Position: {x: 206, y: 132}
-    - StrokeID: 0
-      Position: {x: 206, y: 123}
-    - StrokeID: 0
-      Position: {x: 206, y: 115}
-    - StrokeID: 0
-      Position: {x: 206, y: 107}
-    - StrokeID: 0
-      Position: {x: 205, y: 101}
-    - StrokeID: 0
-      Position: {x: 205, y: 95}
-    - StrokeID: 0
-      Position: {x: 205, y: 88}
-    - StrokeID: 0
-      Position: {x: 204, y: 83}
-    - StrokeID: 0
-      Position: {x: 203, y: 76}
-    - StrokeID: 0
-      Position: {x: 202, y: 71}
-    - StrokeID: 0
-      Position: {x: 201, y: 65}
-    - StrokeID: 0
-      Position: {x: 193, y: 62}
-    - StrokeID: 0
-      Position: {x: 183, y: 64}
-    - StrokeID: 0
-      Position: {x: 178, y: 65}
-    - StrokeID: 0
-      Position: {x: 172, y: 65}
-    - StrokeID: 0
-      Position: {x: 166, y: 66}
-    - StrokeID: 0
-      Position: {x: 156, y: 66}
-    - StrokeID: 0
-      Position: {x: 150, y: 66}
-    - StrokeID: 0
-      Position: {x: 140, y: 66}
-    - StrokeID: 0
-      Position: {x: 131, y: 66}
-    - StrokeID: 0
-      Position: {x: 123, y: 66}
-    - StrokeID: 0
-      Position: {x: 115, y: 66}
-    - StrokeID: 0
-      Position: {x: 107, y: 65}
-    - StrokeID: 0
-      Position: {x: 100, y: 65}
-    - StrokeID: 0
-      Position: {x: 93, y: 64}
-    - StrokeID: 0
-      Position: {x: 86, y: 64}
-    - StrokeID: 0
-      Position: {x: 79, y: 63}
-    - StrokeID: 0
-      Position: {x: 71, y: 63}
-    - StrokeID: 0
-      Position: {x: 64, y: 63}
-    - StrokeID: 0
-      Position: {x: 58, y: 63}
-    - StrokeID: 0
-      Position: {x: 52, y: 63}
-    - StrokeID: 0
-      Position: {x: 46, y: 63}
-    - StrokeID: 0
-      Position: {x: 38, y: 63}
-    - StrokeID: 0
-      Position: {x: 32, y: 64}
-    numberOfPoints: 64
-  - Name: rectangle
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.42702338, y: -0.30657336}
-    - StrokeID: 0
-      Position: {x: -0.43313223, y: -0.25590166}
-    - StrokeID: 0
-      Position: {x: -0.43871376, y: -0.20518108}
-    - StrokeID: 0
-      Position: {x: -0.44264838, y: -0.15446587}
-    - StrokeID: 0
-      Position: {x: -0.44785672, y: -0.10385606}
-    - StrokeID: 0
-      Position: {x: -0.4502609, y: -0.052964874}
-    - StrokeID: 0
-      Position: {x: -0.4599611, y: -0.0029475358}
-    - StrokeID: 0
-      Position: {x: -0.46349266, y: 0.04765901}
-    - StrokeID: 0
-      Position: {x: -0.47143736, y: 0.09807448}
-    - StrokeID: 0
-      Position: {x: -0.47436687, y: 0.14889406}
-    - StrokeID: 0
-      Position: {x: -0.47910672, y: 0.19946557}
-    - StrokeID: 0
-      Position: {x: -0.48922938, y: 0.24939525}
-    - StrokeID: 0
-      Position: {x: -0.48952338, y: 0.30040383}
-    - StrokeID: 0
-      Position: {x: -0.48952338, y: 0.3514447}
-    - StrokeID: 0
-      Position: {x: -0.44247678, y: 0.3581187}
-    - StrokeID: 0
-      Position: {x: -0.39197698, y: 0.35078004}
-    - StrokeID: 0
-      Position: {x: -0.34139758, y: 0.3444683}
-    - StrokeID: 0
-      Position: {x: -0.29057866, y: 0.34134525}
-    - StrokeID: 0
-      Position: {x: -0.239686, y: 0.33925998}
-    - StrokeID: 0
-      Position: {x: -0.18864514, y: 0.33925998}
-    - StrokeID: 0
-      Position: {x: -0.13779107, y: 0.33663157}
-    - StrokeID: 0
-      Position: {x: -0.08693355, y: 0.33405167}
-    - StrokeID: 0
-      Position: {x: -0.035972744, y: 0.3324466}
-    - StrokeID: 0
-      Position: {x: 0.014888397, y: 0.3288433}
-    - StrokeID: 0
-      Position: {x: 0.065929264, y: 0.3288433}
-    - StrokeID: 0
-      Position: {x: 0.11672265, y: 0.33134252}
-    - StrokeID: 0
-      Position: {x: 0.16749525, y: 0.33405167}
-    - StrokeID: 0
-      Position: {x: 0.21853611, y: 0.33405167}
-    - StrokeID: 0
-      Position: {x: 0.26957697, y: 0.33405167}
-    - StrokeID: 0
-      Position: {x: 0.32061782, y: 0.33405167}
-    - StrokeID: 0
-      Position: {x: 0.37148386, y: 0.33685985}
-    - StrokeID: 0
-      Position: {x: 0.4223753, y: 0.33925998}
-    - StrokeID: 0
-      Position: {x: 0.467778, y: 0.3275291}
-    - StrokeID: 0
-      Position: {x: 0.48957175, y: 0.28218296}
-    - StrokeID: 0
-      Position: {x: 0.50084263, y: 0.2324751}
-    - StrokeID: 0
-      Position: {x: 0.5065555, y: 0.18178244}
-    - StrokeID: 0
-      Position: {x: 0.5104766, y: 0.13112983}
-    - StrokeID: 0
-      Position: {x: 0.5104766, y: 0.080088966}
-    - StrokeID: 0
-      Position: {x: 0.5074278, y: 0.029300427}
-    - StrokeID: 0
-      Position: {x: 0.4978345, y: -0.020825615}
-    - StrokeID: 0
-      Position: {x: 0.4939532, y: -0.07148215}
-    - StrokeID: 0
-      Position: {x: 0.4896433, y: -0.12209625}
-    - StrokeID: 0
-      Position: {x: 0.48616758, y: -0.17292072}
-    - StrokeID: 0
-      Position: {x: 0.4834778, y: -0.2237745}
-    - StrokeID: 0
-      Position: {x: 0.47922662, y: -0.27446353}
-    - StrokeID: 0
-      Position: {x: 0.47040674, y: -0.32463104}
-    - StrokeID: 0
-      Position: {x: 0.42760155, y: -0.34303167}
-    - StrokeID: 0
-      Position: {x: 0.37660494, y: -0.34391883}
-    - StrokeID: 0
-      Position: {x: 0.3257796, y: -0.34824002}
-    - StrokeID: 0
-      Position: {x: 0.27511162, y: -0.35274532}
-    - StrokeID: 0
-      Position: {x: 0.22426915, y: -0.35514265}
-    - StrokeID: 0
-      Position: {x: 0.17351912, y: -0.35865667}
-    - StrokeID: 0
-      Position: {x: 0.1227237, y: -0.3635778}
-    - StrokeID: 0
-      Position: {x: 0.07169716, y: -0.36386502}
-    - StrokeID: 0
-      Position: {x: 0.020656299, y: -0.36386502}
-    - StrokeID: 0
-      Position: {x: -0.030384563, y: -0.36386502}
-    - StrokeID: 0
-      Position: {x: -0.08142542, y: -0.36386502}
-    - StrokeID: 0
-      Position: {x: -0.13246629, y: -0.36386502}
-    - StrokeID: 0
-      Position: {x: -0.18345708, y: -0.3630608}
-    - StrokeID: 0
-      Position: {x: -0.23422375, y: -0.35865667}
-    - StrokeID: 0
-      Position: {x: -0.2852646, y: -0.35865667}
-    - StrokeID: 0
-      Position: {x: -0.3360516, y: -0.35558948}
-    - StrokeID: 0
-      Position: {x: -0.38639957, y: -0.34824002}
-    - StrokeID: 0
-      Position: {x: -0.43744004, y: -0.34824002}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 45, y: 79}
-    - StrokeID: 0
-      Position: {x: 44, y: 87}
-    - StrokeID: 0
-      Position: {x: 43, y: 97}
-    - StrokeID: 0
-      Position: {x: 42, y: 103}
-    - StrokeID: 0
-      Position: {x: 42, y: 110}
-    - StrokeID: 0
-      Position: {x: 41, y: 116}
-    - StrokeID: 0
-      Position: {x: 41, y: 124}
-    - StrokeID: 0
-      Position: {x: 40, y: 132}
-    - StrokeID: 0
-      Position: {x: 38, y: 140}
-    - StrokeID: 0
-      Position: {x: 38, y: 147}
-    - StrokeID: 0
-      Position: {x: 37, y: 153}
-    - StrokeID: 0
-      Position: {x: 36, y: 160}
-    - StrokeID: 0
-      Position: {x: 36, y: 166}
-    - StrokeID: 0
-      Position: {x: 35, y: 171}
-    - StrokeID: 0
-      Position: {x: 35, y: 177}
-    - StrokeID: 0
-      Position: {x: 33, y: 186}
-    - StrokeID: 0
-      Position: {x: 33, y: 193}
-    - StrokeID: 0
-      Position: {x: 33, y: 200}
-    - StrokeID: 0
-      Position: {x: 33, y: 206}
-    - StrokeID: 0
-      Position: {x: 39, y: 207}
-    - StrokeID: 0
-      Position: {x: 47, y: 206}
-    - StrokeID: 0
-      Position: {x: 53, y: 205}
-    - StrokeID: 0
-      Position: {x: 60, y: 204}
-    - StrokeID: 0
-      Position: {x: 67, y: 204}
-    - StrokeID: 0
-      Position: {x: 74, y: 203}
-    - StrokeID: 0
-      Position: {x: 82, y: 203}
-    - StrokeID: 0
-      Position: {x: 90, y: 203}
-    - StrokeID: 0
-      Position: {x: 97, y: 203}
-    - StrokeID: 0
-      Position: {x: 104, y: 202}
-    - StrokeID: 0
-      Position: {x: 110, y: 202}
-    - StrokeID: 0
-      Position: {x: 117, y: 202}
-    - StrokeID: 0
-      Position: {x: 127, y: 201}
-    - StrokeID: 0
-      Position: {x: 137, y: 201}
-    - StrokeID: 0
-      Position: {x: 147, y: 201}
-    - StrokeID: 0
-      Position: {x: 152, y: 202}
-    - StrokeID: 0
-      Position: {x: 158, y: 202}
-    - StrokeID: 0
-      Position: {x: 164, y: 202}
-    - StrokeID: 0
-      Position: {x: 170, y: 202}
-    - StrokeID: 0
-      Position: {x: 176, y: 202}
-    - StrokeID: 0
-      Position: {x: 186, y: 202}
-    - StrokeID: 0
-      Position: {x: 194, y: 202}
-    - StrokeID: 0
-      Position: {x: 202, y: 203}
-    - StrokeID: 0
-      Position: {x: 209, y: 203}
-    - StrokeID: 0
-      Position: {x: 215, y: 203}
-    - StrokeID: 0
-      Position: {x: 219, y: 198}
-    - StrokeID: 0
-      Position: {x: 221, y: 192}
-    - StrokeID: 0
-      Position: {x: 223, y: 184}
-    - StrokeID: 0
-      Position: {x: 224, y: 174}
-    - StrokeID: 0
-      Position: {x: 225, y: 169}
-    - StrokeID: 0
-      Position: {x: 225, y: 158}
-    - StrokeID: 0
-      Position: {x: 225, y: 147}
-    - StrokeID: 0
-      Position: {x: 224, y: 141}
-    - StrokeID: 0
-      Position: {x: 223, y: 136}
-    - StrokeID: 0
-      Position: {x: 222, y: 131}
-    - StrokeID: 0
-      Position: {x: 222, y: 125}
-    - StrokeID: 0
-      Position: {x: 221, y: 120}
-    - StrokeID: 0
-      Position: {x: 221, y: 110}
-    - StrokeID: 0
-      Position: {x: 220, y: 102}
-    - StrokeID: 0
-      Position: {x: 220, y: 96}
-    - StrokeID: 0
-      Position: {x: 219, y: 90}
-    - StrokeID: 0
-      Position: {x: 219, y: 84}
-    - StrokeID: 0
-      Position: {x: 218, y: 79}
-    - StrokeID: 0
-      Position: {x: 217, y: 74}
-    - StrokeID: 0
-      Position: {x: 211, y: 72}
-    - StrokeID: 0
-      Position: {x: 201, y: 72}
-    - StrokeID: 0
-      Position: {x: 191, y: 71}
-    - StrokeID: 0
-      Position: {x: 185, y: 71}
-    - StrokeID: 0
-      Position: {x: 179, y: 70}
-    - StrokeID: 0
-      Position: {x: 172, y: 70}
-    - StrokeID: 0
-      Position: {x: 166, y: 69}
-    - StrokeID: 0
-      Position: {x: 160, y: 69}
-    - StrokeID: 0
-      Position: {x: 150, y: 68}
-    - StrokeID: 0
-      Position: {x: 144, y: 68}
-    - StrokeID: 0
-      Position: {x: 134, y: 68}
-    - StrokeID: 0
-      Position: {x: 124, y: 68}
-    - StrokeID: 0
-      Position: {x: 115, y: 68}
-    - StrokeID: 0
-      Position: {x: 106, y: 68}
-    - StrokeID: 0
-      Position: {x: 99, y: 68}
-    - StrokeID: 0
-      Position: {x: 93, y: 68}
-    - StrokeID: 0
-      Position: {x: 85, y: 69}
-    - StrokeID: 0
-      Position: {x: 78, y: 69}
-    - StrokeID: 0
-      Position: {x: 72, y: 69}
-    - StrokeID: 0
-      Position: {x: 66, y: 69}
-    - StrokeID: 0
-      Position: {x: 60, y: 70}
-    - StrokeID: 0
-      Position: {x: 55, y: 71}
-    - StrokeID: 0
-      Position: {x: 49, y: 71}
-    - StrokeID: 0
-      Position: {x: 43, y: 71}
-    numberOfPoints: 64
-  - Name: rectangle
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.49818316, y: -0.31950015}
-    - StrokeID: 0
-      Position: {x: -0.49289215, y: -0.26654163}
-    - StrokeID: 0
-      Position: {x: -0.49289215, y: -0.2132071}
-    - StrokeID: 0
-      Position: {x: -0.49289215, y: -0.15987255}
-    - StrokeID: 0
-      Position: {x: -0.49289215, y: -0.106538005}
-    - StrokeID: 0
-      Position: {x: -0.49289215, y: -0.053203464}
-    - StrokeID: 0
-      Position: {x: -0.49289215, y: 0.00013107805}
-    - StrokeID: 0
-      Position: {x: -0.49289215, y: 0.05346562}
-    - StrokeID: 0
-      Position: {x: -0.4890529, y: 0.10658753}
-    - StrokeID: 0
-      Position: {x: -0.48760116, y: 0.15984166}
-    - StrokeID: 0
-      Position: {x: -0.4837869, y: 0.21279852}
-    - StrokeID: 0
-      Position: {x: -0.48231015, y: 0.26598683}
-    - StrokeID: 0
-      Position: {x: -0.48071077, y: 0.3192328}
-    - StrokeID: 0
-      Position: {x: -0.47701913, y: 0.37236285}
-    - StrokeID: 0
-      Position: {x: -0.46773377, y: 0.42079675}
-    - StrokeID: 0
-      Position: {x: -0.4147626, y: 0.41461435}
-    - StrokeID: 0
-      Position: {x: -0.36170918, y: 0.41065854}
-    - StrokeID: 0
-      Position: {x: -0.30856472, y: 0.40722653}
-    - StrokeID: 0
-      Position: {x: -0.25548303, y: 0.40206295}
-    - StrokeID: 0
-      Position: {x: -0.20236753, y: 0.39723423}
-    - StrokeID: 0
-      Position: {x: -0.14927453, y: 0.3921698}
-    - StrokeID: 0
-      Position: {x: -0.09618203, y: 0.3871}
-    - StrokeID: 0
-      Position: {x: -0.043109413, y: 0.38184673}
-    - StrokeID: 0
-      Position: {x: 0.009929792, y: 0.37624937}
-    - StrokeID: 0
-      Position: {x: 0.06313327, y: 0.37362152}
-    - StrokeID: 0
-      Position: {x: 0.116091795, y: 0.36833054}
-    - StrokeID: 0
-      Position: {x: 0.16942634, y: 0.36833054}
-    - StrokeID: 0
-      Position: {x: 0.22276089, y: 0.36833054}
-    - StrokeID: 0
-      Position: {x: 0.2758903, y: 0.36462688}
-    - StrokeID: 0
-      Position: {x: 0.3291369, y: 0.3630395}
-    - StrokeID: 0
-      Position: {x: 0.38247147, y: 0.3630395}
-    - StrokeID: 0
-      Position: {x: 0.435806, y: 0.3630395}
-    - StrokeID: 0
-      Position: {x: 0.47483793, y: 0.33577266}
-    - StrokeID: 0
-      Position: {x: 0.48696145, y: 0.2838772}
-    - StrokeID: 0
-      Position: {x: 0.49652585, y: 0.23148972}
-    - StrokeID: 0
-      Position: {x: 0.49947637, y: 0.17836487}
-    - StrokeID: 0
-      Position: {x: 0.50181687, y: 0.12519667}
-    - StrokeID: 0
-      Position: {x: 0.50181687, y: 0.071862124}
-    - StrokeID: 0
-      Position: {x: 0.50181687, y: 0.018527582}
-    - StrokeID: 0
-      Position: {x: 0.50181687, y: -0.03480696}
-    - StrokeID: 0
-      Position: {x: 0.49723002, y: -0.08776188}
-    - StrokeID: 0
-      Position: {x: 0.49652585, y: -0.14103815}
-    - StrokeID: 0
-      Position: {x: 0.4912348, y: -0.19384877}
-    - StrokeID: 0
-      Position: {x: 0.48659676, y: -0.24679945}
-    - StrokeID: 0
-      Position: {x: 0.47626296, y: -0.29912135}
-    - StrokeID: 0
-      Position: {x: 0.46079, y: -0.34411627}
-    - StrokeID: 0
-      Position: {x: 0.40943035, y: -0.3512462}
-    - StrokeID: 0
-      Position: {x: 0.35609582, y: -0.3512462}
-    - StrokeID: 0
-      Position: {x: 0.30276126, y: -0.3512462}
-    - StrokeID: 0
-      Position: {x: 0.24942672, y: -0.3512462}
-    - StrokeID: 0
-      Position: {x: 0.19609219, y: -0.3512462}
-    - StrokeID: 0
-      Position: {x: 0.14308706, y: -0.3565372}
-    - StrokeID: 0
-      Position: {x: 0.08975251, y: -0.3565372}
-    - StrokeID: 0
-      Position: {x: 0.03641797, y: -0.3565372}
-    - StrokeID: 0
-      Position: {x: -0.016833197, y: -0.3578764}
-    - StrokeID: 0
-      Position: {x: -0.0699217, y: -0.3618282}
-    - StrokeID: 0
-      Position: {x: -0.12304629, y: -0.36520067}
-    - StrokeID: 0
-      Position: {x: -0.17626138, y: -0.36711922}
-    - StrokeID: 0
-      Position: {x: -0.22942379, y: -0.36954135}
-    - StrokeID: 0
-      Position: {x: -0.28255445, y: -0.3724102}
-    - StrokeID: 0
-      Position: {x: -0.3353651, y: -0.37770122}
-    - StrokeID: 0
-      Position: {x: -0.38869962, y: -0.37770122}
-    - StrokeID: 0
-      Position: {x: -0.44193426, y: -0.37649402}
-    - StrokeID: 0
-      Position: {x: -0.49289215, y: -0.3618282}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 50, y: 68}
-    - StrokeID: 0
-      Position: {x: 51, y: 75}
-    - StrokeID: 0
-      Position: {x: 51, y: 83}
-    - StrokeID: 0
-      Position: {x: 51, y: 89}
-    - StrokeID: 0
-      Position: {x: 51, y: 97}
-    - StrokeID: 0
-      Position: {x: 51, y: 106}
-    - StrokeID: 0
-      Position: {x: 51, y: 115}
-    - StrokeID: 0
-      Position: {x: 51, y: 125}
-    - StrokeID: 0
-      Position: {x: 51, y: 134}
-    - StrokeID: 0
-      Position: {x: 51, y: 142}
-    - StrokeID: 0
-      Position: {x: 52, y: 151}
-    - StrokeID: 0
-      Position: {x: 52, y: 158}
-    - StrokeID: 0
-      Position: {x: 52, y: 165}
-    - StrokeID: 0
-      Position: {x: 53, y: 170}
-    - StrokeID: 0
-      Position: {x: 53, y: 176}
-    - StrokeID: 0
-      Position: {x: 53, y: 186}
-    - StrokeID: 0
-      Position: {x: 54, y: 195}
-    - StrokeID: 0
-      Position: {x: 54, y: 202}
-    - StrokeID: 0
-      Position: {x: 55, y: 208}
-    - StrokeID: 0
-      Position: {x: 64, y: 207}
-    - StrokeID: 0
-      Position: {x: 71, y: 206}
-    - StrokeID: 0
-      Position: {x: 80, y: 206}
-    - StrokeID: 0
-      Position: {x: 89, y: 205}
-    - StrokeID: 0
-      Position: {x: 100, y: 204}
-    - StrokeID: 0
-      Position: {x: 111, y: 203}
-    - StrokeID: 0
-      Position: {x: 121, y: 202}
-    - StrokeID: 0
-      Position: {x: 132, y: 201}
-    - StrokeID: 0
-      Position: {x: 141, y: 200}
-    - StrokeID: 0
-      Position: {x: 151, y: 199}
-    - StrokeID: 0
-      Position: {x: 159, y: 199}
-    - StrokeID: 0
-      Position: {x: 166, y: 198}
-    - StrokeID: 0
-      Position: {x: 173, y: 198}
-    - StrokeID: 0
-      Position: {x: 179, y: 198}
-    - StrokeID: 0
-      Position: {x: 190, y: 198}
-    - StrokeID: 0
-      Position: {x: 199, y: 197}
-    - StrokeID: 0
-      Position: {x: 206, y: 197}
-    - StrokeID: 0
-      Position: {x: 213, y: 197}
-    - StrokeID: 0
-      Position: {x: 220, y: 197}
-    - StrokeID: 0
-      Position: {x: 227, y: 197}
-    - StrokeID: 0
-      Position: {x: 233, y: 195}
-    - StrokeID: 0
-      Position: {x: 235, y: 188}
-    - StrokeID: 0
-      Position: {x: 237, y: 178}
-    - StrokeID: 0
-      Position: {x: 238, y: 173}
-    - StrokeID: 0
-      Position: {x: 238, y: 166}
-    - StrokeID: 0
-      Position: {x: 239, y: 159}
-    - StrokeID: 0
-      Position: {x: 239, y: 153}
-    - StrokeID: 0
-      Position: {x: 239, y: 146}
-    - StrokeID: 0
-      Position: {x: 239, y: 140}
-    - StrokeID: 0
-      Position: {x: 239, y: 134}
-    - StrokeID: 0
-      Position: {x: 239, y: 128}
-    - StrokeID: 0
-      Position: {x: 239, y: 117}
-    - StrokeID: 0
-      Position: {x: 238, y: 111}
-    - StrokeID: 0
-      Position: {x: 238, y: 101}
-    - StrokeID: 0
-      Position: {x: 237, y: 96}
-    - StrokeID: 0
-      Position: {x: 237, y: 87}
-    - StrokeID: 0
-      Position: {x: 236, y: 81}
-    - StrokeID: 0
-      Position: {x: 235, y: 76}
-    - StrokeID: 0
-      Position: {x: 234, y: 71}
-    - StrokeID: 0
-      Position: {x: 234, y: 65}
-    - StrokeID: 0
-      Position: {x: 229, y: 62}
-    - StrokeID: 0
-      Position: {x: 223, y: 62}
-    - StrokeID: 0
-      Position: {x: 212, y: 62}
-    - StrokeID: 0
-      Position: {x: 206, y: 62}
-    - StrokeID: 0
-      Position: {x: 199, y: 62}
-    - StrokeID: 0
-      Position: {x: 190, y: 62}
-    - StrokeID: 0
-      Position: {x: 181, y: 62}
-    - StrokeID: 0
-      Position: {x: 173, y: 61}
-    - StrokeID: 0
-      Position: {x: 163, y: 61}
-    - StrokeID: 0
-      Position: {x: 153, y: 61}
-    - StrokeID: 0
-      Position: {x: 143, y: 61}
-    - StrokeID: 0
-      Position: {x: 135, y: 60}
-    - StrokeID: 0
-      Position: {x: 126, y: 60}
-    - StrokeID: 0
-      Position: {x: 118, y: 59}
-    - StrokeID: 0
-      Position: {x: 110, y: 59}
-    - StrokeID: 0
-      Position: {x: 104, y: 59}
-    - StrokeID: 0
-      Position: {x: 97, y: 58}
-    - StrokeID: 0
-      Position: {x: 87, y: 58}
-    - StrokeID: 0
-      Position: {x: 82, y: 57}
-    - StrokeID: 0
-      Position: {x: 75, y: 57}
-    - StrokeID: 0
-      Position: {x: 68, y: 57}
-    - StrokeID: 0
-      Position: {x: 62, y: 57}
-    - StrokeID: 0
-      Position: {x: 56, y: 58}
-    - StrokeID: 0
-      Position: {x: 51, y: 60}
-    numberOfPoints: 64
-  - Name: triangle
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.044608086, y: -0.50727946}
-    - StrokeID: 0
-      Position: {x: -0.063522294, y: -0.46386448}
-    - StrokeID: 0
-      Position: {x: -0.084852844, y: -0.42158285}
-    - StrokeID: 0
-      Position: {x: -0.109221265, y: -0.38096887}
-    - StrokeID: 0
-      Position: {x: -0.12975653, y: -0.33839494}
-    - StrokeID: 0
-      Position: {x: -0.15429977, y: -0.29804918}
-    - StrokeID: 0
-      Position: {x: -0.17587677, y: -0.25591528}
-    - StrokeID: 0
-      Position: {x: -0.19906835, y: -0.21462762}
-    - StrokeID: 0
-      Position: {x: -0.22256732, y: -0.17350446}
-    - StrokeID: 0
-      Position: {x: -0.24606626, y: -0.13238128}
-    - StrokeID: 0
-      Position: {x: -0.26956522, y: -0.09125812}
-    - StrokeID: 0
-      Position: {x: -0.292519, y: -0.049863484}
-    - StrokeID: 0
-      Position: {x: -0.31280848, y: -0.0072134803}
-    - StrokeID: 0
-      Position: {x: -0.33722925, y: 0.033270128}
-    - StrokeID: 0
-      Position: {x: -0.36132556, y: 0.073942035}
-    - StrokeID: 0
-      Position: {x: -0.38640192, y: 0.11409687}
-    - StrokeID: 0
-      Position: {x: -0.41473868, y: 0.15196855}
-    - StrokeID: 0
-      Position: {x: -0.4400358, y: 0.19200732}
-    - StrokeID: 0
-      Position: {x: -0.46630841, y: 0.23141627}
-    - StrokeID: 0
-      Position: {x: -0.49021333, y: 0.27219924}
-    - StrokeID: 0
-      Position: {x: -0.46572152, y: 0.2917258}
-    - StrokeID: 0
-      Position: {x: -0.41885054, y: 0.29718977}
-    - StrokeID: 0
-      Position: {x: -0.3714869, y: 0.29718977}
-    - StrokeID: 0
-      Position: {x: -0.32412323, y: 0.29718977}
-    - StrokeID: 0
-      Position: {x: -0.2767596, y: 0.29718977}
-    - StrokeID: 0
-      Position: {x: -0.22939593, y: 0.29718977}
-    - StrokeID: 0
-      Position: {x: -0.18203227, y: 0.29718977}
-    - StrokeID: 0
-      Position: {x: -0.13478182, y: 0.3001373}
-    - StrokeID: 0
-      Position: {x: -0.08756427, y: 0.3038522}
-    - StrokeID: 0
-      Position: {x: -0.04036422, y: 0.3077855}
-    - StrokeID: 0
-      Position: {x: 0.006856386, y: 0.3114623}
-    - StrokeID: 0
-      Position: {x: 0.054124516, y: 0.31394958}
-    - StrokeID: 0
-      Position: {x: 0.10148817, y: 0.31394958}
-    - StrokeID: 0
-      Position: {x: 0.14885183, y: 0.31394958}
-    - StrokeID: 0
-      Position: {x: 0.19605242, y: 0.3175444}
-    - StrokeID: 0
-      Position: {x: 0.24332573, y: 0.31953615}
-    - StrokeID: 0
-      Position: {x: 0.29055208, y: 0.32201517}
-    - StrokeID: 0
-      Position: {x: 0.3377436, y: 0.32512277}
-    - StrokeID: 0
-      Position: {x: 0.38480937, y: 0.32872212}
-    - StrokeID: 0
-      Position: {x: 0.43145537, y: 0.33629596}
-    - StrokeID: 0
-      Position: {x: 0.4787438, y: 0.3370557}
-    - StrokeID: 0
-      Position: {x: 0.50005597, y: 0.31930667}
-    - StrokeID: 0
-      Position: {x: 0.48485088, y: 0.27541888}
-    - StrokeID: 0
-      Position: {x: 0.45974746, y: 0.23528732}
-    - StrokeID: 0
-      Position: {x: 0.43501544, y: 0.19498432}
-    - StrokeID: 0
-      Position: {x: 0.4112304, y: 0.1541318}
-    - StrokeID: 0
-      Position: {x: 0.38495773, y: 0.11472287}
-    - StrokeID: 0
-      Position: {x: 0.3586851, y: 0.07531393}
-    - StrokeID: 0
-      Position: {x: 0.33353528, y: 0.03518006}
-    - StrokeID: 0
-      Position: {x: 0.3097909, y: -0.00579636}
-    - StrokeID: 0
-      Position: {x: 0.28188425, y: -0.044023395}
-    - StrokeID: 0
-      Position: {x: 0.25500336, y: -0.08300198}
-    - StrokeID: 0
-      Position: {x: 0.23017205, y: -0.12328975}
-    - StrokeID: 0
-      Position: {x: 0.20669484, y: -0.16441268}
-    - StrokeID: 0
-      Position: {x: 0.18094262, y: -0.20409977}
-    - StrokeID: 0
-      Position: {x: 0.15013185, y: -0.24007201}
-    - StrokeID: 0
-      Position: {x: 0.119810365, y: -0.27645776}
-    - StrokeID: 0
-      Position: {x: 0.08890686, y: -0.312312}
-    - StrokeID: 0
-      Position: {x: 0.05678025, y: -0.3470245}
-    - StrokeID: 0
-      Position: {x: 0.0302945, y: -0.38616627}
-    - StrokeID: 0
-      Position: {x: 0.000073810355, y: -0.42256218}
-    - StrokeID: 0
-      Position: {x: -0.02285205, y: -0.4637674}
-    - StrokeID: 0
-      Position: {x: -0.0412195, y: -0.50709635}
-    - StrokeID: 0
-      Position: {x: -0.055781275, y: -0.5519722}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 118, y: 48}
-    - StrokeID: 0
-      Position: {x: 115, y: 55}
-    - StrokeID: 0
-      Position: {x: 111, y: 63}
-    - StrokeID: 0
-      Position: {x: 108, y: 68}
-    - StrokeID: 0
-      Position: {x: 105, y: 73}
-    - StrokeID: 0
-      Position: {x: 102, y: 80}
-    - StrokeID: 0
-      Position: {x: 98, y: 86}
-    - StrokeID: 0
-      Position: {x: 94, y: 94}
-    - StrokeID: 0
-      Position: {x: 90, y: 101}
-    - StrokeID: 0
-      Position: {x: 86, y: 108}
-    - StrokeID: 0
-      Position: {x: 82, y: 115}
-    - StrokeID: 0
-      Position: {x: 78, y: 122}
-    - StrokeID: 0
-      Position: {x: 74, y: 129}
-    - StrokeID: 0
-      Position: {x: 71, y: 136}
-    - StrokeID: 0
-      Position: {x: 67, y: 142}
-    - StrokeID: 0
-      Position: {x: 64, y: 148}
-    - StrokeID: 0
-      Position: {x: 60, y: 154}
-    - StrokeID: 0
-      Position: {x: 57, y: 159}
-    - StrokeID: 0
-      Position: {x: 53, y: 164}
-    - StrokeID: 0
-      Position: {x: 48, y: 172}
-    - StrokeID: 0
-      Position: {x: 44, y: 178}
-    - StrokeID: 0
-      Position: {x: 40, y: 184}
-    - StrokeID: 0
-      Position: {x: 37, y: 190}
-    - StrokeID: 0
-      Position: {x: 48, y: 192}
-    - StrokeID: 0
-      Position: {x: 55, y: 192}
-    - StrokeID: 0
-      Position: {x: 64, y: 192}
-    - StrokeID: 0
-      Position: {x: 74, y: 192}
-    - StrokeID: 0
-      Position: {x: 84, y: 192}
-    - StrokeID: 0
-      Position: {x: 95, y: 192}
-    - StrokeID: 0
-      Position: {x: 108, y: 193}
-    - StrokeID: 0
-      Position: {x: 120, y: 194}
-    - StrokeID: 0
-      Position: {x: 133, y: 195}
-    - StrokeID: 0
-      Position: {x: 144, y: 195}
-    - StrokeID: 0
-      Position: {x: 154, y: 195}
-    - StrokeID: 0
-      Position: {x: 165, y: 196}
-    - StrokeID: 0
-      Position: {x: 174, y: 196}
-    - StrokeID: 0
-      Position: {x: 183, y: 197}
-    - StrokeID: 0
-      Position: {x: 191, y: 197}
-    - StrokeID: 0
-      Position: {x: 197, y: 198}
-    - StrokeID: 0
-      Position: {x: 202, y: 199}
-    - StrokeID: 0
-      Position: {x: 211, y: 199}
-    - StrokeID: 0
-      Position: {x: 216, y: 200}
-    - StrokeID: 0
-      Position: {x: 215, y: 192}
-    - StrokeID: 0
-      Position: {x: 211, y: 185}
-    - StrokeID: 0
-      Position: {x: 205, y: 176}
-    - StrokeID: 0
-      Position: {x: 202, y: 170}
-    - StrokeID: 0
-      Position: {x: 198, y: 164}
-    - StrokeID: 0
-      Position: {x: 194, y: 158}
-    - StrokeID: 0
-      Position: {x: 190, y: 152}
-    - StrokeID: 0
-      Position: {x: 185, y: 144}
-    - StrokeID: 0
-      Position: {x: 181, y: 137}
-    - StrokeID: 0
-      Position: {x: 175, y: 129}
-    - StrokeID: 0
-      Position: {x: 169, y: 120}
-    - StrokeID: 0
-      Position: {x: 164, y: 111}
-    - StrokeID: 0
-      Position: {x: 159, y: 103}
-    - StrokeID: 0
-      Position: {x: 153, y: 96}
-    - StrokeID: 0
-      Position: {x: 148, y: 90}
-    - StrokeID: 0
-      Position: {x: 143, y: 84}
-    - StrokeID: 0
-      Position: {x: 138, y: 79}
-    - StrokeID: 0
-      Position: {x: 134, y: 74}
-    - StrokeID: 0
-      Position: {x: 131, y: 69}
-    - StrokeID: 0
-      Position: {x: 125, y: 62}
-    - StrokeID: 0
-      Position: {x: 122, y: 56}
-    - StrokeID: 0
-      Position: {x: 119, y: 50}
-    - StrokeID: 0
-      Position: {x: 118, y: 45}
-    - StrokeID: 0
-      Position: {x: 116, y: 40}
-    numberOfPoints: 64
-  - Name: triangle
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.019126654, y: -0.550433}
-    - StrokeID: 0
-      Position: {x: -0.046099715, y: -0.50997335}
-    - StrokeID: 0
-      Position: {x: -0.07183076, y: -0.4687278}
-    - StrokeID: 0
-      Position: {x: -0.10135723, y: -0.4301546}
-    - StrokeID: 0
-      Position: {x: -0.12833029, y: -0.389695}
-    - StrokeID: 0
-      Position: {x: -0.15452822, y: -0.3487563}
-    - StrokeID: 0
-      Position: {x: -0.17865367, y: -0.3065368}
-    - StrokeID: 0
-      Position: {x: -0.2027791, y: -0.26431727}
-    - StrokeID: 0
-      Position: {x: -0.22637954, y: -0.22181678}
-    - StrokeID: 0
-      Position: {x: -0.24872693, y: -0.17868586}
-    - StrokeID: 0
-      Position: {x: -0.27691323, y: -0.1390758}
-    - StrokeID: 0
-      Position: {x: -0.29398707, y: -0.0935455}
-    - StrokeID: 0
-      Position: {x: -0.3214555, y: -0.05355298}
-    - StrokeID: 0
-      Position: {x: -0.346228, y: -0.011747934}
-    - StrokeID: 0
-      Position: {x: -0.37035346, y: 0.030471593}
-    - StrokeID: 0
-      Position: {x: -0.3967834, y: 0.07126685}
-    - StrokeID: 0
-      Position: {x: -0.41891745, y: 0.11451859}
-    - StrokeID: 0
-      Position: {x: -0.43879387, y: 0.15882243}
-    - StrokeID: 0
-      Position: {x: -0.4636507, y: 0.20031705}
-    - StrokeID: 0
-      Position: {x: -0.48273525, y: 0.24474287}
-    - StrokeID: 0
-      Position: {x: -0.5025984, y: 0.2889272}
-    - StrokeID: 0
-      Position: {x: -0.5202349, y: 0.33423948}
-    - StrokeID: 0
-      Position: {x: -0.47887006, y: 0.3385454}
-    - StrokeID: 0
-      Position: {x: -0.43044338, y: 0.33414298}
-    - StrokeID: 0
-      Position: {x: -0.38186872, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: -0.33324233, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: -0.28461593, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: -0.23598957, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: -0.18736318, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: -0.13873678, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: -0.09011041, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: -0.04148402, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: 0.007142364, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: 0.05576875, y: 0.33300263}
-    - StrokeID: 0
-      Position: {x: 0.104352586, y: 0.33377093}
-    - StrokeID: 0
-      Position: {x: 0.15268174, y: 0.3391376}
-    - StrokeID: 0
-      Position: {x: 0.20130812, y: 0.3391376}
-    - StrokeID: 0
-      Position: {x: 0.24993451, y: 0.3391376}
-    - StrokeID: 0
-      Position: {x: 0.2985609, y: 0.3391376}
-    - StrokeID: 0
-      Position: {x: 0.34718728, y: 0.3391376}
-    - StrokeID: 0
-      Position: {x: 0.39581367, y: 0.3391376}
-    - StrokeID: 0
-      Position: {x: 0.44419372, y: 0.33785853}
-    - StrokeID: 0
-      Position: {x: 0.4754035, y: 0.30820465}
-    - StrokeID: 0
-      Position: {x: 0.45913085, y: 0.26497778}
-    - StrokeID: 0
-      Position: {x: 0.43738446, y: 0.22148503}
-    - StrokeID: 0
-      Position: {x: 0.413778, y: 0.17906795}
-    - StrokeID: 0
-      Position: {x: 0.39153925, y: 0.13611798}
-    - StrokeID: 0
-      Position: {x: 0.36748832, y: 0.093962595}
-    - StrokeID: 0
-      Position: {x: 0.347589, y: 0.049613178}
-    - StrokeID: 0
-      Position: {x: 0.3225557, y: 0.008102808}
-    - StrokeID: 0
-      Position: {x: 0.2955826, y: -0.032356787}
-    - StrokeID: 0
-      Position: {x: 0.26872724, y: -0.07288469}
-    - StrokeID: 0
-      Position: {x: 0.24606006, y: -0.11584309}
-    - StrokeID: 0
-      Position: {x: 0.22047926, y: -0.15711066}
-    - StrokeID: 0
-      Position: {x: 0.20140828, y: -0.20171161}
-    - StrokeID: 0
-      Position: {x: 0.18003356, y: -0.24508408}
-    - StrokeID: 0
-      Position: {x: 0.16356167, y: -0.29071155}
-    - StrokeID: 0
-      Position: {x: 0.14740528, y: -0.3365571}
-    - StrokeID: 0
-      Position: {x: 0.1293459, y: -0.38170555}
-    - StrokeID: 0
-      Position: {x: 0.1112865, y: -0.426854}
-    - StrokeID: 0
-      Position: {x: 0.09476377, y: -0.47256538}
-    - StrokeID: 0
-      Position: {x: 0.07796645, y: -0.5181564}
-    - StrokeID: 0
-      Position: {x: 0.059266306, y: -0.5630395}
-    - StrokeID: 0
-      Position: {x: 0.03608805, y: -0.6056477}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 107, y: 56}
-    - StrokeID: 0
-      Position: {x: 101, y: 65}
-    - StrokeID: 0
-      Position: {x: 98, y: 70}
-    - StrokeID: 0
-      Position: {x: 94, y: 75}
-    - StrokeID: 0
-      Position: {x: 90, y: 81}
-    - StrokeID: 0
-      Position: {x: 86, y: 87}
-    - StrokeID: 0
-      Position: {x: 82, y: 94}
-    - StrokeID: 0
-      Position: {x: 78, y: 101}
-    - StrokeID: 0
-      Position: {x: 74, y: 108}
-    - StrokeID: 0
-      Position: {x: 70, y: 116}
-    - StrokeID: 0
-      Position: {x: 65, y: 123}
-    - StrokeID: 0
-      Position: {x: 62, y: 131}
-    - StrokeID: 0
-      Position: {x: 57, y: 138}
-    - StrokeID: 0
-      Position: {x: 53, y: 145}
-    - StrokeID: 0
-      Position: {x: 49, y: 152}
-    - StrokeID: 0
-      Position: {x: 45, y: 158}
-    - StrokeID: 0
-      Position: {x: 42, y: 164}
-    - StrokeID: 0
-      Position: {x: 39, y: 171}
-    - StrokeID: 0
-      Position: {x: 35, y: 177}
-    - StrokeID: 0
-      Position: {x: 33, y: 183}
-    - StrokeID: 0
-      Position: {x: 30, y: 188}
-    - StrokeID: 0
-      Position: {x: 27, y: 196}
-    - StrokeID: 0
-      Position: {x: 25, y: 201}
-    - StrokeID: 0
-      Position: {x: 31, y: 201}
-    - StrokeID: 0
-      Position: {x: 42, y: 200}
-    - StrokeID: 0
-      Position: {x: 49, y: 200}
-    - StrokeID: 0
-      Position: {x: 58, y: 200}
-    - StrokeID: 0
-      Position: {x: 68, y: 200}
-    - StrokeID: 0
-      Position: {x: 78, y: 200}
-    - StrokeID: 0
-      Position: {x: 89, y: 200}
-    - StrokeID: 0
-      Position: {x: 99, y: 200}
-    - StrokeID: 0
-      Position: {x: 108, y: 200}
-    - StrokeID: 0
-      Position: {x: 118, y: 200}
-    - StrokeID: 0
-      Position: {x: 126, y: 200}
-    - StrokeID: 0
-      Position: {x: 135, y: 201}
-    - StrokeID: 0
-      Position: {x: 143, y: 201}
-    - StrokeID: 0
-      Position: {x: 151, y: 201}
-    - StrokeID: 0
-      Position: {x: 158, y: 201}
-    - StrokeID: 0
-      Position: {x: 165, y: 201}
-    - StrokeID: 0
-      Position: {x: 175, y: 201}
-    - StrokeID: 0
-      Position: {x: 182, y: 201}
-    - StrokeID: 0
-      Position: {x: 187, y: 199}
-    - StrokeID: 0
-      Position: {x: 188, y: 194}
-    - StrokeID: 0
-      Position: {x: 185, y: 189}
-    - StrokeID: 0
-      Position: {x: 181, y: 181}
-    - StrokeID: 0
-      Position: {x: 178, y: 176}
-    - StrokeID: 0
-      Position: {x: 176, y: 171}
-    - StrokeID: 0
-      Position: {x: 172, y: 165}
-    - StrokeID: 0
-      Position: {x: 169, y: 159}
-    - StrokeID: 0
-      Position: {x: 166, y: 152}
-    - StrokeID: 0
-      Position: {x: 162, y: 146}
-    - StrokeID: 0
-      Position: {x: 158, y: 140}
-    - StrokeID: 0
-      Position: {x: 154, y: 134}
-    - StrokeID: 0
-      Position: {x: 151, y: 128}
-    - StrokeID: 0
-      Position: {x: 147, y: 122}
-    - StrokeID: 0
-      Position: {x: 144, y: 116}
-    - StrokeID: 0
-      Position: {x: 142, y: 110}
-    - StrokeID: 0
-      Position: {x: 139, y: 105}
-    - StrokeID: 0
-      Position: {x: 137, y: 99}
-    - StrokeID: 0
-      Position: {x: 135, y: 93}
-    - StrokeID: 0
-      Position: {x: 133, y: 88}
-    - StrokeID: 0
-      Position: {x: 131, y: 83}
-    - StrokeID: 0
-      Position: {x: 129, y: 78}
-    - StrokeID: 0
-      Position: {x: 127, y: 73}
-    - StrokeID: 0
-      Position: {x: 124, y: 64}
-    - StrokeID: 0
-      Position: {x: 121, y: 57}
-    - StrokeID: 0
-      Position: {x: 119, y: 52}
-    - StrokeID: 0
-      Position: {x: 116, y: 47}
-    numberOfPoints: 64
-  - Name: triangle
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.03047365, y: -0.4962868}
-    - StrokeID: 0
-      Position: {x: -0.058241468, y: -0.45741186}
-    - StrokeID: 0
-      Position: {x: -0.087528855, y: -0.4196861}
-    - StrokeID: 0
-      Position: {x: -0.11473757, y: -0.3804543}
-    - StrokeID: 0
-      Position: {x: -0.14215684, y: -0.34133878}
-    - StrokeID: 0
-      Position: {x: -0.17121166, y: -0.30345753}
-    - StrokeID: 0
-      Position: {x: -0.20093462, y: -0.26609212}
-    - StrokeID: 0
-      Position: {x: -0.22854935, y: -0.22711912}
-    - StrokeID: 0
-      Position: {x: -0.25225168, y: -0.18564005}
-    - StrokeID: 0
-      Position: {x: -0.27940646, y: -0.14637242}
-    - StrokeID: 0
-      Position: {x: -0.3064375, y: -0.10698893}
-    - StrokeID: 0
-      Position: {x: -0.3329375, y: -0.06723893}
-    - StrokeID: 0
-      Position: {x: -0.3571001, y: -0.026132474}
-    - StrokeID: 0
-      Position: {x: -0.3784651, y: 0.016597504}
-    - StrokeID: 0
-      Position: {x: -0.3998301, y: 0.05932748}
-    - StrokeID: 0
-      Position: {x: -0.42119506, y: 0.102057464}
-    - StrokeID: 0
-      Position: {x: -0.44256005, y: 0.14478745}
-    - StrokeID: 0
-      Position: {x: -0.46930698, y: 0.18427706}
-    - StrokeID: 0
-      Position: {x: -0.49826336, y: 0.22225316}
-    - StrokeID: 0
-      Position: {x: -0.52277726, y: 0.26296833}
-    - StrokeID: 0
-      Position: {x: -0.5002169, y: 0.2826835}
-    - StrokeID: 0
-      Position: {x: -0.45292348, y: 0.281367}
-    - StrokeID: 0
-      Position: {x: -0.40536353, y: 0.27836108}
-    - StrokeID: 0
-      Position: {x: -0.35758996, y: 0.27836108}
-    - StrokeID: 0
-      Position: {x: -0.3098164, y: 0.27836108}
-    - StrokeID: 0
-      Position: {x: -0.26204282, y: 0.27836108}
-    - StrokeID: 0
-      Position: {x: -0.2144755, y: 0.28249612}
-    - StrokeID: 0
-      Position: {x: -0.16692315, y: 0.28708336}
-    - StrokeID: 0
-      Position: {x: -0.11934578, y: 0.29140857}
-    - StrokeID: 0
-      Position: {x: -0.07161925, y: 0.2924456}
-    - StrokeID: 0
-      Position: {x: -0.023878582, y: 0.2931051}
-    - StrokeID: 0
-      Position: {x: 0.023657888, y: 0.29785877}
-    - StrokeID: 0
-      Position: {x: 0.071194366, y: 0.30261242}
-    - StrokeID: 0
-      Position: {x: 0.11872115, y: 0.30745786}
-    - StrokeID: 0
-      Position: {x: 0.16620253, y: 0.31273356}
-    - StrokeID: 0
-      Position: {x: 0.21361937, y: 0.31855583}
-    - StrokeID: 0
-      Position: {x: 0.26095143, y: 0.32502344}
-    - StrokeID: 0
-      Position: {x: 0.30853784, y: 0.32765687}
-    - StrokeID: 0
-      Position: {x: 0.35583967, y: 0.333357}
-    - StrokeID: 0
-      Position: {x: 0.40350214, y: 0.33469915}
-    - StrokeID: 0
-      Position: {x: 0.45067284, y: 0.32861066}
-    - StrokeID: 0
-      Position: {x: 0.46952635, y: 0.2874592}
-    - StrokeID: 0
-      Position: {x: 0.46952635, y: 0.23968562}
-    - StrokeID: 0
-      Position: {x: 0.44976154, y: 0.19657789}
-    - StrokeID: 0
-      Position: {x: 0.43681967, y: 0.15108001}
-    - StrokeID: 0
-      Position: {x: 0.4132853, y: 0.10954092}
-    - StrokeID: 0
-      Position: {x: 0.3919203, y: 0.066810936}
-    - StrokeID: 0
-      Position: {x: 0.36974338, y: 0.024515497}
-    - StrokeID: 0
-      Position: {x: 0.34578392, y: -0.016809847}
-    - StrokeID: 0
-      Position: {x: 0.32046402, y: -0.05732176}
-    - StrokeID: 0
-      Position: {x: 0.29514405, y: -0.09783366}
-    - StrokeID: 0
-      Position: {x: 0.2720586, y: -0.13953286}
-    - StrokeID: 0
-      Position: {x: 0.25265592, y: -0.18318889}
-    - StrokeID: 0
-      Position: {x: 0.22777496, y: -0.22393405}
-    - StrokeID: 0
-      Position: {x: 0.20457156, y: -0.265633}
-    - StrokeID: 0
-      Position: {x: 0.18120892, y: -0.30705646}
-    - StrokeID: 0
-      Position: {x: 0.15122786, y: -0.34415138}
-    - StrokeID: 0
-      Position: {x: 0.12921385, y: -0.38646612}
-    - StrokeID: 0
-      Position: {x: 0.09952648, y: -0.42389226}
-    - StrokeID: 0
-      Position: {x: 0.07086233, y: -0.46211112}
-    - StrokeID: 0
-      Position: {x: 0.04440059, y: -0.5018401}
-    - StrokeID: 0
-      Position: {x: 0.018184684, y: -0.5417377}
-    - StrokeID: 0
-      Position: {x: -0.010479449, y: -0.57995653}
-    - StrokeID: 0
-      Position: {x: -0.03047365, y: -0.62304735}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 116, y: 61}
-    - StrokeID: 0
-      Position: {x: 111, y: 68}
-    - StrokeID: 0
-      Position: {x: 107, y: 73}
-    - StrokeID: 0
-      Position: {x: 103, y: 79}
-    - StrokeID: 0
-      Position: {x: 98, y: 86}
-    - StrokeID: 0
-      Position: {x: 93, y: 92}
-    - StrokeID: 0
-      Position: {x: 88, y: 99}
-    - StrokeID: 0
-      Position: {x: 84, y: 106}
-    - StrokeID: 0
-      Position: {x: 79, y: 113}
-    - StrokeID: 0
-      Position: {x: 75, y: 119}
-    - StrokeID: 0
-      Position: {x: 71, y: 125}
-    - StrokeID: 0
-      Position: {x: 68, y: 131}
-    - StrokeID: 0
-      Position: {x: 65, y: 137}
-    - StrokeID: 0
-      Position: {x: 61, y: 145}
-    - StrokeID: 0
-      Position: {x: 57, y: 153}
-    - StrokeID: 0
-      Position: {x: 52, y: 160}
-    - StrokeID: 0
-      Position: {x: 48, y: 165}
-    - StrokeID: 0
-      Position: {x: 45, y: 171}
-    - StrokeID: 0
-      Position: {x: 52, y: 172}
-    - StrokeID: 0
-      Position: {x: 59, y: 171}
-    - StrokeID: 0
-      Position: {x: 66, y: 171}
-    - StrokeID: 0
-      Position: {x: 74, y: 171}
-    - StrokeID: 0
-      Position: {x: 84, y: 171}
-    - StrokeID: 0
-      Position: {x: 94, y: 172}
-    - StrokeID: 0
-      Position: {x: 105, y: 173}
-    - StrokeID: 0
-      Position: {x: 116, y: 173}
-    - StrokeID: 0
-      Position: {x: 126, y: 174}
-    - StrokeID: 0
-      Position: {x: 136, y: 175}
-    - StrokeID: 0
-      Position: {x: 145, y: 176}
-    - StrokeID: 0
-      Position: {x: 153, y: 177}
-    - StrokeID: 0
-      Position: {x: 160, y: 178}
-    - StrokeID: 0
-      Position: {x: 166, y: 178}
-    - StrokeID: 0
-      Position: {x: 172, y: 179}
-    - StrokeID: 0
-      Position: {x: 180, y: 179}
-    - StrokeID: 0
-      Position: {x: 185, y: 178}
-    - StrokeID: 0
-      Position: {x: 187, y: 173}
-    - StrokeID: 0
-      Position: {x: 187, y: 165}
-    - StrokeID: 0
-      Position: {x: 184, y: 159}
-    - StrokeID: 0
-      Position: {x: 183, y: 154}
-    - StrokeID: 0
-      Position: {x: 180, y: 149}
-    - StrokeID: 0
-      Position: {x: 177, y: 143}
-    - StrokeID: 0
-      Position: {x: 174, y: 137}
-    - StrokeID: 0
-      Position: {x: 170, y: 130}
-    - StrokeID: 0
-      Position: {x: 165, y: 122}
-    - StrokeID: 0
-      Position: {x: 160, y: 114}
-    - StrokeID: 0
-      Position: {x: 156, y: 105}
-    - StrokeID: 0
-      Position: {x: 151, y: 97}
-    - StrokeID: 0
-      Position: {x: 147, y: 89}
-    - StrokeID: 0
-      Position: {x: 142, y: 83}
-    - StrokeID: 0
-      Position: {x: 139, y: 77}
-    - StrokeID: 0
-      Position: {x: 135, y: 72}
-    - StrokeID: 0
-      Position: {x: 129, y: 64}
-    - StrokeID: 0
-      Position: {x: 124, y: 56}
-    - StrokeID: 0
-      Position: {x: 118, y: 48}
-    - StrokeID: 0
-      Position: {x: 116, y: 43}
-    numberOfPoints: 64
   - Name: circle
     IsShown: 0
     NormalizedPoints:
@@ -2461,885 +793,6 @@ MonoBehaviour:
     - StrokeID: 0
       Position: {x: 97, y: 65}
     numberOfPoints: 64
-  - Name: star
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.33826286, y: 0.36769015}
-    - StrokeID: 0
-      Position: {x: -0.31150895, y: 0.30116865}
-    - StrokeID: 0
-      Position: {x: -0.2835561, y: 0.23515527}
-    - StrokeID: 0
-      Position: {x: -0.25287622, y: 0.17038149}
-    - StrokeID: 0
-      Position: {x: -0.22397599, y: 0.10476439}
-    - StrokeID: 0
-      Position: {x: -0.1906288, y: 0.041298542}
-    - StrokeID: 0
-      Position: {x: -0.15767969, y: -0.022377882}
-    - StrokeID: 0
-      Position: {x: -0.1320277, y: -0.089165576}
-    - StrokeID: 0
-      Position: {x: -0.10040128, y: -0.15344478}
-    - StrokeID: 0
-      Position: {x: -0.06665975, y: -0.21671017}
-    - StrokeID: 0
-      Position: {x: -0.028640352, y: -0.27744177}
-    - StrokeID: 0
-      Position: {x: 0.010659471, y: -0.3372489}
-    - StrokeID: 0
-      Position: {x: 0.061453484, y: -0.312646}
-    - StrokeID: 0
-      Position: {x: 0.09814239, y: -0.2511888}
-    - StrokeID: 0
-      Position: {x: 0.13188392, y: -0.18792343}
-    - StrokeID: 0
-      Position: {x: 0.1686705, y: -0.12641887}
-    - StrokeID: 0
-      Position: {x: 0.19911067, y: -0.061569363}
-    - StrokeID: 0
-      Position: {x: 0.23351118, y: 0.0013364399}
-    - StrokeID: 0
-      Position: {x: 0.2670591, y: 0.064704716}
-    - StrokeID: 0
-      Position: {x: 0.29502416, y: 0.13056667}
-    - StrokeID: 0
-      Position: {x: 0.3273669, y: 0.1944292}
-    - StrokeID: 0
-      Position: {x: 0.36104912, y: 0.25766546}
-    - StrokeID: 0
-      Position: {x: 0.34362262, y: 0.29416922}
-    - StrokeID: 0
-      Position: {x: 0.28198197, y: 0.25939995}
-    - StrokeID: 0
-      Position: {x: 0.22166887, y: 0.22062719}
-    - StrokeID: 0
-      Position: {x: 0.15929154, y: 0.18529792}
-    - StrokeID: 0
-      Position: {x: 0.09725277, y: 0.1494668}
-    - StrokeID: 0
-      Position: {x: 0.031978805, y: 0.11979681}
-    - StrokeID: 0
-      Position: {x: -0.033295162, y: 0.09012682}
-    - StrokeID: 0
-      Position: {x: -0.09877356, y: 0.060926262}
-    - StrokeID: 0
-      Position: {x: -0.16502713, y: 0.033516202}
-    - StrokeID: 0
-      Position: {x: -0.23159961, y: 0.006887212}
-    - StrokeID: 0
-      Position: {x: -0.29896367, y: -0.017526621}
-    - StrokeID: 0
-      Position: {x: -0.36733624, y: -0.039117977}
-    - StrokeID: 0
-      Position: {x: -0.43643895, y: -0.058098827}
-    - StrokeID: 0
-      Position: {x: -0.5059412, y: -0.07493309}
-    - StrokeID: 0
-      Position: {x: -0.49310187, y: -0.08317691}
-    - StrokeID: 0
-      Position: {x: -0.4214011, y: -0.08317691}
-    - StrokeID: 0
-      Position: {x: -0.35001335, y: -0.08976495}
-    - StrokeID: 0
-      Position: {x: -0.27859777, y: -0.096109234}
-    - StrokeID: 0
-      Position: {x: -0.20716847, y: -0.10201135}
-    - StrokeID: 0
-      Position: {x: -0.13625377, y: -0.11249998}
-    - StrokeID: 0
-      Position: {x: -0.06477856, y: -0.118126854}
-    - StrokeID: 0
-      Position: {x: 0.0061480855, y: -0.1286345}
-    - StrokeID: 0
-      Position: {x: 0.07707473, y: -0.13914216}
-    - StrokeID: 0
-      Position: {x: 0.14839712, y: -0.14633623}
-    - StrokeID: 0
-      Position: {x: 0.21897939, y: -0.15883896}
-    - StrokeID: 0
-      Position: {x: 0.28854835, y: -0.17599744}
-    - StrokeID: 0
-      Position: {x: 0.35669965, y: -0.19815613}
-    - StrokeID: 0
-      Position: {x: 0.42610902, y: -0.21524204}
-    - StrokeID: 0
-      Position: {x: 0.4373223, y: -0.19939506}
-    - StrokeID: 0
-      Position: {x: 0.37512752, y: -0.16378014}
-    - StrokeID: 0
-      Position: {x: 0.31398433, y: -0.1264098}
-    - StrokeID: 0
-      Position: {x: 0.25412357, y: -0.08696439}
-    - StrokeID: 0
-      Position: {x: 0.19446494, y: -0.047191978}
-    - StrokeID: 0
-      Position: {x: 0.13901693, y: -0.0018303865}
-    - StrokeID: 0
-      Position: {x: 0.08165633, y: 0.041190073}
-    - StrokeID: 0
-      Position: {x: 0.02584931, y: 0.08614726}
-    - StrokeID: 0
-      Position: {x: -0.028420601, y: 0.13299239}
-    - StrokeID: 0
-      Position: {x: -0.080045104, y: 0.18269424}
-    - StrokeID: 0
-      Position: {x: -0.13259996, y: 0.23139141}
-    - StrokeID: 0
-      Position: {x: -0.18330005, y: 0.2820915}
-    - StrokeID: 0
-      Position: {x: -0.22947352, y: 0.33677238}
-    - StrokeID: 0
-      Position: {x: -0.26889867, y: 0.39659184}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 72, y: 191}
-    - StrokeID: 0
-      Position: {x: 74, y: 186}
-    - StrokeID: 0
-      Position: {x: 76, y: 181}
-    - StrokeID: 0
-      Position: {x: 81, y: 169}
-    - StrokeID: 0
-      Position: {x: 85, y: 161}
-    - StrokeID: 0
-      Position: {x: 88, y: 154}
-    - StrokeID: 0
-      Position: {x: 92, y: 145}
-    - StrokeID: 0
-      Position: {x: 101, y: 128}
-    - StrokeID: 0
-      Position: {x: 105, y: 120}
-    - StrokeID: 0
-      Position: {x: 108, y: 111}
-    - StrokeID: 0
-      Position: {x: 112, y: 103}
-    - StrokeID: 0
-      Position: {x: 120, y: 88}
-    - StrokeID: 0
-      Position: {x: 124, y: 82}
-    - StrokeID: 0
-      Position: {x: 127, y: 77}
-    - StrokeID: 0
-      Position: {x: 130, y: 72}
-    - StrokeID: 0
-      Position: {x: 134, y: 67}
-    - StrokeID: 0
-      Position: {x: 140, y: 71}
-    - StrokeID: 0
-      Position: {x: 143, y: 77}
-    - StrokeID: 0
-      Position: {x: 147, y: 83}
-    - StrokeID: 0
-      Position: {x: 155, y: 98}
-    - StrokeID: 0
-      Position: {x: 160, y: 106}
-    - StrokeID: 0
-      Position: {x: 164, y: 115}
-    - StrokeID: 0
-      Position: {x: 169, y: 124}
-    - StrokeID: 0
-      Position: {x: 178, y: 141}
-    - StrokeID: 0
-      Position: {x: 181, y: 149}
-    - StrokeID: 0
-      Position: {x: 185, y: 156}
-    - StrokeID: 0
-      Position: {x: 188, y: 163}
-    - StrokeID: 0
-      Position: {x: 193, y: 172}
-    - StrokeID: 0
-      Position: {x: 195, y: 179}
-    - StrokeID: 0
-      Position: {x: 188, y: 178}
-    - StrokeID: 0
-      Position: {x: 182, y: 174}
-    - StrokeID: 0
-      Position: {x: 168, y: 165}
-    - StrokeID: 0
-      Position: {x: 159, y: 160}
-    - StrokeID: 0
-      Position: {x: 149, y: 154}
-    - StrokeID: 0
-      Position: {x: 138, y: 149}
-    - StrokeID: 0
-      Position: {x: 116, y: 139}
-    - StrokeID: 0
-      Position: {x: 104, y: 134}
-    - StrokeID: 0
-      Position: {x: 94, y: 130}
-    - StrokeID: 0
-      Position: {x: 84, y: 126}
-    - StrokeID: 0
-      Position: {x: 65, y: 120}
-    - StrokeID: 0
-      Position: {x: 57, y: 118}
-    - StrokeID: 0
-      Position: {x: 51, y: 116}
-    - StrokeID: 0
-      Position: {x: 45, y: 115}
-    - StrokeID: 0
-      Position: {x: 38, y: 113}
-    - StrokeID: 0
-      Position: {x: 45, y: 113}
-    - StrokeID: 0
-      Position: {x: 51, y: 113}
-    - StrokeID: 0
-      Position: {x: 58, y: 113}
-    - StrokeID: 0
-      Position: {x: 79, y: 111}
-    - StrokeID: 0
-      Position: {x: 93, y: 110}
-    - StrokeID: 0
-      Position: {x: 106, y: 108}
-    - StrokeID: 0
-      Position: {x: 119, y: 107}
-    - StrokeID: 0
-      Position: {x: 146, y: 103}
-    - StrokeID: 0
-      Position: {x: 157, y: 102}
-    - StrokeID: 0
-      Position: {x: 168, y: 100}
-    - StrokeID: 0
-      Position: {x: 177, y: 98}
-    - StrokeID: 0
-      Position: {x: 190, y: 94}
-    - StrokeID: 0
-      Position: {x: 195, y: 92}
-    - StrokeID: 0
-      Position: {x: 200, y: 91}
-    - StrokeID: 0
-      Position: {x: 205, y: 90}
-    - StrokeID: 0
-      Position: {x: 211, y: 90}
-    - StrokeID: 0
-      Position: {x: 206, y: 93}
-    - StrokeID: 0
-      Position: {x: 197, y: 98}
-    - StrokeID: 0
-      Position: {x: 191, y: 102}
-    - StrokeID: 0
-      Position: {x: 184, y: 106}
-    - StrokeID: 0
-      Position: {x: 178, y: 110}
-    - StrokeID: 0
-      Position: {x: 163, y: 120}
-    - StrokeID: 0
-      Position: {x: 156, y: 126}
-    - StrokeID: 0
-      Position: {x: 148, y: 132}
-    - StrokeID: 0
-      Position: {x: 140, y: 138}
-    - StrokeID: 0
-      Position: {x: 126, y: 150}
-    - StrokeID: 0
-      Position: {x: 119, y: 157}
-    - StrokeID: 0
-      Position: {x: 112, y: 163}
-    - StrokeID: 0
-      Position: {x: 106, y: 169}
-    - StrokeID: 0
-      Position: {x: 96, y: 179}
-    - StrokeID: 0
-      Position: {x: 92, y: 184}
-    - StrokeID: 0
-      Position: {x: 87, y: 191}
-    - StrokeID: 0
-      Position: {x: 84, y: 196}
-    numberOfPoints: 64
-  - Name: star
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.4049942, y: 0.3777408}
-    - StrokeID: 0
-      Position: {x: -0.36776507, y: 0.31254286}
-    - StrokeID: 0
-      Position: {x: -0.3281229, y: 0.24868056}
-    - StrokeID: 0
-      Position: {x: -0.2874398, y: 0.18564779}
-    - StrokeID: 0
-      Position: {x: -0.25465626, y: 0.118061446}
-    - StrokeID: 0
-      Position: {x: -0.21814202, y: 0.05233585}
-    - StrokeID: 0
-      Position: {x: -0.18416864, y: -0.014729942}
-    - StrokeID: 0
-      Position: {x: -0.14625618, y: -0.079625905}
-    - StrokeID: 0
-      Position: {x: -0.11230097, y: -0.14669752}
-    - StrokeID: 0
-      Position: {x: -0.07462936, y: -0.21176666}
-    - StrokeID: 0
-      Position: {x: -0.038924634, y: -0.2778956}
-    - StrokeID: 0
-      Position: {x: -0.0031443455, y: -0.34399167}
-    - StrokeID: 0
-      Position: {x: 0.039463326, y: -0.4055145}
-    - StrokeID: 0
-      Position: {x: 0.078439176, y: -0.37123942}
-    - StrokeID: 0
-      Position: {x: 0.101649866, y: -0.29982466}
-    - StrokeID: 0
-      Position: {x: 0.12227706, y: -0.2275954}
-    - StrokeID: 0
-      Position: {x: 0.14724864, y: -0.15667737}
-    - StrokeID: 0
-      Position: {x: 0.16709411, y: -0.08422208}
-    - StrokeID: 0
-      Position: {x: 0.18537447, y: -0.011376438}
-    - StrokeID: 0
-      Position: {x: 0.20776345, y: 0.060398627}
-    - StrokeID: 0
-      Position: {x: 0.22904582, y: 0.13248006}
-    - StrokeID: 0
-      Position: {x: 0.25395808, y: 0.20319939}
-    - StrokeID: 0
-      Position: {x: 0.2791674, y: 0.2739371}
-    - StrokeID: 0
-      Position: {x: 0.30019715, y: 0.34604725}
-    - StrokeID: 0
-      Position: {x: 0.26162273, y: 0.33555073}
-    - StrokeID: 0
-      Position: {x: 0.20044026, y: 0.29184893}
-    - StrokeID: 0
-      Position: {x: 0.13573235, y: 0.25370786}
-    - StrokeID: 0
-      Position: {x: 0.071026295, y: 0.21604331}
-    - StrokeID: 0
-      Position: {x: 0.0014368354, y: 0.1875749}
-    - StrokeID: 0
-      Position: {x: -0.06680071, y: 0.1561272}
-    - StrokeID: 0
-      Position: {x: -0.13600938, y: 0.12686482}
-    - StrokeID: 0
-      Position: {x: -0.20546392, y: 0.098124065}
-    - StrokeID: 0
-      Position: {x: -0.27349487, y: 0.066109516}
-    - StrokeID: 0
-      Position: {x: -0.34283042, y: 0.037238006}
-    - StrokeID: 0
-      Position: {x: -0.41169602, y: 0.0071964897}
-    - StrokeID: 0
-      Position: {x: -0.48126, y: -0.021047825}
-    - StrokeID: 0
-      Position: {x: -0.46054402, y: -0.058852043}
-    - StrokeID: 0
-      Position: {x: -0.38710147, y: -0.07459339}
-    - StrokeID: 0
-      Position: {x: -0.31348547, y: -0.089782625}
-    - StrokeID: 0
-      Position: {x: -0.23986688, y: -0.104973495}
-    - StrokeID: 0
-      Position: {x: -0.16593648, y: -0.11866431}
-    - StrokeID: 0
-      Position: {x: -0.09173645, y: -0.13071051}
-    - StrokeID: 0
-      Position: {x: -0.017770559, y: -0.14395542}
-    - StrokeID: 0
-      Position: {x: 0.056120902, y: -0.15768084}
-    - StrokeID: 0
-      Position: {x: 0.13035762, y: -0.16959013}
-    - StrokeID: 0
-      Position: {x: 0.204522, y: -0.18195087}
-    - StrokeID: 0
-      Position: {x: 0.2779592, y: -0.1978156}
-    - StrokeID: 0
-      Position: {x: 0.34966052, y: -0.22038847}
-    - StrokeID: 0
-      Position: {x: 0.42210406, y: -0.24048115}
-    - StrokeID: 0
-      Position: {x: 0.49122226, y: -0.26982096}
-    - StrokeID: 0
-      Position: {x: 0.44070005, y: -0.23193969}
-    - StrokeID: 0
-      Position: {x: 0.38136625, y: -0.18577377}
-    - StrokeID: 0
-      Position: {x: 0.32503262, y: -0.13626613}
-    - StrokeID: 0
-      Position: {x: 0.26329738, y: -0.093365185}
-    - StrokeID: 0
-      Position: {x: 0.20312005, y: -0.048290223}
-    - StrokeID: 0
-      Position: {x: 0.14482385, y: -0.00089094404}
-    - StrokeID: 0
-      Position: {x: 0.08492941, y: 0.044451132}
-    - StrokeID: 0
-      Position: {x: 0.024589116, y: 0.08930685}
-    - StrokeID: 0
-      Position: {x: -0.036066305, y: 0.13373686}
-    - StrokeID: 0
-      Position: {x: -0.09896285, y: 0.17476271}
-    - StrokeID: 0
-      Position: {x: -0.15954497, y: 0.21910313}
-    - StrokeID: 0
-      Position: {x: -0.21955891, y: 0.2643653}
-    - StrokeID: 0
-      Position: {x: -0.27918845, y: 0.30987084}
-    - StrokeID: 0
-      Position: {x: -0.33395594, y: 0.36134738}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 58, y: 200}
-    - StrokeID: 0
-      Position: {x: 61, y: 194}
-    - StrokeID: 0
-      Position: {x: 70, y: 180}
-    - StrokeID: 0
-      Position: {x: 74, y: 173}
-    - StrokeID: 0
-      Position: {x: 79, y: 166}
-    - StrokeID: 0
-      Position: {x: 83, y: 157}
-    - StrokeID: 0
-      Position: {x: 93, y: 139}
-    - StrokeID: 0
-      Position: {x: 99, y: 127}
-    - StrokeID: 0
-      Position: {x: 105, y: 117}
-    - StrokeID: 0
-      Position: {x: 111, y: 105}
-    - StrokeID: 0
-      Position: {x: 122, y: 86}
-    - StrokeID: 0
-      Position: {x: 126, y: 78}
-    - StrokeID: 0
-      Position: {x: 130, y: 71}
-    - StrokeID: 0
-      Position: {x: 133, y: 65}
-    - StrokeID: 0
-      Position: {x: 138, y: 58}
-    - StrokeID: 0
-      Position: {x: 142, y: 54}
-    - StrokeID: 0
-      Position: {x: 147, y: 64}
-    - StrokeID: 0
-      Position: {x: 149, y: 70}
-    - StrokeID: 0
-      Position: {x: 151, y: 77}
-    - StrokeID: 0
-      Position: {x: 153, y: 85}
-    - StrokeID: 0
-      Position: {x: 159, y: 102}
-    - StrokeID: 0
-      Position: {x: 162, y: 112}
-    - StrokeID: 0
-      Position: {x: 164, y: 122}
-    - StrokeID: 0
-      Position: {x: 167, y: 132}
-    - StrokeID: 0
-      Position: {x: 173, y: 151}
-    - StrokeID: 0
-      Position: {x: 175, y: 159}
-    - StrokeID: 0
-      Position: {x: 178, y: 166}
-    - StrokeID: 0
-      Position: {x: 180, y: 173}
-    - StrokeID: 0
-      Position: {x: 184, y: 183}
-    - StrokeID: 0
-      Position: {x: 186, y: 190}
-    - StrokeID: 0
-      Position: {x: 188, y: 198}
-    - StrokeID: 0
-      Position: {x: 174, y: 188}
-    - StrokeID: 0
-      Position: {x: 167, y: 183}
-    - StrokeID: 0
-      Position: {x: 158, y: 178}
-    - StrokeID: 0
-      Position: {x: 149, y: 172}
-    - StrokeID: 0
-      Position: {x: 127, y: 163}
-    - StrokeID: 0
-      Position: {x: 117, y: 158}
-    - StrokeID: 0
-      Position: {x: 107, y: 154}
-    - StrokeID: 0
-      Position: {x: 97, y: 150}
-    - StrokeID: 0
-      Position: {x: 80, y: 142}
-    - StrokeID: 0
-      Position: {x: 72, y: 139}
-    - StrokeID: 0
-      Position: {x: 66, y: 136}
-    - StrokeID: 0
-      Position: {x: 59, y: 133}
-    - StrokeID: 0
-      Position: {x: 48, y: 129}
-    - StrokeID: 0
-      Position: {x: 40, y: 125}
-    - StrokeID: 0
-      Position: {x: 48, y: 120}
-    - StrokeID: 0
-      Position: {x: 57, y: 118}
-    - StrokeID: 0
-      Position: {x: 68, y: 116}
-    - StrokeID: 0
-      Position: {x: 81, y: 113}
-    - StrokeID: 0
-      Position: {x: 108, y: 108}
-    - StrokeID: 0
-      Position: {x: 122, y: 106}
-    - StrokeID: 0
-      Position: {x: 136, y: 103}
-    - StrokeID: 0
-      Position: {x: 149, y: 101}
-    - StrokeID: 0
-      Position: {x: 173, y: 97}
-    - StrokeID: 0
-      Position: {x: 182, y: 95}
-    - StrokeID: 0
-      Position: {x: 191, y: 92}
-    - StrokeID: 0
-      Position: {x: 198, y: 90}
-    - StrokeID: 0
-      Position: {x: 209, y: 87}
-    - StrokeID: 0
-      Position: {x: 217, y: 84}
-    - StrokeID: 0
-      Position: {x: 223, y: 81}
-    - StrokeID: 0
-      Position: {x: 216, y: 86}
-    - StrokeID: 0
-      Position: {x: 208, y: 92}
-    - StrokeID: 0
-      Position: {x: 198, y: 100}
-    - StrokeID: 0
-      Position: {x: 193, y: 105}
-    - StrokeID: 0
-      Position: {x: 187, y: 109}
-    - StrokeID: 0
-      Position: {x: 180, y: 114}
-    - StrokeID: 0
-      Position: {x: 164, y: 126}
-    - StrokeID: 0
-      Position: {x: 156, y: 133}
-    - StrokeID: 0
-      Position: {x: 149, y: 138}
-    - StrokeID: 0
-      Position: {x: 141, y: 144}
-    - StrokeID: 0
-      Position: {x: 126, y: 155}
-    - StrokeID: 0
-      Position: {x: 119, y: 160}
-    - StrokeID: 0
-      Position: {x: 112, y: 164}
-    - StrokeID: 0
-      Position: {x: 107, y: 168}
-    - StrokeID: 0
-      Position: {x: 96, y: 176}
-    - StrokeID: 0
-      Position: {x: 91, y: 180}
-    - StrokeID: 0
-      Position: {x: 85, y: 184}
-    - StrokeID: 0
-      Position: {x: 75, y: 193}
-    - StrokeID: 0
-      Position: {x: 71, y: 197}
-    numberOfPoints: 64
-  - Name: star
-    IsShown: 0
-    NormalizedPoints:
-    - StrokeID: 0
-      Position: {x: -0.32353985, y: 0.31286654}
-    - StrokeID: 0
-      Position: {x: -0.28988338, y: 0.24538831}
-    - StrokeID: 0
-      Position: {x: -0.25034073, y: 0.18107346}
-    - StrokeID: 0
-      Position: {x: -0.21586613, y: 0.113861606}
-    - StrokeID: 0
-      Position: {x: -0.18032698, y: 0.047201574}
-    - StrokeID: 0
-      Position: {x: -0.14620449, y: -0.02012842}
-    - StrokeID: 0
-      Position: {x: -0.111579604, y: -0.087221526}
-    - StrokeID: 0
-      Position: {x: -0.0742722, y: -0.1529085}
-    - StrokeID: 0
-      Position: {x: -0.036049005, y: -0.21805476}
-    - StrokeID: 0
-      Position: {x: 0.00051332393, y: -0.28405067}
-    - StrokeID: 0
-      Position: {x: 0.04241755, y: -0.34690696}
-    - StrokeID: 0
-      Position: {x: 0.07845784, y: -0.35054368}
-    - StrokeID: 0
-      Position: {x: 0.10463814, y: -0.27984023}
-    - StrokeID: 0
-      Position: {x: 0.12077943, y: -0.20606905}
-    - StrokeID: 0
-      Position: {x: 0.14213976, y: -0.1336095}
-    - StrokeID: 0
-      Position: {x: 0.16289325, y: -0.060972244}
-    - StrokeID: 0
-      Position: {x: 0.18282302, y: 0.011895006}
-    - StrokeID: 0
-      Position: {x: 0.20199604, y: 0.08496097}
-    - StrokeID: 0
-      Position: {x: 0.22031812, y: 0.1582493}
-    - StrokeID: 0
-      Position: {x: 0.23758185, y: 0.23177563}
-    - StrokeID: 0
-      Position: {x: 0.25346747, y: 0.30562487}
-    - StrokeID: 0
-      Position: {x: 0.27178955, y: 0.3789132}
-    - StrokeID: 0
-      Position: {x: 0.26892313, y: 0.40263242}
-    - StrokeID: 0
-      Position: {x: 0.21660678, y: 0.34892476}
-    - StrokeID: 0
-      Position: {x: 0.15617335, y: 0.30376056}
-    - StrokeID: 0
-      Position: {x: 0.092185974, y: 0.2637799}
-    - StrokeID: 0
-      Position: {x: 0.026473492, y: 0.22653027}
-    - StrokeID: 0
-      Position: {x: -0.037326794, y: 0.18639334}
-    - StrokeID: 0
-      Position: {x: -0.09617743, y: 0.13905142}
-    - StrokeID: 0
-      Position: {x: -0.15296838, y: 0.08934938}
-    - StrokeID: 0
-      Position: {x: -0.20638596, y: 0.035931777}
-    - StrokeID: 0
-      Position: {x: -0.2611782, y: -0.016009497}
-    - StrokeID: 0
-      Position: {x: -0.31861755, y: -0.06503904}
-    - StrokeID: 0
-      Position: {x: -0.3807408, y: -0.10800533}
-    - StrokeID: 0
-      Position: {x: -0.44457912, y: -0.1481392}
-    - StrokeID: 0
-      Position: {x: -0.49060276, y: -0.18359818}
-    - StrokeID: 0
-      Position: {x: -0.41709527, y: -0.1967414}
-    - StrokeID: 0
-      Position: {x: -0.34169272, y: -0.20122005}
-    - StrokeID: 0
-      Position: {x: -0.26637548, y: -0.20705055}
-    - StrokeID: 0
-      Position: {x: -0.19118072, y: -0.21415529}
-    - StrokeID: 0
-      Position: {x: -0.11604586, y: -0.2219801}
-    - StrokeID: 0
-      Position: {x: -0.04083179, y: -0.22903141}
-    - StrokeID: 0
-      Position: {x: 0.034325052, y: -0.23662437}
-    - StrokeID: 0
-      Position: {x: 0.10941765, y: -0.24473292}
-    - StrokeID: 0
-      Position: {x: 0.18464588, y: -0.25110596}
-    - StrokeID: 0
-      Position: {x: 0.25922754, y: -0.26310414}
-    - StrokeID: 0
-      Position: {x: 0.33365428, y: -0.27604792}
-    - StrokeID: 0
-      Position: {x: 0.4084891, y: -0.28614977}
-    - StrokeID: 0
-      Position: {x: 0.48343304, y: -0.29535636}
-    - StrokeID: 0
-      Position: {x: 0.456314, y: -0.2573468}
-    - StrokeID: 0
-      Position: {x: 0.3955923, y: -0.21251865}
-    - StrokeID: 0
-      Position: {x: 0.3331126, y: -0.17020133}
-    - StrokeID: 0
-      Position: {x: 0.26920936, y: -0.12991865}
-    - StrokeID: 0
-      Position: {x: 0.20635305, y: -0.08801444}
-    - StrokeID: 0
-      Position: {x: 0.1401023, y: -0.05195947}
-    - StrokeID: 0
-      Position: {x: 0.075743355, y: -0.012435572}
-    - StrokeID: 0
-      Position: {x: 0.012887035, y: 0.029468635}
-    - StrokeID: 0
-      Position: {x: -0.05143089, y: 0.0690632}
-    - StrokeID: 0
-      Position: {x: -0.11541443, y: 0.10911871}
-    - StrokeID: 0
-      Position: {x: -0.17762537, y: 0.15170655}
-    - StrokeID: 0
-      Position: {x: -0.2384535, y: 0.19649595}
-    - StrokeID: 0
-      Position: {x: -0.29568934, y: 0.24560715}
-    - StrokeID: 0
-      Position: {x: -0.35174298, y: 0.29622433}
-    - StrokeID: 0
-      Position: {x: -0.40728366, y: 0.34734926}
-    OriginalPoints:
-    - StrokeID: 0
-      Position: {x: 62, y: 194}
-    - StrokeID: 0
-      Position: {x: 64, y: 189}
-    - StrokeID: 0
-      Position: {x: 69, y: 180}
-    - StrokeID: 0
-      Position: {x: 73, y: 174}
-    - StrokeID: 0
-      Position: {x: 77, y: 167}
-    - StrokeID: 0
-      Position: {x: 81, y: 159}
-    - StrokeID: 0
-      Position: {x: 90, y: 142}
-    - StrokeID: 0
-      Position: {x: 95, y: 133}
-    - StrokeID: 0
-      Position: {x: 100, y: 122}
-    - StrokeID: 0
-      Position: {x: 106, y: 111}
-    - StrokeID: 0
-      Position: {x: 118, y: 90}
-    - StrokeID: 0
-      Position: {x: 123, y: 82}
-    - StrokeID: 0
-      Position: {x: 127, y: 74}
-    - StrokeID: 0
-      Position: {x: 131, y: 68}
-    - StrokeID: 0
-      Position: {x: 137, y: 59}
-    - StrokeID: 0
-      Position: {x: 141, y: 53}
-    - StrokeID: 0
-      Position: {x: 148, y: 70}
-    - StrokeID: 0
-      Position: {x: 150, y: 78}
-    - StrokeID: 0
-      Position: {x: 152, y: 88}
-    - StrokeID: 0
-      Position: {x: 155, y: 98}
-    - StrokeID: 0
-      Position: {x: 161, y: 119}
-    - StrokeID: 0
-      Position: {x: 164, y: 130}
-    - StrokeID: 0
-      Position: {x: 167, y: 141}
-    - StrokeID: 0
-      Position: {x: 170, y: 153}
-    - StrokeID: 0
-      Position: {x: 175, y: 173}
-    - StrokeID: 0
-      Position: {x: 177, y: 183}
-    - StrokeID: 0
-      Position: {x: 179, y: 192}
-    - StrokeID: 0
-      Position: {x: 181, y: 200}
-    - StrokeID: 0
-      Position: {x: 184, y: 212}
-    - StrokeID: 0
-      Position: {x: 185, y: 217}
-    - StrokeID: 0
-      Position: {x: 181, y: 210}
-    - StrokeID: 0
-      Position: {x: 175, y: 204}
-    - StrokeID: 0
-      Position: {x: 170, y: 200}
-    - StrokeID: 0
-      Position: {x: 164, y: 196}
-    - StrokeID: 0
-      Position: {x: 158, y: 191}
-    - StrokeID: 0
-      Position: {x: 143, y: 182}
-    - StrokeID: 0
-      Position: {x: 134, y: 177}
-    - StrokeID: 0
-      Position: {x: 125, y: 172}
-    - StrokeID: 0
-      Position: {x: 117, y: 166}
-    - StrokeID: 0
-      Position: {x: 100, y: 152}
-    - StrokeID: 0
-      Position: {x: 93, y: 145}
-    - StrokeID: 0
-      Position: {x: 86, y: 138}
-    - StrokeID: 0
-      Position: {x: 79, y: 131}
-    - StrokeID: 0
-      Position: {x: 64, y: 118}
-    - StrokeID: 0
-      Position: {x: 57, y: 113}
-    - StrokeID: 0
-      Position: {x: 51, y: 109}
-    - StrokeID: 0
-      Position: {x: 44, y: 104}
-    - StrokeID: 0
-      Position: {x: 33, y: 98}
-    - StrokeID: 0
-      Position: {x: 26, y: 94}
-    - StrokeID: 0
-      Position: {x: 34, y: 91}
-    - StrokeID: 0
-      Position: {x: 54, y: 90}
-    - StrokeID: 0
-      Position: {x: 66, y: 89}
-    - StrokeID: 0
-      Position: {x: 80, y: 88}
-    - StrokeID: 0
-      Position: {x: 98, y: 86}
-    - StrokeID: 0
-      Position: {x: 130, y: 83}
-    - StrokeID: 0
-      Position: {x: 147, y: 81}
-    - StrokeID: 0
-      Position: {x: 162, y: 80}
-    - StrokeID: 0
-      Position: {x: 175, y: 78}
-    - StrokeID: 0
-      Position: {x: 198, y: 74}
-    - StrokeID: 0
-      Position: {x: 207, y: 73}
-    - StrokeID: 0
-      Position: {x: 213, y: 72}
-    - StrokeID: 0
-      Position: {x: 223, y: 71}
-    - StrokeID: 0
-      Position: {x: 229, y: 70}
-    - StrokeID: 0
-      Position: {x: 225, y: 75}
-    - StrokeID: 0
-      Position: {x: 212, y: 84}
-    - StrokeID: 0
-      Position: {x: 206, y: 89}
-    - StrokeID: 0
-      Position: {x: 200, y: 93}
-    - StrokeID: 0
-      Position: {x: 192, y: 98}
-    - StrokeID: 0
-      Position: {x: 184, y: 103}
-    - StrokeID: 0
-      Position: {x: 175, y: 109}
-    - StrokeID: 0
-      Position: {x: 166, y: 115}
-    - StrokeID: 0
-      Position: {x: 156, y: 120}
-    - StrokeID: 0
-      Position: {x: 146, y: 126}
-    - StrokeID: 0
-      Position: {x: 128, y: 138}
-    - StrokeID: 0
-      Position: {x: 118, y: 144}
-    - StrokeID: 0
-      Position: {x: 109, y: 150}
-    - StrokeID: 0
-      Position: {x: 100, y: 155}
-    - StrokeID: 0
-      Position: {x: 84, y: 167}
-    - StrokeID: 0
-      Position: {x: 77, y: 172}
-    - StrokeID: 0
-      Position: {x: 71, y: 177}
-    - StrokeID: 0
-      Position: {x: 66, y: 182}
-    - StrokeID: 0
-      Position: {x: 57, y: 190}
-    - StrokeID: 0
-      Position: {x: 50, y: 196}
-    - StrokeID: 0
-      Position: {x: 45, y: 201}
-    numberOfPoints: 64
   - Name: arrow
     IsShown: 0
     NormalizedPoints:
@@ -3937,718 +1390,856 @@ MonoBehaviour:
     - StrokeID: 0
       Position: {x: 165, y: 168}
     numberOfPoints: 64
-  - Name: diamond
+  - Name: square
     IsShown: 0
     NormalizedPoints:
     - StrokeID: 0
-      Position: {x: 0.02613628, y: -0.47815657}
+      Position: {x: -0.46402714, y: -0.44834068}
     - StrokeID: 0
-      Position: {x: 0.005900952, y: -0.44511557}
+      Position: {x: -0.45373467, y: -0.3929961}
     - StrokeID: 0
-      Position: {x: -0.01735599, y: -0.4141063}
+      Position: {x: -0.4454192, y: -0.33731604}
     - StrokeID: 0
-      Position: {x: -0.040896475, y: -0.3833136}
+      Position: {x: -0.43834388, y: -0.28146297}
     - StrokeID: 0
-      Position: {x: -0.06469378, y: -0.35271707}
+      Position: {x: -0.43197584, y: -0.2257929}
     - StrokeID: 0
-      Position: {x: -0.08880039, y: -0.3223645}
+      Position: {x: -0.41915533, y: -0.1719613}
     - StrokeID: 0
-      Position: {x: -0.111543365, y: -0.29099518}
+      Position: {x: -0.41652808, y: -0.1158474}
     - StrokeID: 0
-      Position: {x: -0.13377167, y: -0.25924045}
+      Position: {x: -0.40788698, y: -0.06021771}
     - StrokeID: 0
-      Position: {x: -0.15409772, y: -0.22625144}
+      Position: {x: -0.39992458, y: -0.004680295}
     - StrokeID: 0
-      Position: {x: -0.17709139, y: -0.19506516}
+      Position: {x: -0.39466178, y: 0.051184755}
     - StrokeID: 0
-      Position: {x: -0.19937965, y: -0.1633917}
+      Position: {x: -0.38710406, y: 0.10675566}
     - StrokeID: 0
-      Position: {x: -0.21992326, y: -0.13052194}
+      Position: {x: -0.38055667, y: 0.16241626}
     - StrokeID: 0
-      Position: {x: -0.24652137, y: -0.102468625}
+      Position: {x: -0.3762386, y: 0.21855104}
     - StrokeID: 0
-      Position: {x: -0.2724674, y: -0.07369177}
+      Position: {x: -0.37428355, y: 0.27477658}
     - StrokeID: 0
-      Position: {x: -0.2982073, y: -0.044722077}
+      Position: {x: -0.36787328, y: 0.33044243}
     - StrokeID: 0
-      Position: {x: -0.3248819, y: -0.016656563}
+      Position: {x: -0.36787328, y: 0.38674304}
     - StrokeID: 0
-      Position: {x: -0.34210396, y: 0.01543229}
+      Position: {x: -0.343481, y: 0.4294482}
     - StrokeID: 0
-      Position: {x: -0.33234894, y: 0.052499328}
+      Position: {x: -0.2893246, y: 0.44469392}
     - StrokeID: 0
-      Position: {x: -0.31378788, y: 0.08652794}
+      Position: {x: -0.23356584, y: 0.44909522}
     - StrokeID: 0
-      Position: {x: -0.29655302, y: 0.121180795}
+      Position: {x: -0.17726523, y: 0.44909522}
     - StrokeID: 0
-      Position: {x: -0.27793595, y: 0.15479763}
+      Position: {x: -0.12163789, y: 0.4545643}
     - StrokeID: 0
-      Position: {x: -0.254679, y: 0.1858069}
+      Position: {x: -0.06624228, y: 0.4619157}
     - StrokeID: 0
-      Position: {x: -0.23142205, y: 0.21681616}
+      Position: {x: -0.010576412, y: 0.468326}
     - StrokeID: 0
-      Position: {x: -0.20932268, y: 0.24860376}
+      Position: {x: 0.0457242, y: 0.468326}
     - StrokeID: 0
-      Position: {x: -0.19052115, y: 0.28246796}
+      Position: {x: 0.10202481, y: 0.468326}
     - StrokeID: 0
-      Position: {x: -0.17311235, y: 0.31709772}
+      Position: {x: 0.15832542, y: 0.468326}
     - StrokeID: 0
-      Position: {x: -0.15388124, y: 0.3507522}
+      Position: {x: 0.21399128, y: 0.4619157}
     - StrokeID: 0
-      Position: {x: -0.13288298, y: 0.38331455}
+      Position: {x: 0.2702919, y: 0.4619157}
     - StrokeID: 0
-      Position: {x: -0.11071228, y: 0.4151039}
+      Position: {x: 0.3265925, y: 0.4619157}
     - StrokeID: 0
-      Position: {x: -0.0884973, y: 0.44686276}
+      Position: {x: 0.38225836, y: 0.468326}
     - StrokeID: 0
-      Position: {x: -0.06651206, y: 0.4787603}
+      Position: {x: 0.43855897, y: 0.468326}
     - StrokeID: 0
-      Position: {x: -0.042191453, y: 0.49838218}
+      Position: {x: 0.48264277, y: 0.45233116}
     - StrokeID: 0
-      Position: {x: -0.01737693, y: 0.46860468}
+      Position: {x: 0.49745646, y: 0.39801437}
     - StrokeID: 0
-      Position: {x: 0.0052530593, y: 0.43714052}
+      Position: {x: 0.4846908, y: 0.34419012}
     - StrokeID: 0
-      Position: {x: 0.027497858, y: 0.40539855}
+      Position: {x: 0.4751323, y: 0.2890662}
     - StrokeID: 0
-      Position: {x: 0.04956133, y: 0.37352908}
+      Position: {x: 0.4644486, y: 0.23385234}
     - StrokeID: 0
-      Position: {x: 0.072367154, y: 0.34227917}
+      Position: {x: 0.45904976, y: 0.17782101}
     - StrokeID: 0
-      Position: {x: 0.09977575, y: 0.31487063}
+      Position: {x: 0.45904976, y: 0.12152039}
     - StrokeID: 0
-      Position: {x: 0.12631051, y: 0.286633}
+      Position: {x: 0.45904976, y: 0.06521978}
     - StrokeID: 0
-      Position: {x: 0.15224063, y: 0.25782174}
+      Position: {x: 0.454131, y: 0.009326262}
     - StrokeID: 0
-      Position: {x: 0.17889148, y: 0.22969428}
+      Position: {x: 0.45263952, y: -0.04685091}
     - StrokeID: 0
-      Position: {x: 0.20471463, y: 0.20091067}
+      Position: {x: 0.45263952, y: -0.103151515}
     - StrokeID: 0
-      Position: {x: 0.22797157, y: 0.16990142}
+      Position: {x: 0.45263952, y: -0.15945213}
     - StrokeID: 0
-      Position: {x: 0.25201184, y: 0.13949898}
+      Position: {x: 0.45263952, y: -0.21575274}
     - StrokeID: 0
-      Position: {x: 0.274009, y: 0.10761014}
+      Position: {x: 0.45263952, y: -0.27205336}
     - StrokeID: 0
-      Position: {x: 0.2977952, y: 0.077064835}
+      Position: {x: 0.4477517, y: -0.32774764}
     - StrokeID: 0
-      Position: {x: 0.323825, y: 0.04839714}
+      Position: {x: 0.4464859, y: -0.38295496}
     - StrokeID: 0
-      Position: {x: 0.35123357, y: 0.020988556}
+      Position: {x: 0.39230517, y: -0.39502293}
     - StrokeID: 0
-      Position: {x: 0.35089538, y: -0.012970151}
+      Position: {x: 0.33684087, y: -0.40346888}
     - StrokeID: 0
-      Position: {x: 0.3350299, y: -0.048248135}
+      Position: {x: 0.28054026, y: -0.40346888}
     - StrokeID: 0
-      Position: {x: 0.3176952, y: -0.08291755}
+      Position: {x: 0.22431812, y: -0.4026764}
     - StrokeID: 0
-      Position: {x: 0.29853514, y: -0.11661006}
+      Position: {x: 0.16857378, y: -0.39705864}
     - StrokeID: 0
-      Position: {x: 0.27720022, y: -0.14893104}
+      Position: {x: 0.112273164, y: -0.39705864}
     - StrokeID: 0
-      Position: {x: 0.25497192, y: -0.18068577}
+      Position: {x: 0.055972554, y: -0.39705864}
     - StrokeID: 0
-      Position: {x: 0.23250447, y: -0.2122714}
+      Position: {x: -0.00032805643, y: -0.39705864}
     - StrokeID: 0
-      Position: {x: 0.20940645, y: -0.24338928}
+      Position: {x: -0.056628667, y: -0.39705864}
     - StrokeID: 0
-      Position: {x: 0.18560913, y: -0.2739858}
+      Position: {x: -0.11292928, y: -0.39705864}
     - StrokeID: 0
-      Position: {x: 0.16397752, y: -0.30609542}
+      Position: {x: -0.16869229, y: -0.38965717}
     - StrokeID: 0
-      Position: {x: 0.14311293, y: -0.33875272}
+      Position: {x: -0.2240912, y: -0.3796612}
     - StrokeID: 0
-      Position: {x: 0.12088462, y: -0.37050745}
+      Position: {x: -0.2797547, y: -0.3714176}
     - StrokeID: 0
-      Position: {x: 0.098861374, y: -0.40240225}
+      Position: {x: -0.3360553, y: -0.3714176}
     - StrokeID: 0
-      Position: {x: 0.076447755, y: -0.43390572}
+      Position: {x: -0.39235592, y: -0.3714176}
     - StrokeID: 0
-      Position: {x: 0.049531516, y: -0.46166915}
+      Position: {x: -0.44865653, y: -0.3714176}
     - StrokeID: 0
-      Position: {x: 0.03219688, y: -0.4963384}
+      Position: {x: -0.5024882, y: -0.38423792}
     OriginalPoints:
     - StrokeID: 0
-      Position: {x: 136, y: 39}
+      Position: {x: 59, y: 60}
     - StrokeID: 0
-      Position: {x: 133, y: 44}
+      Position: {x: 60, y: 65}
     - StrokeID: 0
-      Position: {x: 127, y: 52}
+      Position: {x: 61, y: 71}
     - StrokeID: 0
-      Position: {x: 120, y: 61}
+      Position: {x: 62, y: 78}
     - StrokeID: 0
-      Position: {x: 116, y: 66}
+      Position: {x: 63, y: 86}
     - StrokeID: 0
-      Position: {x: 109, y: 76}
+      Position: {x: 64, y: 91}
     - StrokeID: 0
-      Position: {x: 106, y: 81}
+      Position: {x: 64, y: 97}
     - StrokeID: 0
-      Position: {x: 100, y: 89}
+      Position: {x: 66, y: 102}
     - StrokeID: 0
-      Position: {x: 95, y: 97}
+      Position: {x: 66, y: 109}
     - StrokeID: 0
-      Position: {x: 90, y: 102}
+      Position: {x: 67, y: 116}
     - StrokeID: 0
-      Position: {x: 83, y: 110}
+      Position: {x: 68, y: 122}
     - StrokeID: 0
-      Position: {x: 79, y: 114}
+      Position: {x: 69, y: 127}
     - StrokeID: 0
-      Position: {x: 75, y: 119}
+      Position: {x: 69, y: 133}
     - StrokeID: 0
-      Position: {x: 76, y: 125}
+      Position: {x: 70, y: 139}
     - StrokeID: 0
-      Position: {x: 82, y: 136}
+      Position: {x: 71, y: 144}
     - StrokeID: 0
-      Position: {x: 84, y: 141}
+      Position: {x: 71, y: 150}
     - StrokeID: 0
-      Position: {x: 90, y: 149}
+      Position: {x: 72, y: 155}
     - StrokeID: 0
-      Position: {x: 96, y: 157}
+      Position: {x: 73, y: 168}
     - StrokeID: 0
-      Position: {x: 99, y: 162}
+      Position: {x: 73, y: 174}
     - StrokeID: 0
-      Position: {x: 103, y: 170}
+      Position: {x: 74, y: 179}
     - StrokeID: 0
-      Position: {x: 107, y: 177}
+      Position: {x: 74, y: 185}
     - StrokeID: 0
-      Position: {x: 111, y: 183}
+      Position: {x: 74, y: 191}
     - StrokeID: 0
-      Position: {x: 116, y: 190}
+      Position: {x: 75, y: 196}
     - StrokeID: 0
-      Position: {x: 120, y: 196}
+      Position: {x: 81, y: 198}
     - StrokeID: 0
-      Position: {x: 124, y: 201}
+      Position: {x: 89, y: 200}
     - StrokeID: 0
-      Position: {x: 129, y: 195}
+      Position: {x: 95, y: 200}
     - StrokeID: 0
-      Position: {x: 134, y: 188}
+      Position: {x: 101, y: 200}
     - StrokeID: 0
-      Position: {x: 143, y: 175}
+      Position: {x: 109, y: 200}
     - StrokeID: 0
-      Position: {x: 150, y: 168}
+      Position: {x: 117, y: 202}
     - StrokeID: 0
-      Position: {x: 159, y: 158}
+      Position: {x: 123, y: 202}
     - StrokeID: 0
-      Position: {x: 164, y: 153}
+      Position: {x: 128, y: 203}
     - StrokeID: 0
-      Position: {x: 170, y: 145}
+      Position: {x: 135, y: 203}
     - StrokeID: 0
-      Position: {x: 174, y: 140}
+      Position: {x: 143, y: 203}
     - StrokeID: 0
-      Position: {x: 178, y: 134}
+      Position: {x: 149, y: 203}
     - StrokeID: 0
-      Position: {x: 183, y: 128}
+      Position: {x: 158, y: 203}
     - StrokeID: 0
-      Position: {x: 187, y: 124}
+      Position: {x: 163, y: 202}
     - StrokeID: 0
-      Position: {x: 191, y: 120}
+      Position: {x: 171, y: 202}
     - StrokeID: 0
-      Position: {x: 189, y: 114}
+      Position: {x: 177, y: 202}
     - StrokeID: 0
-      Position: {x: 184, y: 104}
+      Position: {x: 183, y: 202}
     - StrokeID: 0
-      Position: {x: 180, y: 97}
+      Position: {x: 188, y: 203}
     - StrokeID: 0
-      Position: {x: 173, y: 87}
+      Position: {x: 194, y: 203}
     - StrokeID: 0
-      Position: {x: 168, y: 80}
+      Position: {x: 200, y: 203}
     - StrokeID: 0
-      Position: {x: 161, y: 71}
+      Position: {x: 206, y: 203}
     - StrokeID: 0
-      Position: {x: 156, y: 63}
+      Position: {x: 209, y: 192}
     - StrokeID: 0
-      Position: {x: 149, y: 53}
+      Position: {x: 207, y: 187}
     - StrokeID: 0
-      Position: {x: 145, y: 47}
+      Position: {x: 207, y: 181}
     - StrokeID: 0
-      Position: {x: 140, y: 42}
+      Position: {x: 205, y: 173}
     - StrokeID: 0
-      Position: {x: 137, y: 36}
+      Position: {x: 204, y: 168}
+    - StrokeID: 0
+      Position: {x: 203, y: 158}
+    - StrokeID: 0
+      Position: {x: 203, y: 151}
+    - StrokeID: 0
+      Position: {x: 203, y: 142}
+    - StrokeID: 0
+      Position: {x: 203, y: 136}
+    - StrokeID: 0
+      Position: {x: 202, y: 130}
+    - StrokeID: 0
+      Position: {x: 202, y: 124}
+    - StrokeID: 0
+      Position: {x: 202, y: 116}
+    - StrokeID: 0
+      Position: {x: 202, y: 109}
+    - StrokeID: 0
+      Position: {x: 202, y: 103}
+    - StrokeID: 0
+      Position: {x: 202, y: 95}
+    - StrokeID: 0
+      Position: {x: 202, y: 87}
+    - StrokeID: 0
+      Position: {x: 201, y: 80}
+    - StrokeID: 0
+      Position: {x: 202, y: 75}
+    - StrokeID: 0
+      Position: {x: 201, y: 70}
+    - StrokeID: 0
+      Position: {x: 196, y: 69}
+    - StrokeID: 0
+      Position: {x: 191, y: 68}
+    - StrokeID: 0
+      Position: {x: 186, y: 67}
+    - StrokeID: 0
+      Position: {x: 180, y: 67}
+    - StrokeID: 0
+      Position: {x: 173, y: 67}
+    - StrokeID: 0
+      Position: {x: 167, y: 67}
+    - StrokeID: 0
+      Position: {x: 162, y: 68}
+    - StrokeID: 0
+      Position: {x: 156, y: 68}
+    - StrokeID: 0
+      Position: {x: 139, y: 68}
+    - StrokeID: 0
+      Position: {x: 132, y: 68}
+    - StrokeID: 0
+      Position: {x: 125, y: 68}
+    - StrokeID: 0
+      Position: {x: 119, y: 68}
+    - StrokeID: 0
+      Position: {x: 113, y: 68}
+    - StrokeID: 0
+      Position: {x: 106, y: 69}
+    - StrokeID: 0
+      Position: {x: 100, y: 70}
+    - StrokeID: 0
+      Position: {x: 95, y: 71}
+    - StrokeID: 0
+      Position: {x: 88, y: 72}
+    - StrokeID: 0
+      Position: {x: 82, y: 72}
+    - StrokeID: 0
+      Position: {x: 76, y: 72}
+    - StrokeID: 0
+      Position: {x: 70, y: 72}
+    - StrokeID: 0
+      Position: {x: 64, y: 72}
+    - StrokeID: 0
+      Position: {x: 58, y: 72}
+    - StrokeID: 0
+      Position: {x: 53, y: 70}
     numberOfPoints: 64
-  - Name: diamond
+  - Name: square
     IsShown: 0
     NormalizedPoints:
     - StrokeID: 0
-      Position: {x: -0.013496518, y: -0.49089763}
+      Position: {x: -0.43246648, y: -0.37214768}
     - StrokeID: 0
-      Position: {x: -0.04388928, y: -0.46561855}
+      Position: {x: -0.4620639, y: -0.3228186}
     - StrokeID: 0
-      Position: {x: -0.06798228, y: -0.43422893}
+      Position: {x: -0.47273493, y: -0.26824722}
     - StrokeID: 0
-      Position: {x: -0.08897457, y: -0.40064123}
+      Position: {x: -0.47273493, y: -0.21072014}
     - StrokeID: 0
-      Position: {x: -0.109458655, y: -0.36674228}
+      Position: {x: -0.47273493, y: -0.15319304}
     - StrokeID: 0
-      Position: {x: -0.1298369, y: -0.33277854}
+      Position: {x: -0.46700215, y: -0.096140414}
     - StrokeID: 0
-      Position: {x: -0.1515247, y: -0.2997121}
+      Position: {x: -0.4581813, y: -0.03929404}
     - StrokeID: 0
-      Position: {x: -0.17584178, y: -0.26844728}
+      Position: {x: -0.4526007, y: 0.017806284}
     - StrokeID: 0
-      Position: {x: -0.19737756, y: -0.23527668}
+      Position: {x: -0.4526007, y: 0.07533337}
     - StrokeID: 0
-      Position: {x: -0.21979801, y: -0.20263803}
+      Position: {x: -0.4526007, y: 0.13286045}
     - StrokeID: 0
-      Position: {x: -0.24278222, y: -0.1703922}
+      Position: {x: -0.4526007, y: 0.19038755}
     - StrokeID: 0
-      Position: {x: -0.2665654, y: -0.13879599}
+      Position: {x: -0.4526007, y: 0.24791464}
     - StrokeID: 0
-      Position: {x: -0.28937566, y: -0.10663962}
+      Position: {x: -0.4526007, y: 0.30544174}
     - StrokeID: 0
-      Position: {x: -0.31601903, y: -0.07733193}
+      Position: {x: -0.4526007, y: 0.3629688}
     - StrokeID: 0
-      Position: {x: -0.3414116, y: -0.04704765}
+      Position: {x: -0.4526007, y: 0.4204959}
     - StrokeID: 0
-      Position: {x: -0.36300153, y: -0.0138506945}
+      Position: {x: -0.44249818, y: 0.47702265}
     - StrokeID: 0
-      Position: {x: -0.3624792, y: 0.016356897}
+      Position: {x: -0.3991334, y: 0.5002982}
     - StrokeID: 0
-      Position: {x: -0.33545664, y: 0.04479891}
+      Position: {x: -0.34348938, y: 0.51375836}
     - StrokeID: 0
-      Position: {x: -0.31243482, y: 0.07702943}
+      Position: {x: -0.28596228, y: 0.51375836}
     - StrokeID: 0
-      Position: {x: -0.28941303, y: 0.10925995}
+      Position: {x: -0.23008804, y: 0.501957}
     - StrokeID: 0
-      Position: {x: -0.26639125, y: 0.14149046}
+      Position: {x: -0.17496626, y: 0.48691273}
     - StrokeID: 0
-      Position: {x: -0.2455184, y: 0.17512994}
+      Position: {x: -0.11743917, y: 0.48691273}
     - StrokeID: 0
-      Position: {x: -0.22769012, y: 0.21049348}
+      Position: {x: -0.06012894, y: 0.48256487}
     - StrokeID: 0
-      Position: {x: -0.20739292, y: 0.24450518}
+      Position: {x: -0.0027197364, y: 0.4802013}
     - StrokeID: 0
-      Position: {x: -0.1874355, y: 0.2787179}
+      Position: {x: 0.051933203, y: 0.4638583}
     - StrokeID: 0
-      Position: {x: -0.16738927, y: 0.3128781}
+      Position: {x: 0.10908489, y: 0.4600671}
     - StrokeID: 0
-      Position: {x: -0.14744444, y: 0.34709218}
+      Position: {x: 0.16594741, y: 0.45335567}
     - StrokeID: 0
-      Position: {x: -0.12820898, y: 0.38171598}
+      Position: {x: 0.22280993, y: 0.44664425}
     - StrokeID: 0
-      Position: {x: -0.10552539, y: 0.41416025}
+      Position: {x: 0.28033704, y: 0.44664425}
     - StrokeID: 0
-      Position: {x: -0.08132688, y: 0.44550088}
+      Position: {x: 0.3378641, y: 0.44664425}
     - StrokeID: 0
-      Position: {x: -0.05871938, y: 0.47799125}
+      Position: {x: 0.3953912, y: 0.44664425}
     - StrokeID: 0
-      Position: {x: -0.03227133, y: 0.50727665}
+      Position: {x: 0.44979933, y: 0.44126973}
     - StrokeID: 0
-      Position: {x: 0.0051560383, y: 0.49893045}
+      Position: {x: 0.4735738, y: 0.39005628}
     - StrokeID: 0
-      Position: {x: 0.028796408, y: 0.46826184}
+      Position: {x: 0.4735738, y: 0.33252922}
     - StrokeID: 0
-      Position: {x: 0.0537053, y: 0.43749973}
+      Position: {x: 0.46852633, y: 0.27541986}
     - StrokeID: 0
-      Position: {x: 0.07906184, y: 0.40707186}
+      Position: {x: 0.46390527, y: 0.21812281}
     - StrokeID: 0
-      Position: {x: 0.10402596, y: 0.37632355}
+      Position: {x: 0.46031684, y: 0.16070774}
     - StrokeID: 0
-      Position: {x: 0.12876901, y: 0.34539476}
+      Position: {x: 0.46015096, y: 0.10318584}
     - StrokeID: 0
-      Position: {x: 0.15125814, y: 0.31281784}
+      Position: {x: 0.46015096, y: 0.04565875}
     - StrokeID: 0
-      Position: {x: 0.17367962, y: 0.28016812}
+      Position: {x: 0.46015096, y: -0.011868339}
     - StrokeID: 0
-      Position: {x: 0.196225, y: 0.24760257}
+      Position: {x: 0.46015096, y: -0.06939543}
     - StrokeID: 0
-      Position: {x: 0.22025767, y: 0.21616799}
+      Position: {x: 0.46015096, y: -0.12692252}
     - StrokeID: 0
-      Position: {x: 0.24671426, y: 0.18674469}
+      Position: {x: 0.46015096, y: -0.1844496}
     - StrokeID: 0
-      Position: {x: 0.27472147, y: 0.15873747}
+      Position: {x: 0.46015096, y: -0.2419767}
     - StrokeID: 0
-      Position: {x: 0.2985233, y: 0.12738478}
+      Position: {x: 0.46015096, y: -0.29950377}
     - StrokeID: 0
-      Position: {x: 0.31976396, y: 0.09395745}
+      Position: {x: 0.46015096, y: -0.35703087}
     - StrokeID: 0
-      Position: {x: 0.34151426, y: 0.060859155}
+      Position: {x: 0.4593555, y: -0.41440475}
     - StrokeID: 0
-      Position: {x: 0.36250657, y: 0.027271468}
+      Position: {x: 0.44672817, y: -0.46950006}
     - StrokeID: 0
-      Position: {x: 0.35747707, y: -0.010782102}
+      Position: {x: 0.4115516, y: -0.4657835}
     - StrokeID: 0
-      Position: {x: 0.34188503, y: -0.04658097}
+      Position: {x: 0.35499656, y: -0.4552931}
     - StrokeID: 0
-      Position: {x: 0.32102707, y: -0.08025094}
+      Position: {x: 0.29768535, y: -0.45268458}
     - StrokeID: 0
-      Position: {x: 0.2991241, y: -0.113169916}
+      Position: {x: 0.24015827, y: -0.45268458}
     - StrokeID: 0
-      Position: {x: 0.274807, y: -0.14443475}
+      Position: {x: 0.1826312, y: -0.45268458}
     - StrokeID: 0
-      Position: {x: 0.25016585, y: -0.17544393}
+      Position: {x: 0.1251041, y: -0.45268458}
     - StrokeID: 0
-      Position: {x: 0.22278897, y: -0.20401533}
+      Position: {x: 0.06757702, y: -0.45268458}
     - StrokeID: 0
-      Position: {x: 0.1978756, y: -0.23480162}
+      Position: {x: 0.010049932, y: -0.45268458}
     - StrokeID: 0
-      Position: {x: 0.17179342, y: -0.2646098}
+      Position: {x: -0.047434215, y: -0.4532888}
     - StrokeID: 0
-      Position: {x: 0.14453524, y: -0.29331782}
+      Position: {x: -0.10452727, y: -0.459396}
     - StrokeID: 0
-      Position: {x: 0.11832138, y: -0.32298577}
+      Position: {x: -0.16157103, y: -0.4642773}
     - StrokeID: 0
-      Position: {x: 0.09389164, y: -0.35411352}
+      Position: {x: -0.21843992, y: -0.47281882}
     - StrokeID: 0
-      Position: {x: 0.071145125, y: -0.38653404}
+      Position: {x: -0.275967, y: -0.47281882}
     - StrokeID: 0
-      Position: {x: 0.04875586, y: -0.4191939}
+      Position: {x: -0.33307013, y: -0.4771006}
     - StrokeID: 0
-      Position: {x: 0.024990939, y: -0.45088044}
+      Position: {x: -0.38948005, y: -0.48410067}
     - StrokeID: 0
-      Position: {x: -0.0021970707, y: -0.47959816}
+      Position: {x: -0.4458893, y: -0.47281882}
     OriginalPoints:
     - StrokeID: 0
-      Position: {x: 122, y: 32}
+      Position: {x: 66, y: 64}
     - StrokeID: 0
-      Position: {x: 117, y: 36}
+      Position: {x: 63, y: 69}
     - StrokeID: 0
-      Position: {x: 113, y: 41}
+      Position: {x: 60, y: 74}
     - StrokeID: 0
-      Position: {x: 108, y: 49}
+      Position: {x: 60, y: 82}
     - StrokeID: 0
-      Position: {x: 105, y: 54}
+      Position: {x: 60, y: 88}
     - StrokeID: 0
-      Position: {x: 99, y: 64}
+      Position: {x: 60, y: 94}
     - StrokeID: 0
-      Position: {x: 92, y: 73}
+      Position: {x: 60, y: 100}
     - StrokeID: 0
-      Position: {x: 89, y: 78}
+      Position: {x: 61, y: 106}
     - StrokeID: 0
-      Position: {x: 82, y: 88}
+      Position: {x: 63, y: 119}
     - StrokeID: 0
-      Position: {x: 78, y: 93}
+      Position: {x: 63, y: 130}
     - StrokeID: 0
-      Position: {x: 75, y: 98}
+      Position: {x: 63, y: 140}
     - StrokeID: 0
-      Position: {x: 65, y: 109}
+      Position: {x: 63, y: 147}
     - StrokeID: 0
-      Position: {x: 61, y: 115}
+      Position: {x: 63, y: 156}
     - StrokeID: 0
-      Position: {x: 58, y: 120}
+      Position: {x: 63, y: 163}
     - StrokeID: 0
-      Position: {x: 63, y: 124}
+      Position: {x: 63, y: 169}
     - StrokeID: 0
-      Position: {x: 68, y: 131}
+      Position: {x: 63, y: 175}
     - StrokeID: 0
-      Position: {x: 78, y: 145}
+      Position: {x: 63, y: 183}
     - StrokeID: 0
-      Position: {x: 81, y: 150}
+      Position: {x: 64, y: 188}
     - StrokeID: 0
-      Position: {x: 84, y: 156}
+      Position: {x: 65, y: 193}
     - StrokeID: 0
-      Position: {x: 87, y: 161}
+      Position: {x: 71, y: 194}
     - StrokeID: 0
-      Position: {x: 94, y: 173}
+      Position: {x: 78, y: 196}
     - StrokeID: 0
-      Position: {x: 97, y: 178}
+      Position: {x: 84, y: 196}
     - StrokeID: 0
-      Position: {x: 102, y: 187}
+      Position: {x: 90, y: 196}
     - StrokeID: 0
-      Position: {x: 107, y: 194}
+      Position: {x: 97, y: 194}
     - StrokeID: 0
-      Position: {x: 111, y: 199}
+      Position: {x: 103, y: 192}
     - StrokeID: 0
-      Position: {x: 115, y: 205}
+      Position: {x: 109, y: 192}
     - StrokeID: 0
-      Position: {x: 119, y: 209}
+      Position: {x: 115, y: 192}
     - StrokeID: 0
-      Position: {x: 126, y: 207}
+      Position: {x: 125, y: 191}
     - StrokeID: 0
-      Position: {x: 130, y: 201}
+      Position: {x: 131, y: 191}
     - StrokeID: 0
-      Position: {x: 140, y: 189}
+      Position: {x: 136, y: 189}
     - StrokeID: 0
-      Position: {x: 144, y: 184}
+      Position: {x: 141, y: 188}
     - StrokeID: 0
-      Position: {x: 148, y: 179}
+      Position: {x: 147, y: 188}
     - StrokeID: 0
-      Position: {x: 152, y: 173}
+      Position: {x: 152, y: 187}
     - StrokeID: 0
-      Position: {x: 161, y: 160}
+      Position: {x: 158, y: 187}
     - StrokeID: 0
-      Position: {x: 166, y: 154}
+      Position: {x: 163, y: 186}
     - StrokeID: 0
-      Position: {x: 171, y: 149}
+      Position: {x: 171, y: 186}
     - StrokeID: 0
-      Position: {x: 175, y: 145}
+      Position: {x: 179, y: 186}
     - StrokeID: 0
-      Position: {x: 180, y: 137}
+      Position: {x: 185, y: 186}
     - StrokeID: 0
-      Position: {x: 184, y: 131}
+      Position: {x: 191, y: 186}
     - StrokeID: 0
-      Position: {x: 189, y: 123}
+      Position: {x: 197, y: 186}
     - StrokeID: 0
-      Position: {x: 187, y: 114}
+      Position: {x: 201, y: 179}
     - StrokeID: 0
-      Position: {x: 182, y: 106}
+      Position: {x: 201, y: 172}
     - StrokeID: 0
-      Position: {x: 179, y: 101}
+      Position: {x: 201, y: 165}
     - StrokeID: 0
-      Position: {x: 172, y: 92}
+      Position: {x: 200, y: 159}
     - StrokeID: 0
-      Position: {x: 168, y: 87}
+      Position: {x: 199, y: 143}
     - StrokeID: 0
-      Position: {x: 164, y: 83}
+      Position: {x: 199, y: 136}
     - StrokeID: 0
-      Position: {x: 160, y: 78}
+      Position: {x: 199, y: 127}
     - StrokeID: 0
-      Position: {x: 153, y: 70}
+      Position: {x: 199, y: 119}
     - StrokeID: 0
-      Position: {x: 149, y: 66}
+      Position: {x: 199, y: 113}
     - StrokeID: 0
-      Position: {x: 143, y: 59}
+      Position: {x: 199, y: 105}
     - StrokeID: 0
-      Position: {x: 138, y: 52}
+      Position: {x: 199, y: 99}
     - StrokeID: 0
-      Position: {x: 134, y: 46}
+      Position: {x: 199, y: 92}
     - StrokeID: 0
-      Position: {x: 128, y: 38}
+      Position: {x: 199, y: 86}
     - StrokeID: 0
-      Position: {x: 124, y: 34}
+      Position: {x: 199, y: 79}
+    - StrokeID: 0
+      Position: {x: 199, y: 71}
+    - StrokeID: 0
+      Position: {x: 199, y: 64}
+    - StrokeID: 0
+      Position: {x: 199, y: 58}
+    - StrokeID: 0
+      Position: {x: 197, y: 53}
+    - StrokeID: 0
+      Position: {x: 197, y: 47}
+    - StrokeID: 0
+      Position: {x: 192, y: 50}
+    - StrokeID: 0
+      Position: {x: 187, y: 51}
+    - StrokeID: 0
+      Position: {x: 181, y: 52}
+    - StrokeID: 0
+      Position: {x: 172, y: 52}
+    - StrokeID: 0
+      Position: {x: 165, y: 52}
+    - StrokeID: 0
+      Position: {x: 159, y: 52}
+    - StrokeID: 0
+      Position: {x: 152, y: 52}
+    - StrokeID: 0
+      Position: {x: 146, y: 52}
+    - StrokeID: 0
+      Position: {x: 140, y: 52}
+    - StrokeID: 0
+      Position: {x: 132, y: 52}
+    - StrokeID: 0
+      Position: {x: 124, y: 52}
+    - StrokeID: 0
+      Position: {x: 117, y: 51}
+    - StrokeID: 0
+      Position: {x: 110, y: 51}
+    - StrokeID: 0
+      Position: {x: 105, y: 50}
+    - StrokeID: 0
+      Position: {x: 98, y: 49}
+    - StrokeID: 0
+      Position: {x: 92, y: 49}
+    - StrokeID: 0
+      Position: {x: 84, y: 49}
+    - StrokeID: 0
+      Position: {x: 79, y: 48}
+    - StrokeID: 0
+      Position: {x: 74, y: 47}
+    - StrokeID: 0
+      Position: {x: 69, y: 48}
+    - StrokeID: 0
+      Position: {x: 64, y: 49}
     numberOfPoints: 64
-  - Name: diamond
+  - Name: square
     IsShown: 0
     NormalizedPoints:
     - StrokeID: 0
-      Position: {x: -0.04062745, y: -0.44605064}
+      Position: {x: -0.4407548, y: -0.4116593}
     - StrokeID: 0
-      Position: {x: -0.06372807, y: -0.4152498}
+      Position: {x: -0.44820756, y: -0.35576355}
     - StrokeID: 0
-      Position: {x: -0.08637669, y: -0.3841181}
+      Position: {x: -0.45535883, y: -0.29983097}
     - StrokeID: 0
-      Position: {x: -0.10761513, y: -0.35204118}
+      Position: {x: -0.46036264, y: -0.24371769}
     - StrokeID: 0
-      Position: {x: -0.12797715, y: -0.3193688}
+      Position: {x: -0.46343398, y: -0.18754555}
     - StrokeID: 0
-      Position: {x: -0.14864743, y: -0.28688696}
+      Position: {x: -0.4668986, y: -0.13140136}
     - StrokeID: 0
-      Position: {x: -0.16798383, y: -0.25360024}
+      Position: {x: -0.4668986, y: -0.075010955}
     - StrokeID: 0
-      Position: {x: -0.18875979, y: -0.2212066}
+      Position: {x: -0.4668986, y: -0.018620549}
     - StrokeID: 0
-      Position: {x: -0.2070063, y: -0.18736698}
+      Position: {x: -0.4606477, y: 0.03732562}
     - StrokeID: 0
-      Position: {x: -0.22637363, y: -0.15411036}
+      Position: {x: -0.45063582, y: 0.09281871}
     - StrokeID: 0
-      Position: {x: -0.24618225, y: -0.12109598}
+      Position: {x: -0.4410944, y: 0.14839466}
     - StrokeID: 0
-      Position: {x: -0.26739222, y: -0.089023866}
+      Position: {x: -0.43421885, y: 0.20410979}
     - StrokeID: 0
-      Position: {x: -0.2904557, y: -0.058195826}
+      Position: {x: -0.4300034, y: 0.26026672}
     - StrokeID: 0
-      Position: {x: -0.312834, y: -0.026866248}
+      Position: {x: -0.42074484, y: 0.3158416}
     - StrokeID: 0
-      Position: {x: -0.33330733, y: 0.005694345}
+      Position: {x: -0.4104823, y: 0.37128294}
     - StrokeID: 0
-      Position: {x: -0.3579551, y: 0.035271674}
+      Position: {x: -0.40153912, y: 0.4269332}
     - StrokeID: 0
-      Position: {x: -0.358295, y: 0.07056605}
+      Position: {x: -0.39070904, y: 0.4771917}
     - StrokeID: 0
-      Position: {x: -0.32687294, y: 0.09270403}
+      Position: {x: -0.3379498, y: 0.4903015}
     - StrokeID: 0
-      Position: {x: -0.29849175, y: 0.118720144}
+      Position: {x: -0.2815594, y: 0.4903015}
     - StrokeID: 0
-      Position: {x: -0.27011052, y: 0.14473626}
+      Position: {x: -0.22562782, y: 0.48384544}
     - StrokeID: 0
-      Position: {x: -0.24046758, y: 0.16922854}
+      Position: {x: -0.16924308, y: 0.48376554}
     - StrokeID: 0
-      Position: {x: -0.21641618, y: 0.19929281}
+      Position: {x: -0.11285268, y: 0.48376554}
     - StrokeID: 0
-      Position: {x: -0.19236477, y: 0.22935708}
+      Position: {x: -0.056462273, y: 0.48376554}
     - StrokeID: 0
-      Position: {x: -0.16831335, y: 0.25942135}
+      Position: {x: -0.00007186444, y: 0.48376554}
     - StrokeID: 0
-      Position: {x: -0.14426194, y: 0.2894856}
+      Position: {x: 0.05631854, y: 0.48376554}
     - StrokeID: 0
-      Position: {x: -0.12297214, y: 0.32147008}
+      Position: {x: 0.11253762, y: 0.48089987}
     - StrokeID: 0
-      Position: {x: -0.09955893, y: 0.3519781}
+      Position: {x: 0.16852635, y: 0.47418123}
     - StrokeID: 0
-      Position: {x: -0.07642943, y: 0.3827566}
+      Position: {x: 0.22451508, y: 0.46746257}
     - StrokeID: 0
-      Position: {x: -0.05493343, y: 0.41465768}
+      Position: {x: 0.2807079, y: 0.4641577}
     - StrokeID: 0
-      Position: {x: -0.033049002, y: 0.44620833}
+      Position: {x: 0.33620837, y: 0.4551703}
     - StrokeID: 0
-      Position: {x: -0.0076958695, y: 0.4751833}
+      Position: {x: 0.39143237, y: 0.4438426}
     - StrokeID: 0
-      Position: {x: 0.016566327, y: 0.50507116}
+      Position: {x: 0.44548053, y: 0.42808712}
     - StrokeID: 0
-      Position: {x: 0.041189115, y: 0.4779917}
+      Position: {x: 0.4656623, y: 0.3848353}
     - StrokeID: 0
-      Position: {x: 0.06417378, y: 0.44711363}
+      Position: {x: 0.46774194, y: 0.32856008}
     - StrokeID: 0
-      Position: {x: 0.086941905, y: 0.4160662}
+      Position: {x: 0.46456185, y: 0.27231392}
     - StrokeID: 0
-      Position: {x: 0.107212506, y: 0.3835927}
+      Position: {x: 0.45847318, y: 0.21626996}
     - StrokeID: 0
-      Position: {x: 0.123488426, y: 0.3487572}
+      Position: {x: 0.45467004, y: 0.16014983}
     - StrokeID: 0
-      Position: {x: 0.14298257, y: 0.31557137}
+      Position: {x: 0.45340317, y: 0.10381688}
     - StrokeID: 0
-      Position: {x: 0.16433913, y: 0.28353658}
+      Position: {x: 0.44829783, y: 0.047658056}
     - StrokeID: 0
-      Position: {x: 0.18569565, y: 0.25150177}
+      Position: {x: 0.44159815, y: -0.008260433}
     - StrokeID: 0
-      Position: {x: 0.20674099, y: 0.21927002}
+      Position: {x: 0.4435428, y: -0.06449826}
     - StrokeID: 0
-      Position: {x: 0.22824554, y: 0.18743485}
+      Position: {x: 0.4523376, y: -0.120198615}
     - StrokeID: 0
-      Position: {x: 0.2500917, y: 0.15583724}
+      Position: {x: 0.46113238, y: -0.17589898}
     - StrokeID: 0
-      Position: {x: 0.26910222, y: 0.122361906}
+      Position: {x: 0.46677008, y: -0.2320061}
     - StrokeID: 0
-      Position: {x: 0.2881372, y: 0.08890069}
+      Position: {x: 0.47238114, y: -0.28811666}
     - StrokeID: 0
-      Position: {x: 0.3073879, y: 0.055564072}
+      Position: {x: 0.47660637, y: -0.34433976}
     - StrokeID: 0
-      Position: {x: 0.32595637, y: 0.021839922}
+      Position: {x: 0.4801239, y: -0.40062034}
     - StrokeID: 0
-      Position: {x: 0.34233993, y: -0.012942178}
+      Position: {x: 0.48081383, y: -0.45698923}
     - StrokeID: 0
-      Position: {x: 0.34283906, y: -0.046711143}
+      Position: {x: 0.47079518, y: -0.5051663}
     - StrokeID: 0
-      Position: {x: 0.3156147, y: -0.07393549}
+      Position: {x: 0.41549984, y: -0.5031717}
     - StrokeID: 0
-      Position: {x: 0.28839034, y: -0.10115983}
+      Position: {x: 0.36176038, y: -0.48614204}
     - StrokeID: 0
-      Position: {x: 0.26175863, y: -0.12891461}
+      Position: {x: 0.30735695, y: -0.47130474}
     - StrokeID: 0
-      Position: {x: 0.23770721, y: -0.1589789}
+      Position: {x: 0.25301778, y: -0.45629618}
     - StrokeID: 0
-      Position: {x: 0.21365581, y: -0.18904316}
+      Position: {x: 0.19762789, y: -0.44573244}
     - StrokeID: 0
-      Position: {x: 0.18960439, y: -0.21910742}
+      Position: {x: 0.14195247, y: -0.4378031}
     - StrokeID: 0
-      Position: {x: 0.16735041, y: -0.25048602}
+      Position: {x: 0.085562065, y: -0.4378031}
     - StrokeID: 0
-      Position: {x: 0.14481488, y: -0.28168666}
+      Position: {x: 0.029171653, y: -0.4378031}
     - StrokeID: 0
-      Position: {x: 0.12103457, y: -0.31193656}
+      Position: {x: -0.027218755, y: -0.4378031}
     - StrokeID: 0
-      Position: {x: 0.095681444, y: -0.34091154}
+      Position: {x: -0.083609164, y: -0.4378031}
     - StrokeID: 0
-      Position: {x: 0.07092145, y: -0.37039304}
+      Position: {x: -0.13980353, y: -0.44056168}
     - StrokeID: 0
-      Position: {x: 0.04596023, y: -0.3997054}
+      Position: {x: -0.1956963, y: -0.44802046}
     - StrokeID: 0
-      Position: {x: 0.019818718, y: -0.42793253}
+      Position: {x: -0.2513706, y: -0.45684555}
     - StrokeID: 0
-      Position: {x: -0.00016932281, y: -0.4603725}
+      Position: {x: -0.3068936, y: -0.46669114}
     - StrokeID: 0
-      Position: {x: -0.019463258, y: -0.49366942}
+      Position: {x: -0.36232302, y: -0.47701868}
     OriginalPoints:
     - StrokeID: 0
-      Position: {x: 112, y: 26}
+      Position: {x: 63, y: 60}
     - StrokeID: 0
-      Position: {x: 106, y: 34}
+      Position: {x: 61, y: 75}
     - StrokeID: 0
-      Position: {x: 101, y: 41}
+      Position: {x: 60, y: 84}
     - StrokeID: 0
-      Position: {x: 98, y: 46}
+      Position: {x: 60, y: 91}
     - StrokeID: 0
-      Position: {x: 91, y: 57}
+      Position: {x: 59, y: 98}
     - StrokeID: 0
-      Position: {x: 87, y: 64}
+      Position: {x: 59, y: 104}
     - StrokeID: 0
-      Position: {x: 83, y: 70}
+      Position: {x: 59, y: 114}
     - StrokeID: 0
-      Position: {x: 80, y: 76}
+      Position: {x: 59, y: 122}
     - StrokeID: 0
-      Position: {x: 74, y: 86}
+      Position: {x: 60, y: 129}
     - StrokeID: 0
-      Position: {x: 71, y: 91}
+      Position: {x: 62, y: 140}
     - StrokeID: 0
-      Position: {x: 65, y: 99}
+      Position: {x: 63, y: 146}
     - StrokeID: 0
-      Position: {x: 60, y: 106}
+      Position: {x: 64, y: 151}
     - StrokeID: 0
-      Position: {x: 57, y: 111}
+      Position: {x: 64, y: 157}
     - StrokeID: 0
-      Position: {x: 52, y: 117}
+      Position: {x: 65, y: 166}
     - StrokeID: 0
-      Position: {x: 51, y: 123}
+      Position: {x: 66, y: 171}
     - StrokeID: 0
-      Position: {x: 57, y: 127}
+      Position: {x: 67, y: 176}
     - StrokeID: 0
-      Position: {x: 69, y: 138}
+      Position: {x: 69, y: 188}
     - StrokeID: 0
-      Position: {x: 74, y: 142}
+      Position: {x: 69, y: 195}
     - StrokeID: 0
-      Position: {x: 78, y: 147}
+      Position: {x: 74, y: 198}
     - StrokeID: 0
-      Position: {x: 82, y: 152}
+      Position: {x: 82, y: 198}
     - StrokeID: 0
-      Position: {x: 90, y: 162}
+      Position: {x: 89, y: 198}
     - StrokeID: 0
-      Position: {x: 94, y: 167}
+      Position: {x: 96, y: 197}
     - StrokeID: 0
-      Position: {x: 97, y: 172}
+      Position: {x: 102, y: 197}
     - StrokeID: 0
-      Position: {x: 101, y: 177}
+      Position: {x: 118, y: 197}
     - StrokeID: 0
-      Position: {x: 107, y: 185}
+      Position: {x: 128, y: 197}
     - StrokeID: 0
-      Position: {x: 112, y: 193}
+      Position: {x: 144, y: 197}
     - StrokeID: 0
-      Position: {x: 119, y: 201}
+      Position: {x: 169, y: 194}
     - StrokeID: 0
-      Position: {x: 123, y: 206}
+      Position: {x: 175, y: 194}
     - StrokeID: 0
-      Position: {x: 128, y: 200}
+      Position: {x: 180, y: 193}
     - StrokeID: 0
-      Position: {x: 139, y: 185}
+      Position: {x: 185, y: 192}
     - StrokeID: 0
-      Position: {x: 142, y: 178}
+      Position: {x: 190, y: 191}
     - StrokeID: 0
-      Position: {x: 146, y: 171}
+      Position: {x: 196, y: 189}
     - StrokeID: 0
-      Position: {x: 150, y: 165}
+      Position: {x: 201, y: 188}
     - StrokeID: 0
-      Position: {x: 158, y: 153}
+      Position: {x: 202, y: 179}
     - StrokeID: 0
-      Position: {x: 161, y: 148}
+      Position: {x: 202, y: 170}
     - StrokeID: 0
-      Position: {x: 165, y: 143}
+      Position: {x: 201, y: 159}
     - StrokeID: 0
-      Position: {x: 168, y: 138}
+      Position: {x: 200, y: 152}
     - StrokeID: 0
-      Position: {x: 173, y: 129}
+      Position: {x: 200, y: 141}
     - StrokeID: 0
-      Position: {x: 176, y: 124}
+      Position: {x: 199, y: 130}
     - StrokeID: 0
-      Position: {x: 181, y: 115}
+      Position: {x: 198, y: 123}
     - StrokeID: 0
-      Position: {x: 184, y: 109}
+      Position: {x: 198, y: 115}
     - StrokeID: 0
-      Position: {x: 186, y: 103}
+      Position: {x: 201, y: 96}
     - StrokeID: 0
-      Position: {x: 181, y: 98}
+      Position: {x: 203, y: 76}
     - StrokeID: 0
-      Position: {x: 175, y: 92}
+      Position: {x: 204, y: 60}
     - StrokeID: 0
-      Position: {x: 170, y: 87}
+      Position: {x: 204, y: 52}
     - StrokeID: 0
-      Position: {x: 166, y: 82}
+      Position: {x: 204, y: 46}
     - StrokeID: 0
-      Position: {x: 162, y: 77}
+      Position: {x: 199, y: 45}
     - StrokeID: 0
-      Position: {x: 154, y: 67}
+      Position: {x: 194, y: 46}
     - StrokeID: 0
-      Position: {x: 150, y: 61}
+      Position: {x: 188, y: 48}
     - StrokeID: 0
-      Position: {x: 144, y: 53}
+      Position: {x: 177, y: 51}
     - StrokeID: 0
-      Position: {x: 137, y: 45}
+      Position: {x: 170, y: 53}
     - StrokeID: 0
-      Position: {x: 132, y: 39}
+      Position: {x: 165, y: 54}
     - StrokeID: 0
-      Position: {x: 126, y: 32}
+      Position: {x: 154, y: 56}
     - StrokeID: 0
-      Position: {x: 122, y: 28}
+      Position: {x: 147, y: 56}
     - StrokeID: 0
-      Position: {x: 119, y: 22}
+      Position: {x: 135, y: 56}
     - StrokeID: 0
-      Position: {x: 116, y: 17}
+      Position: {x: 129, y: 56}
+    - StrokeID: 0
+      Position: {x: 112, y: 56}
+    - StrokeID: 0
+      Position: {x: 105, y: 55}
+    - StrokeID: 0
+      Position: {x: 97, y: 54}
+    - StrokeID: 0
+      Position: {x: 86, y: 52}
+    - StrokeID: 0
+      Position: {x: 80, y: 51}
+    - StrokeID: 0
+      Position: {x: 75, y: 50}
     numberOfPoints: 64

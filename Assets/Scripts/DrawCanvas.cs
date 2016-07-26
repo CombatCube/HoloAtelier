@@ -12,39 +12,13 @@ public class DrawCanvas : MonoBehaviour {
     private GameObject lastLineObject;
     private Vector3[] lastPoints;
 
-    public MeshRenderer Quad;
-    public Draw3D DrawTool;
-
-    public enum DrawMode
+    public enum DrawMode : byte
     {
         Draw3D,
         Draw2D
     }
     public DrawMode DrawType;
     public float DrawThreshold;
-
-    // Use this for initialization
-    void Start () {
-
-    }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
-    public void ShowCanvas()
-    {
-        if (Quad != null)
-        {
-            Quad.enabled = true;
-        }
-    }
-
-    void OnSelect()
-    {
-        DrawTool.DrawCanvas = this;
-    }
 
     public void StartLine(Vector3 position)
     {
@@ -96,21 +70,13 @@ public class DrawCanvas : MonoBehaviour {
         }
         foreach (Transform child in transform)
         {
-            if (child.name != "Quad")
-            {
-                Destroy(child.gameObject);
-            }
+            Destroy(child.gameObject);
         }
     }
 
     public void SendStroke()
     {
-        CustomMessages.Instance.SendDraw3DStroke(
-            GetInstanceID(),
-            transform.localPosition,
-            transform.localRotation,
-            transform.localScale,
-            lastPoints
-        );
+        Note note = transform.GetComponentInParent<Note>();
+        note.SendStroke(lastPoints);
     }
 }

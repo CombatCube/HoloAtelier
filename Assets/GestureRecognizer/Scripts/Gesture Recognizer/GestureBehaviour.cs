@@ -176,7 +176,7 @@ namespace GestureRecognizer
         // Update is called once per frame
         void Update()
         {
-            if (HandsManager.Instance.HandDetected && !HandsManager.Instance.TwoHandsDetected)
+            if (HandsManager.Instance.HandDetected)
             {
                 GetComponentInChildren<MeshRenderer>().enabled = true;
 
@@ -186,8 +186,7 @@ namespace GestureRecognizer
                 if (GestureManager.Instance.manipulationTarget == null)
                 {
                     gameObject.transform.position = pos;
-                    Quaternion v = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
-                    gameObject.transform.rotation = v;
+                    gameObject.transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
                 }
                 // Lock tool's hand position until finished dragging
             }
@@ -232,57 +231,14 @@ namespace GestureRecognizer
             RegisterPoint(point);
         }
 
-
-        /// <summary>
-        /// Register this point only if the point list is empty or current point
-        /// is far enough than the last point. This ensures that the multi stroke looks
-        /// good on the screen. Moreover, it is good to not overpopulate the screen
-        /// with so much points.
-        /// </summary>
-        private void RegisterPoint(Vector2 point)
-        {
-            // Converting a point on screen coordinates to editor coordinates
-            screenPoint = new Vector3(point.x, Screen.height - point.y);
-
-            //switch (limitType)
-            //{
-            //    case GestureLimitType.ClampToArea:
-
-            //        if (!limitedDrawAreaRect.Contains(point))
-            //        {
-            //            point = limitedDrawAreaRect.Clamp(point);
-            //        }
-
-            //        break;
-
-            //    case GestureLimitType.IgnoreOutside:
-
-            //        if (!limitedDrawAreaRect.Contains(point))
-            //        {
-            //            return;
-            //        }
-
-            //        break;
-            //}
-
-            if (Vector2.Distance(point, lastPoint) > distanceBetweenPoints)
-            {
-                points.Add(new Point(currentStrokeID, screenPoint.x, screenPoint.y));
-                lastPoint = point;
-
-                currentStrokeRenderer.SetVertexCount(++vertexCount);
-                currentStrokeRenderer.SetPosition(vertexCount - 1, Utility.WorldCoordinateForGesturePoint(point));
-            }
-        }
-
         private void RegisterPoint(Vector3 point)
         {
             if (Vector2.Distance(point, lastPoint) > distanceBetweenPoints)
             {
                 points.Add(new Point(currentStrokeID, -point.x, -point.y));
                 lastPoint = point;
-
-                currentStrokeRenderer.SetVertexCount(++vertexCount);
+                vertexCount++;
+                currentStrokeRenderer.SetVertexCount(vertexCount);
                 currentStrokeRenderer.SetPosition(vertexCount - 1, point);
             }
         }
@@ -334,39 +290,16 @@ namespace GestureRecognizer
             isRecognized = false;
         }
 
-        public void OnClick(BaseEventData eventData)
-        {
-            PointerEventData p = eventData as PointerEventData;
-           
-            if (p.button == PointerEventData.InputButton.Left)
-            {
-                CreateNewStroke(Input.mousePosition);
-            }
-            else if (p.button == PointerEventData.InputButton.Right)
-            {
-                Recognize();
-            }
-        }
-
-        public void OnDrag(BaseEventData eventData)
-        {
-            RegisterPoint(Input.mousePosition);
-        }
-
         void PerformManipulationStart(Vector3 position)
         {
-            Vector3 pos;
-            HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
-            Vector3 localPos = gameObject.transform.InverseTransformPoint(pos);
+            Vector3 localPos = gameObject.transform.InverseTransformPoint(position);
             Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
             CreateNewStroke(planePos);
         }
 
         void PerformManipulationUpdate(Vector3 position)
         {
-            Vector3 pos;
-            HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
-            Vector3 localPos = gameObject.transform.InverseTransformPoint(pos);
+            Vector3 localPos = gameObject.transform.InverseTransformPoint(position);
             Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
             RegisterPoint(planePos);
         }

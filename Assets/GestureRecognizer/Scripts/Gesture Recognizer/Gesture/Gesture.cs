@@ -175,6 +175,21 @@ namespace GestureRecognizer
             this.NormalizedPoints = resampledPoints;
         }
 
+        /// <summary>
+        /// Calculate the center of the points (before normalization)
+        /// </summary>
+        /// <param name="points">List of points</param>
+        /// <returns></returns>
+        public Vector2 GetOriginalCenter()
+        {
+            Vector2 total = Vector2.zero;
+
+            for (int i = 0; i < this.OriginalPoints.Length; i++)
+            {
+                total += this.OriginalPoints[i].Position;
+            }
+            return new Vector2(total.x / this.OriginalPoints.Length, total.y / this.OriginalPoints.Length);
+        }
 
         /// <summary>
         /// Calculate the center of the points
