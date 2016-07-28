@@ -778,7 +778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HelpText: Drag to draw.
-  HudImage: {fileID: 21300000, guid: d289a88f903351740a44a5a2b13db9b8, type: 3}
+  HudImage: {fileID: 21300000, guid: 1cd8563e38064fe49bc8cdae00350387, type: 3}
   Tablet: {fileID: 0}
 --- !u!33 &510096499
 MeshFilter:
@@ -3048,7 +3048,7 @@ RectTransform:
   - {fileID: 1217114996}
   - {fileID: 1841154665}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6187,60 +6187,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-  - Keyword: Show Skin
-    KeyCode: 106
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 340085252}
-          m_MethodName: ToggleLayer
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: M_Man
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-  - Keyword: Show Skeleton
-    KeyCode: 107
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 340085252}
-          m_MethodName: ToggleLayer
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: M_Skeleton
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-  - Keyword: Show Proportion
-    KeyCode: 97
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 340085252}
-          m_MethodName: ToggleLayer
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: M_Proportion
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
   - Keyword: Take Picture
     KeyCode: 99
     Response:
@@ -6259,7 +6205,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-  - Keyword: Create Note
+  - Keyword: Create 3D Note
     KeyCode: 110
     Response:
       m_PersistentCalls:
@@ -6277,7 +6223,25 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-  - Keyword: Magic Wand
+  - Keyword: Create 2D Note
+    KeyCode: 98
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1780129444}
+          m_MethodName: Activate
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ResetStage
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - Keyword: Drawing Recognition
     KeyCode: 109
     Response:
       m_PersistentCalls:
