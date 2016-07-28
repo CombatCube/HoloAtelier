@@ -22,6 +22,6 @@ public class RemoteHead : MonoBehaviour {
     void OnSelect()
     {
         Debug.Log("Remote Head tapped!");
-        RemoteHeadManager.Instance.SetActiveHead(gameObject);
+        //RemoteHeadManager.Instance.SetActiveHead(gameObject);
     }
 }

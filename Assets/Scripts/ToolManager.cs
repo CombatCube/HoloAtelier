@@ -5,14 +5,17 @@ using System;
 
 public partial class ToolManager : Singleton<ToolManager>
 {
+    public UnityEngine.UI.Text HudHelpText;
+    public UnityEngine.UI.Image HudToolImage;
+
     public class ToolChangedEventArgs : EventArgs
     {
-        public GameObject newTool;
+        public Tool newTool;
     }
 
     public event EventHandler<ToolChangedEventArgs> ToolChanged;
 
-    public GameObject ActiveTool { get; private set; }
+    public Tool ActiveTool { get; private set; }
 
     void Awake ()
     {
@@ -35,15 +38,15 @@ public partial class ToolManager : Singleton<ToolManager>
 
     }
 
-    public void SetActiveTool(GameObject tool)
+    public void SetActiveTool(Tool tool)
     {
         if (ActiveTool != null)
         {
-            ActiveTool.SetActive(false);
+            ActiveTool.gameObject.SetActive(false);
         }
         if (tool != null)
         {
-            tool.SetActive(true);
+            tool.gameObject.SetActive(true);
         }
         ActiveTool = tool;
         EventHandler<ToolChangedEventArgs> toolChangedEvent = ToolChanged;
@@ -52,4 +55,29 @@ public partial class ToolManager : Singleton<ToolManager>
         toolChangedEvent(this, tcea);
     }
 
+    public void SetHelpText(string text)
+    {
+        if (text != null)
+        {
+            HudHelpText.text = text;
+        }
+        else
+        {
+            HudHelpText.text = "";
+        }
+    }
+
+    public void SetHudImage(Sprite image)
+    {
+        if (image != null)
+        {
+            HudToolImage.sprite = image;
+            HudToolImage.enabled = true;
+        }
+        else
+        {
+            HudToolImage.enabled = false;
+            HudToolImage.sprite = null;
+        }
+    }
 }

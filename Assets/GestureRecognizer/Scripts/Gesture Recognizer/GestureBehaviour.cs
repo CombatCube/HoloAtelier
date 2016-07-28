@@ -29,7 +29,7 @@ namespace GestureRecognizer
         IgnoreOutside
     }
 
-    public class GestureBehaviour : MonoBehaviour
+    public class GestureBehaviour : Tool
     {
 
         /// <summary>
@@ -314,16 +314,5 @@ namespace GestureRecognizer
             Recognize();
         }
 
-        public void Activate()
-        {
-            if (ToolManager.Instance.ActiveTool != gameObject)
-            {
-                ToolManager.Instance.SetActiveTool(gameObject);
-            }
-            else
-            {
-                ToolManager.Instance.SetActiveTool(null);
-            }
-        }
     }
 }

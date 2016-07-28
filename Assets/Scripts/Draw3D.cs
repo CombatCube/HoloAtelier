@@ -3,11 +3,12 @@ using HoloToolkit.Unity;
 using HoloToolkit.Sharing;
 using System.Collections.Generic;
 
-public class Draw3D : MonoBehaviour {
+public class Draw3D : Tool {
     //private Vector3 manipulationPreviousPosition;
     private float penOffset = 0.1f;
     public Transform Tablet;
     DrawCanvas ActiveCanvas;
+
 
     // Use this for initialization
     void Start () {
@@ -20,18 +21,6 @@ public class Draw3D : MonoBehaviour {
     private void Instance_SessionJoined(object sender, SharingSessionTracker.SessionJoinedEventArgs e)
     {
         // TODO: Send already-drawn strokes
-    }
-
-    public void Activate()
-    {
-        if (ToolManager.Instance.ActiveTool != gameObject)
-        {
-            ToolManager.Instance.SetActiveTool(gameObject);
-        }
-        else
-        {
-            ToolManager.Instance.SetActiveTool(null);
-        }
     }
 
     // Update is called once per frame
@@ -80,7 +69,10 @@ public class Draw3D : MonoBehaviour {
     void OnSelect()
     {
         // Pass through to gazed object
-        GestureManager.Instance.FocusedObject.SendMessage("OnSelect");
+        if (GestureManager.Instance.FocusedObject != null)
+        {
+            GestureManager.Instance.FocusedObject.SendMessage("OnSelect");
+        }
     }
 
     void PerformManipulationStart(Vector3 position)

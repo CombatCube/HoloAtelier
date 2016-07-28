@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RemotePerspective : MonoBehaviour {
+public class RemotePerspective : Tool {
 
-    private GameObject lastTool;
+    private Tool lastTool;
 
 	// Use this for initialization
 	void Start () {
@@ -15,10 +15,10 @@ public class RemotePerspective : MonoBehaviour {
 	
 	}
 
-    public void Activate ()
+    public new void Activate()
     {
         lastTool = ToolManager.Instance.ActiveTool;
-        ToolManager.Instance.SetActiveTool(gameObject);
+        ToolManager.Instance.SetActiveTool(lastTool);
     }
 
     void OnSelect ()

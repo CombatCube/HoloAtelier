@@ -34,7 +34,7 @@ namespace HoloToolkit.Unity
 
         private UnityEngine.VR.WSA.Input.GestureRecognizer recognizer;
         private GameObject focusedObject;
-        private GameObject activeTool;
+        private Tool activeTool;
 
         public GameObject manipulationTarget { get; private set; }
         private Vector3 manipulationStartPos;
@@ -69,7 +69,7 @@ namespace HoloToolkit.Unity
         {
             if (activeTool != null)
             {
-                activeTool.SendMessage("OnSelect");
+                activeTool.gameObject.SendMessage("OnSelect");
             }
             else
             {
@@ -85,7 +85,7 @@ namespace HoloToolkit.Unity
             Vector3 v = manipulationStartPos + cumulativeDelta;
             if (activeTool != null)
             {
-                manipulationTarget = activeTool;
+                manipulationTarget = activeTool.gameObject;
             }
             if (manipulationTarget != null)
             {

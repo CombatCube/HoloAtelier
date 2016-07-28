@@ -4,12 +4,13 @@ using System.Collections;
 public class Note : MonoBehaviour {
 
     public Draw3D DrawTool;
-
-    public bool received = false;
+    
     private bool collapsed;
 
     private const float timeToCollapse = 0.2f;
     private float timePressed = timeToCollapse;
+
+    public long userID;
 
     // Use this for initialization
     void Start () {
@@ -51,10 +52,7 @@ public class Note : MonoBehaviour {
                 timePressed = 0f;
                 collapsed = false;
             }
-            if (!received)
-            {
-                NoteManager.Instance.SetActiveNote(this);
-            }
+            NoteManager.Instance.SetActiveNote(this);
         }
     }
 

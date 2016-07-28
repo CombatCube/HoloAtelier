@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 
 // Takes a picture upon selection and changes the texture to it.
-public class HoloCapture : MonoBehaviour {
+public class HoloCapture : Tool {
     PhotoCapture photoCaptureObject = null;
     // Use this for initialization
     void Start ()
@@ -21,22 +21,10 @@ public class HoloCapture : MonoBehaviour {
 	
 	}
 
-    public void Activate()
-    {
-        if (ToolManager.Instance.ActiveTool != gameObject)
-        {
-            ToolManager.Instance.SetActiveTool(gameObject);
-        }
-        else
-        {
-            ToolManager.Instance.SetActiveTool(null);
-        }
-    }
-
     void OnSelect()
     {
-        OnTakePicture();
         ToolManager.Instance.SetActiveTool(null);
+        OnTakePicture();
     }
 
     void OnTakePicture()

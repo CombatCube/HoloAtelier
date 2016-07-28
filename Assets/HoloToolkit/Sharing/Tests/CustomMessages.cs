@@ -126,7 +126,7 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendDraw3DStroke(long noteID, byte drawType, Vector3 localPosition, Quaternion localRotation, Vector3 localScale, Vector3[] positions)
+    public void SendDraw3DStroke(long noteID, byte drawType, Vector3 position, Quaternion rotation, Vector3 localScale, Vector3[] points)
     {
         // If we are connected to a session, broadcast our head info
         if (this.serverConnection != null && this.serverConnection.IsConnected())
@@ -135,9 +135,9 @@ public class CustomMessages : Singleton<CustomMessages>
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.Draw3DStroke);
             msg.Write(noteID);
             msg.Write(drawType);
-            AppendTransform(msg, localPosition, localRotation);
+            AppendTransform(msg, position, rotation);
             AppendVector3(msg, localScale);
-            foreach (Vector3 v in positions)
+            foreach (Vector3 v in points)
             {
                 AppendVector3(msg, v);
             }

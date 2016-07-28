@@ -50,7 +50,8 @@ public class DrawingRecognizer : MonoBehaviour {
                 sphere.transform.rotation = GestureBehaviour.transform.localRotation;
                 sphere.transform.SetParent(gameObject.transform, true);
                 sphere.GetComponent<MeshRenderer>().material = CubeMaterial;
-                sphere.AddComponent<Rigidbody>();
+                Rigidbody body = sphere.AddComponent<Rigidbody>();
+                body.mass = 0.2f;
             }
         }
     }
