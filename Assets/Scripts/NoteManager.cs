@@ -3,11 +3,13 @@ using System.Collections;
 using HoloToolkit.Unity;
 using HoloToolkit.Sharing;
 using System.Collections.Generic;
+using System;
 
 public class NoteManager : Singleton<NoteManager>
 {
     public Note NoteObject2D;
     public Note NoteObject3D;
+    public VoiceNote VoiceNoteObject;
     public Draw3D DrawTool;
     public Material CanvasMaterial;
     public Note ActiveNote;
@@ -31,6 +33,7 @@ public class NoteManager : Singleton<NoteManager>
     void Start()
     {
         CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.Draw3DStroke] = this.OnReceive3DStroke;
+        CustomMessages.Instance.MessageHandlers[CustomMessages.TestMessageID.VoiceNote] = this.OnReceiveVoiceNote;
     }
 
     // Update is called once per frame
@@ -45,7 +48,7 @@ public class NoteManager : Singleton<NoteManager>
 
         long userID = msg.ReadInt64();
         long noteID = msg.ReadInt64();
-        byte canvasType = msg.ReadByte();
+        byte noteType = msg.ReadByte();
         Vector3 localPosition = CustomMessages.Instance.ReadVector3(msg);
         Quaternion localRotation = CustomMessages.Instance.ReadQuaternion(msg);
         Vector3 localScale = CustomMessages.Instance.ReadVector3(msg);
@@ -63,16 +66,58 @@ public class NoteManager : Singleton<NoteManager>
         }
         else
         {
-            note = CreateNewNote(userID, canvasType, localPosition, localRotation, localScale);
+            note = CreateNewNote(userID, noteType, localPosition, localRotation, localScale);
             notes.Add(new CanvasKey(userID, noteID), note);
         }
         note.GetComponentInChildren<DrawCanvas>().DrawLine(list.ToArray());
     }
 
-    public Note CreateNewNote(long userID, byte canvasType, Vector3 localPosition, Quaternion localRotation, Vector3 localScale)
+
+    private void OnReceiveVoiceNote(NetworkInMessage msg)
+    {
+        Debug.Log("Received voice note.");
+
+        long userID = msg.ReadInt64();
+        long noteID = msg.ReadInt64();
+        byte noteType = msg.ReadByte();
+        Vector3 localPosition = CustomMessages.Instance.ReadVector3(msg);
+        Quaternion localRotation = CustomMessages.Instance.ReadQuaternion(msg);
+        Vector3 localScale = CustomMessages.Instance.ReadVector3(msg);
+        string text = msg.ReadString();
+        var data = new List<float>();
+        while (msg.GetUnreadBitsCount() > 0)
+        {
+            data.Add(msg.ReadFloat());
+        }
+        Note note;
+        CanvasKey key = new CanvasKey(userID, noteID);
+        if (notes.ContainsKey(key))
+        {
+            note = notes[key];
+        }
+        else
+        {
+            note = CreateNewNote(userID, noteType, localPosition, localRotation, localScale);
+            notes.Add(new CanvasKey(userID, noteID), note);
+        }
+        note.GetComponentInChildren<UnityEngine.UI.Text>().text = text;
+        note.GetComponent<AudioClip>().SetData(data.ToArray(), 0);
+    }
+
+    public VoiceNote CreateVoiceNote(long userID, Vector3 localPosition, Quaternion localRotation)
+    {
+        VoiceNote newNoteObject = Instantiate(VoiceNoteObject);
+        newNoteObject.transform.SetParent(this.gameObject.transform, false);
+        newNoteObject.transform.localPosition = localPosition;
+        newNoteObject.transform.localRotation = localRotation;
+        newNoteObject.userID = userID;
+        return newNoteObject;
+    }
+
+    public Note CreateNewNote(long userID, byte noteType, Vector3 localPosition, Quaternion localRotation, Vector3 localScale)
     {
         Note newNoteObject;
-        if (canvasType == (byte)DrawCanvas.DrawMode.Draw2D)
+        if (noteType == (byte)Note.NoteType.Draw2D)
         {
             newNoteObject = Instantiate(NoteObject2D);
         }
@@ -80,15 +125,14 @@ public class NoteManager : Singleton<NoteManager>
         {
             newNoteObject = Instantiate(NoteObject3D);
         }
+        newNoteObject.DrawTool = DrawTool;
+        newNoteObject.GetComponentInChildren<MeshRenderer>().material = CanvasMaterial;
+        newNoteObject.GetComponentInChildren<MeshRenderer>().transform.localScale = localScale;
         newNoteObject.transform.SetParent(this.gameObject.transform, false);
         newNoteObject.transform.localPosition = localPosition;
         newNoteObject.transform.localRotation = localRotation;
         newNoteObject.transform.localScale = Vector3.one;
-        newNoteObject.DrawTool = DrawTool;
         newNoteObject.userID = userID;
-        newNoteObject.GetComponentInChildren<MeshRenderer>().material = CanvasMaterial;
-        MeshRenderer node = newNoteObject.GetComponentInChildren<MeshRenderer>();
-        node.transform.localScale = localScale;
         notes.Add(new CanvasKey(CustomMessages.Instance.localUserID, newNoteObject.GetInstanceID()), newNoteObject);
         return newNoteObject;
     }

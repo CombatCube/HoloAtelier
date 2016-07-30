@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class Draw3D : Tool {
     //private Vector3 manipulationPreviousPosition;
     private float penOffset = 0.1f;
-    public Transform Tablet;
     DrawCanvas ActiveCanvas;
 
 
@@ -25,38 +24,29 @@ public class Draw3D : Tool {
 
     // Update is called once per frame
     void Update () {
-        ActiveCanvas = NoteManager.Instance.ActiveNote.GetComponentInChildren<DrawCanvas>();
         if (HandsManager.Instance.HandDetected) {
             GetComponentInChildren<MeshRenderer>().enabled = true;
             Vector3 pos;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
-            if (ActiveCanvas.DrawType == DrawCanvas.DrawMode.Draw3D)
+            Note note = NoteManager.Instance.ActiveNote;
+            if (note.DrawType == Note.NoteType.Draw3D)
             {
+                ActiveCanvas = NoteManager.Instance.ActiveNote.GetComponentInChildren<DrawCanvas>();
                 pos += penOffset * (Camera.main.transform.forward);
                 gameObject.transform.position = pos;
             }
-            else if (ActiveCanvas.DrawType == DrawCanvas.DrawMode.Draw2D)
+            else if (note.DrawType == Note.NoteType.Draw2D)
             {
-                if (Tablet != null)
-                {
-                    // Get hand position relative to TABLET origin.
-                    Vector3 localPos = Tablet.transform.InverseTransformPoint(pos);
-                    // Project down onto TABLET plane.
-                    Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
-                    // Set world pos of tool to drawing location.
-                    gameObject.transform.position = ActiveCanvas.transform.TransformPoint(planePos);
-                }
-                else
-                {
-                    // Get hand position relative to canvas origin.
-                    Vector3 localPos = ActiveCanvas.transform.InverseTransformPoint(pos);
-                    // Project down onto canvas plane.
-                    Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
-                    // Set world pos of tool to drawing location.
-                    gameObject.transform.position = ActiveCanvas.transform.TransformPoint(planePos);
-                }
+                ActiveCanvas = NoteManager.Instance.ActiveNote.GetComponentInChildren<DrawCanvas>();
+                Vector3 localPos = ActiveCanvas.transform.InverseTransformPoint(pos);
+                Vector3 planePos = Vector3.ProjectOnPlane(localPos, Vector3.forward);
+                gameObject.transform.position = ActiveCanvas.transform.TransformPoint(planePos);
             }
-
+            else if (note.DrawType == Note.NoteType.Voice)
+            {
+                GetComponentInChildren<MeshRenderer>().enabled = false;
+                ActiveCanvas = null;
+            }
             Quaternion v = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
             gameObject.transform.rotation = v;
         }
@@ -77,12 +67,16 @@ public class Draw3D : Tool {
 
     void PerformManipulationStart(Vector3 position)
     {
-        ActiveCanvas.StartLine(gameObject.transform.position);
+        if (ActiveCanvas != null)
+        {
+            ActiveCanvas.StartLine(gameObject.transform.position);
+        }
     }
 
     void PerformManipulationUpdate(Vector3 position)
     {
-        if (GestureManager.Instance.manipulationTarget != null)
+        if (GestureManager.Instance.manipulationTarget != null
+            && ActiveCanvas != null)
         {
             ActiveCanvas.UpdateLine(gameObject.transform.position);
         }
@@ -90,15 +84,20 @@ public class Draw3D : Tool {
 
     void PerformManipulationCompleted()
     {
-        // Send the stroke to the other HoloLens.
-        Debug.Log("Sending Draw3DStroke.");
-        ActiveCanvas.SendStroke();
+        if (ActiveCanvas != null)
+        {
+            // Send the stroke to the other HoloLens.
+            Debug.Log("Sending Draw3DStroke.");
+            ActiveCanvas.SendStroke();
+        }
     }
 
     void PerformManipulationCanceled()
     {
-        Debug.Log("Canceled Draw3DStroke.");
-        ActiveCanvas.SendStroke();
+        if (ActiveCanvas != null)
+        {
+            Debug.Log("Canceled Draw3DStroke.");
+            ActiveCanvas.SendStroke();
+        }
     }
-
 }

@@ -4,8 +4,16 @@ using System.Collections;
 public class Note : MonoBehaviour {
 
     public Draw3D DrawTool;
-    
-    private bool collapsed;
+
+    public enum NoteType : byte
+    {
+        Draw3D,
+        Draw2D,
+        Voice
+    }
+    public NoteType DrawType;
+
+    protected bool collapsed;
 
     private const float timeToCollapse = 0.2f;
     private float timePressed = timeToCollapse;
@@ -18,21 +26,29 @@ public class Note : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        DrawCanvas canvas = GetComponentInChildren<DrawCanvas>();
-        MeshRenderer handle = GetComponentInChildren<MeshRenderer>();
+	void Update ()
+    {
         timePressed += Time.deltaTime;
-        if (collapsed)
+        Transform scaleTarget;
+        MeshRenderer handle = GetComponentInChildren<MeshRenderer>();
+        if (DrawType != NoteType.Voice)
         {
-            handle.material.color = new Color(255, 0, 0, 127);
-            canvas.transform.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, timePressed/timeToCollapse);
+            scaleTarget = GetComponentInChildren<DrawCanvas>().transform;
         }
         else
         {
-            canvas.transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, timePressed/timeToCollapse);
-
+            scaleTarget = GetComponentInChildren<RectTransform>();
         }
-	}
+        if (collapsed)
+        {
+            handle.material.color = new Color(255, 0, 0, 127);
+            scaleTarget.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, timePressed / timeToCollapse);
+        }
+        else
+        {
+            scaleTarget.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, timePressed / timeToCollapse);
+        }
+    }
 
     // Select note to set active. If note is already active, collapse.
     public void OnSelect()
@@ -67,7 +83,7 @@ public class Note : MonoBehaviour {
         DrawCanvas canvas = GetComponentInChildren<DrawCanvas>();
         CustomMessages.Instance.SendDraw3DStroke(
             GetInstanceID(),
-            (byte)canvas.DrawType,
+            (byte)DrawType,
             transform.localPosition,
             transform.localRotation,
             GetComponentInChildren<MeshRenderer>().transform.localScale,

@@ -41,7 +41,7 @@ public class Create3DNote : Tool {
     {
         Note note = NoteManager.Instance.CreateNewNote(
             CustomMessages.Instance.localUserID,
-            (byte)DrawCanvas.DrawMode.Draw3D,
+            (byte)Note.NoteType.Draw3D,
             NoteManager.Instance.transform.InverseTransformPoint(transform.position),
             Quaternion.Inverse(NoteManager.Instance.transform.rotation) * transform.rotation,
             new Vector3(0.05f, 0.05f, 0.05f)

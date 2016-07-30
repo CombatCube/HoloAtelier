@@ -22,28 +22,16 @@ public class MicrophoneManager : MonoBehaviour
 
     void Awake()
     {
-        /* TODO: DEVELOPER CODING EXERCISE 3.a */
-
-        // 3.a: Create a new DictationRecognizer and assign it to dictationRecognizer variable.
         dictationRecognizer = new DictationRecognizer();
-
-        // 3.a: Register for dictationRecognizer.DictationHypothesis and implement DictationHypothesis below
         // This event is fired while the user is talking. As the recognizer listens, it provides text of what it's heard so far.
         dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;
-
-        // 3.a: Register for dictationRecognizer.DictationResult and implement DictationResult below
         // This event is fired after the user pauses, typically at the end of a sentence. The full recognized string is returned here.
         dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;
-
-        // 3.a: Register for dictationRecognizer.DictationComplete and implement DictationComplete below
         // This event is fired when the recognizer stops, whether from Stop() being called, a timeout occurring, or some other error.
         dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;
-
-        // 3.a: Register for dictationRecognizer.DictationError and implement DictationError below
         // This event is fired when an error occurs.
         dictationRecognizer.DictationError += DictationRecognizer_DictationError;
-
-
+        
         // Query the maximum frequency of the default microphone. Use 'unused' to ignore the minimum frequency.
         int unused;
         Microphone.GetDeviceCaps(deviceName, out unused, out samplingRate);

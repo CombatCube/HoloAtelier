@@ -12,12 +12,6 @@ public class DrawCanvas : MonoBehaviour {
     private GameObject lastLineObject;
     private Vector3[] lastPoints;
 
-    public enum DrawMode : byte
-    {
-        Draw3D,
-        Draw2D
-    }
-    public DrawMode DrawType;
     public float DrawThreshold;
 
     public void StartLine(Vector3 position)

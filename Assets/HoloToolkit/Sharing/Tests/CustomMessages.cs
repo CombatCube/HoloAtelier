@@ -18,6 +18,7 @@ public class CustomMessages : Singleton<CustomMessages>
     {
         HeadTransform = MessageID.UserMessageIDStart,
         Draw3DStroke,
+        VoiceNote,
         StageTransform,
         ResetStage,
         Image,
@@ -140,6 +141,32 @@ public class CustomMessages : Singleton<CustomMessages>
             foreach (Vector3 v in points)
             {
                 AppendVector3(msg, v);
+            }
+
+            // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
+            this.serverConnection.Broadcast(
+                msg,
+                MessagePriority.Immediate,
+                MessageReliability.ReliableSequenced,
+                MessageChannel.Avatar);
+        }
+    }
+
+    public void SendVoiceNote(long noteID, byte drawType, Vector3 position, Quaternion rotation, Vector3 localScale, string text, float[] audio)
+    {
+        // If we are connected to a session, broadcast our head info
+        if (this.serverConnection != null && this.serverConnection.IsConnected())
+        {
+            // Create an outgoing network message to contain all the info we want to send
+            NetworkOutMessage msg = CreateMessage((byte)TestMessageID.VoiceNote);
+            msg.Write(noteID);
+            msg.Write(drawType);
+            AppendTransform(msg, position, rotation);
+            AppendVector3(msg, localScale);
+            msg.Write(text);
+            foreach (float f in audio)
+            {
+                msg.Write(f);
             }
 
             // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
