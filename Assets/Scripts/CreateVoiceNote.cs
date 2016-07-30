@@ -38,6 +38,7 @@ public class CreateVoiceNote : Tool {
         // Create new voice note. Next tap stops recording.
         if (newVoiceNoteObj == null)
         {
+            recording = true;
             newVoiceNoteObj = NoteManager.Instance.CreateVoiceNote(
                 CustomMessages.Instance.localUserID,
                 NoteManager.Instance.transform.InverseTransformPoint(transform.position),
