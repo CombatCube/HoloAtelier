@@ -14,6 +14,7 @@ public class NoteManager : Singleton<NoteManager>
     public Material CanvasMaterial;
     public Note ActiveNote;
     public Note DefaultNote;
+    public KeywordManager KeywordManager;
 
     private class CanvasKey
     {
@@ -125,7 +126,6 @@ public class NoteManager : Singleton<NoteManager>
         {
             newNoteObject = Instantiate(NoteObject3D);
         }
-        newNoteObject.DrawTool = DrawTool;
         newNoteObject.GetComponentInChildren<MeshRenderer>().material = CanvasMaterial;
         newNoteObject.GetComponentInChildren<MeshRenderer>().transform.localScale = localScale;
         newNoteObject.transform.SetParent(this.gameObject.transform, false);

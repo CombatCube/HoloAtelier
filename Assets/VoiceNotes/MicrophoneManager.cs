@@ -19,7 +19,7 @@ public class MicrophoneManager : MonoBehaviour
     private static string deviceName = string.Empty;
     private int samplingRate;
     private const int messageLength = 10;
-
+    
     void Awake()
     {
         dictationRecognizer = new DictationRecognizer();
@@ -65,7 +65,7 @@ public class MicrophoneManager : MonoBehaviour
         dictationRecognizer.Start();
 
         // 3.a Uncomment this line
-        DictationDisplay.text = "Dictation is starting. It may take time to display your text the first time, but begin speaking now...";
+        DictationDisplay.text = "Speak to create a voice note. Your text will appear here...";
 
         // Start recording from the microphone for 10 seconds
         return Microphone.Start(deviceName, false, messageLength, samplingRate);
@@ -74,15 +74,13 @@ public class MicrophoneManager : MonoBehaviour
     /// <summary>
     /// Ends the recording session.
     /// </summary>
-    public void StopRecording()
-    {
+    public void StopRecording() {
         // 3.a: Check if dictationRecognizer.Status is Running and stop it if so
         if (dictationRecognizer.Status == SpeechSystemStatus.Running)
         {
             dictationRecognizer.Stop();
+            Microphone.End(deviceName);
         }
-
-        Microphone.End(deviceName);
     }
 
     /// <summary>

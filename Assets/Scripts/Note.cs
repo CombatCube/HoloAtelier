@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class Note : MonoBehaviour {
-
-    public Draw3D DrawTool;
-
+    
     public enum NoteType : byte
     {
         Draw3D,

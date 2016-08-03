@@ -23,7 +23,7 @@ public class VoiceNote : Note
     private AudioSource dictationAudio;
     private AudioSource startAudio;
     private AudioSource stopAudio;
-
+    private bool stopped;
     public enum Message
     {
         PressMic,
@@ -55,10 +55,15 @@ public class VoiceNote : Note
 
     public void RecordStop()
     {
-        // Turn off the microphone.
-        microphoneManager.StopRecording();
-        // Set proper UI state and play a sound.
-        SetUI(false, Message.SendMessage, stopAudio);
+        if (!stopped)
+        {
+            stopped = true;
+            // Turn off the microphone.
+            microphoneManager.StopRecording();
+            microphoneManager.StartCoroutine("RestartSpeechSystem", NoteManager.Instance.KeywordManager);
+            // Set proper UI state and play a sound.
+            SetUI(false, Message.SendMessage, stopAudio);
+        }
     }
 
     public void Play()
@@ -69,11 +74,6 @@ public class VoiceNote : Note
     public void PlayStop()
     {
         dictationAudio.Stop();
-    }
-
-    public void SendCommunicatorMessage()
-    {
-        DictationManager.Instance.CloseCommunicator();
     }
 
     void ResetAfterTimeout()
