@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8d5b128a1d8204fb76c86f47b75912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PivotAxis: 2
+  PivotAxis: 0
 --- !u!114 &114000013598922152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,12 +319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63aa6d1e7fa8d494e97246b5b4802c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrawTool: {fileID: 0}
   DrawType: 2
   userID: 0
   StartListeningSound: {fileID: 8300000, guid: cd51cb75d884054419fdfea85996335b, type: 3}
   StopListeningSound: {fileID: 8300000, guid: c2e2787e4cc1bae42a98c04b52ddfc35, type: 3}
   MicIcon: {fileID: 1000012962450364}
+  microphoneManager: {fileID: 0}
 --- !u!114 &114000013996847744
 MonoBehaviour:
   m_ObjectHideFlags: 1
