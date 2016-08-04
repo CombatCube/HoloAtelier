@@ -11,7 +11,7 @@ public class Note : MonoBehaviour {
     }
     public NoteType DrawType;
 
-    protected bool collapsed;
+    public bool collapsed;
 
     private const float timeToCollapse = 0.2f;
     private float timePressed = timeToCollapse;
@@ -84,7 +84,6 @@ public class Note : MonoBehaviour {
             (byte)DrawType,
             transform.localPosition,
             transform.localRotation,
-            GetComponentInChildren<MeshRenderer>().transform.localScale,
             points
         );
     }

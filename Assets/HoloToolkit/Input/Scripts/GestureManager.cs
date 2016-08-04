@@ -67,7 +67,7 @@ namespace HoloToolkit.Unity
 
         private void GestureRecognizer_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
         {
-            if (activeTool != null)
+            if (activeTool != null && focusedObject.GetComponentInParent<UIManager>() == null)
             {
                 activeTool.gameObject.SendMessage("OnSelect");
             }

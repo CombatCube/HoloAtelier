@@ -52,7 +52,6 @@ public class NoteManager : Singleton<NoteManager>
         byte noteType = msg.ReadByte();
         Vector3 localPosition = CustomMessages.Instance.ReadVector3(msg);
         Quaternion localRotation = CustomMessages.Instance.ReadQuaternion(msg);
-        Vector3 localScale = CustomMessages.Instance.ReadVector3(msg);
         var list = new List<Vector3>();
         while (msg.GetUnreadBitsCount() > 0)
         {
@@ -67,7 +66,7 @@ public class NoteManager : Singleton<NoteManager>
         }
         else
         {
-            note = CreateNewNote(userID, noteType, localPosition, localRotation, localScale);
+            note = CreateNewNote(userID, noteType, localPosition, localRotation);
             notes.Add(new CanvasKey(userID, noteID), note);
         }
         note.GetComponentInChildren<DrawCanvas>().DrawLine(list.ToArray());
@@ -83,7 +82,6 @@ public class NoteManager : Singleton<NoteManager>
         byte noteType = msg.ReadByte();
         Vector3 localPosition = CustomMessages.Instance.ReadVector3(msg);
         Quaternion localRotation = CustomMessages.Instance.ReadQuaternion(msg);
-        Vector3 localScale = CustomMessages.Instance.ReadVector3(msg);
         string text = msg.ReadString();
         var data = new List<float>();
         while (msg.GetUnreadBitsCount() > 0)
@@ -98,7 +96,7 @@ public class NoteManager : Singleton<NoteManager>
         }
         else
         {
-            note = CreateNewNote(userID, noteType, localPosition, localRotation, localScale);
+            note = CreateNewNote(userID, noteType, localPosition, localRotation);
             notes.Add(new CanvasKey(userID, noteID), note);
         }
         note.GetComponentInChildren<UnityEngine.UI.Text>().text = text;
@@ -115,7 +113,7 @@ public class NoteManager : Singleton<NoteManager>
         return newNoteObject;
     }
 
-    public Note CreateNewNote(long userID, byte noteType, Vector3 localPosition, Quaternion localRotation, Vector3 localScale)
+    public Note CreateNewNote(long userID, byte noteType, Vector3 localPosition, Quaternion localRotation)
     {
         Note newNoteObject;
         if (noteType == (byte)Note.NoteType.Draw2D)
@@ -126,8 +124,6 @@ public class NoteManager : Singleton<NoteManager>
         {
             newNoteObject = Instantiate(NoteObject3D);
         }
-        newNoteObject.GetComponentInChildren<MeshRenderer>().material = CanvasMaterial;
-        newNoteObject.GetComponentInChildren<MeshRenderer>().transform.localScale = localScale;
         newNoteObject.transform.SetParent(this.gameObject.transform, false);
         newNoteObject.transform.localPosition = localPosition;
         newNoteObject.transform.localRotation = localRotation;
@@ -139,9 +135,7 @@ public class NoteManager : Singleton<NoteManager>
 
     public void SetActiveNote(Note noteObject)
     {
-        ActiveNote.SetColor(new Color(0, 0, 255, 127));
         ActiveNote = noteObject;
-        ActiveNote.SetColor(new Color(0, 255, 0, 127));
     }
 
     public void SetDefaultNote()

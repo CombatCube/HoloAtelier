@@ -58,7 +58,6 @@ public class CreateVoiceNote : Tool {
                 (byte)Note.NoteType.Voice,
                 newVoiceNoteObj.transform.localPosition,
                 newVoiceNoteObj.transform.localRotation,
-                newVoiceNoteObj.transform.localScale,
                 newVoiceNoteObj.microphoneManager.DictationDisplay.text,
                 data
             );

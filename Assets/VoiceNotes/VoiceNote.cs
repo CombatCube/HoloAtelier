@@ -17,9 +17,6 @@ public class VoiceNote : Note
     [Tooltip("The sound to be played when the recording session ends.")]
     public AudioClip StopListeningSound;
 
-    [Tooltip("The icon to be displayed while recording is happening.")]
-    public GameObject MicIcon;
-
     private AudioSource dictationAudio;
     private AudioSource startAudio;
     private AudioSource stopAudio;
@@ -84,7 +81,6 @@ public class VoiceNote : Note
 
     private void SetUI(bool enabled, Message newMessage, AudioSource soundToPlay)
     {
-        MicIcon.SetActive(enabled);
         soundToPlay.Play();
     }
 

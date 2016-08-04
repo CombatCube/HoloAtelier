@@ -127,7 +127,7 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendDraw3DStroke(long noteID, byte drawType, Vector3 position, Quaternion rotation, Vector3 localScale, Vector3[] points)
+    public void SendDraw3DStroke(long noteID, byte drawType, Vector3 position, Quaternion rotation, Vector3[] points)
     {
         // If we are connected to a session, broadcast our head info
         if (this.serverConnection != null && this.serverConnection.IsConnected())
@@ -137,7 +137,6 @@ public class CustomMessages : Singleton<CustomMessages>
             msg.Write(noteID);
             msg.Write(drawType);
             AppendTransform(msg, position, rotation);
-            AppendVector3(msg, localScale);
             foreach (Vector3 v in points)
             {
                 AppendVector3(msg, v);
@@ -152,7 +151,7 @@ public class CustomMessages : Singleton<CustomMessages>
         }
     }
 
-    public void SendVoiceNote(long noteID, byte drawType, Vector3 position, Quaternion rotation, Vector3 localScale, string text, float[] audio)
+    public void SendVoiceNote(long noteID, byte drawType, Vector3 position, Quaternion rotation, string text, float[] audio)
     {
         // If we are connected to a session, broadcast our head info
         if (this.serverConnection != null && this.serverConnection.IsConnected())
@@ -162,7 +161,6 @@ public class CustomMessages : Singleton<CustomMessages>
             msg.Write(noteID);
             msg.Write(drawType);
             AppendTransform(msg, position, rotation);
-            AppendVector3(msg, localScale);
             msg.Write(text);
             foreach (float f in audio)
             {

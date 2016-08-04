@@ -26,6 +26,7 @@ public class Create3DNote : Tool {
                 Vector3 pos;
                 HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);
                 gameObject.transform.position = pos;
+                gameObject.transform.LookAt(Camera.main.transform);
             }
         }
         else
@@ -43,8 +44,7 @@ public class Create3DNote : Tool {
             CustomMessages.Instance.localUserID,
             (byte)Note.NoteType.Draw3D,
             NoteManager.Instance.transform.InverseTransformPoint(transform.position),
-            Quaternion.Inverse(NoteManager.Instance.transform.rotation) * transform.rotation,
-            new Vector3(0.05f, 0.05f, 0.05f)
+            Quaternion.Inverse(NoteManager.Instance.transform.rotation) * transform.rotation
         );
         NoteManager.Instance.SetActiveNote(note);
         DrawTool.Activate();
