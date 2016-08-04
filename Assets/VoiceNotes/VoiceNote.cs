@@ -17,7 +17,7 @@ public class VoiceNote : Note
     [Tooltip("The sound to be played when the recording session ends.")]
     public AudioClip StopListeningSound;
 
-    private AudioSource dictationAudio;
+    public AudioSource dictationAudio;
     private AudioSource startAudio;
     private AudioSource stopAudio;
     private bool stopped;
@@ -32,12 +32,11 @@ public class VoiceNote : Note
 
     void Start()
     {
+
     }
 
     public void Record()
     {
-        dictationAudio = gameObject.GetComponent<AudioSource>();
-        microphoneManager = GetComponent<MicrophoneManager>();
         startAudio = gameObject.AddComponent<AudioSource>();
         stopAudio = gameObject.AddComponent<AudioSource>();
         startAudio.playOnAwake = false;
@@ -60,17 +59,10 @@ public class VoiceNote : Note
             microphoneManager.StartCoroutine("RestartSpeechSystem", NoteManager.Instance.KeywordManager);
             // Set proper UI state and play a sound.
             SetUI(false, Message.SendMessage, stopAudio);
+            SendVoiceData();
+            NoteManager.Instance.recording = false;
+            Debug.Log("Clip recorded: frequency=" + dictationAudio.clip.frequency + ", channels=" + dictationAudio.clip.channels);
         }
-    }
-
-    public void Play()
-    {
-        dictationAudio.Play();
-    }
-
-    public void PlayStop()
-    {
-        dictationAudio.Stop();
     }
 
     void ResetAfterTimeout()
@@ -79,21 +71,36 @@ public class VoiceNote : Note
         SetUI(false, Message.PressMic, stopAudio);
     }
 
+    void SendVoiceData()
+    {
+        AudioClip clip = GetComponent<AudioSource>().clip;
+        float[] data = new float[clip.samples * clip.channels];
+        clip.GetData(data, 0);
+        CustomMessages.Instance.SendVoiceNote(
+            noteID,
+            (byte)NoteType.Voice,
+            transform.localPosition,
+            transform.localRotation,
+            microphoneManager.DictationDisplay.text,
+            data
+        );
+    }
+
     private void SetUI(bool enabled, Message newMessage, AudioSource soundToPlay)
     {
         soundToPlay.Play();
     }
 
-    new void OnSelect()
+    public new void OnSelect()
     {
         base.OnSelect();
-        if (collapsed)
+        if (!collapsed)
         {
-            GetComponent<VoiceNote>().Play();
+            dictationAudio.Play();
         }
         else
         {
-            GetComponent<VoiceNote>().PlayStop();
+            dictationAudio.Stop();
         }
     }
 }

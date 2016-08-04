@@ -20,6 +20,8 @@ namespace HoloToolkit.Unity
         /// set the override focused object.
         /// If its null, then the gazed at object will be selected.
         /// </summary>
+
+        public const int UILayer = 5;
         public GameObject OverrideFocusedObject
         {
             get; set;
@@ -67,7 +69,19 @@ namespace HoloToolkit.Unity
 
         private void GestureRecognizer_TappedEvent(InteractionSourceKind source, int tapCount, Ray headRay)
         {
-            if (activeTool != null && focusedObject.GetComponentInParent<UIManager>() == null)
+            RaycastHit hitInfo;
+            bool hit = Physics.Raycast(
+                GazeManager.Instance.GazeOrigin,
+                GazeManager.Instance.GazeDirection,
+                out hitInfo,
+                GazeManager.Instance.MaxGazeDistance,
+                1 << UILayer
+            );
+            if (hit)
+            {
+                // button can handle its own interaction
+            }
+            else if (activeTool != null)
             {
                 activeTool.gameObject.SendMessage("OnSelect");
             }

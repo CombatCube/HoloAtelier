@@ -27,7 +27,7 @@ public class Create2DNote : Tool {
     void OnSelect()
     {
         Note note = NoteManager.Instance.CreateNewNote(
-            CustomMessages.Instance.localUserID,
+            SystemInfo.deviceUniqueIdentifier + "-" + GetInstanceID(),
             (byte)Note.NoteType.Draw2D,
             NoteManager.Instance.transform.InverseTransformPoint(transform.position),
             Quaternion.Inverse(NoteManager.Instance.transform.rotation) * transform.rotation

@@ -50,14 +50,14 @@ namespace HoloToolkit.Unity
         [Tooltip("Lerp speed when moving focus point farther away.")]
         public float LerpStabilizationPlanePowerFarther = 7.0f;
 
-        private Vector3 gazeOrigin;
-        private Vector3 gazeDirection;
+        public Vector3 GazeOrigin;
+        public Vector3 GazeDirection;
         private float lastHitDistance = 15.0f;
 
         private void Update()
         {
-            gazeOrigin = Camera.main.transform.position;
-            gazeDirection = Camera.main.transform.forward;
+            GazeOrigin = Camera.main.transform.position;
+            GazeDirection = Camera.main.transform.forward;
 
             UpdateRaycast();
             UpdateStabilizationPlane();
@@ -70,8 +70,8 @@ namespace HoloToolkit.Unity
         {
             // Get the raycast hit information from Unity's physics system.
             RaycastHit hitInfo;
-            Hit = Physics.Raycast(gazeOrigin,
-                           gazeDirection,
+            Hit = Physics.Raycast(GazeOrigin,
+                           GazeDirection,
                            out hitInfo,
                            MaxGazeDistance,
                            RaycastLayerMask);
@@ -92,8 +92,8 @@ namespace HoloToolkit.Unity
             {
                 // If the raycast does not hit a hologram, default the position to last hit distance in front of the user,
                 // and the normal to face the user.
-                Position = gazeOrigin + (gazeDirection * lastHitDistance);
-                Normal = -gazeDirection;
+                Position = GazeOrigin + (GazeDirection * lastHitDistance);
+                Normal = -GazeDirection;
                 FocusedObject = null;
             }
 

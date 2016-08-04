@@ -15,20 +15,9 @@ public class NoteManager : Singleton<NoteManager>
     public Note ActiveNote;
     public Note DefaultNote;
     public KeywordManager KeywordManager;
+    public bool recording;
 
-    private class CanvasKey
-    {
-        long userID;
-        long canvasID;
-
-        public CanvasKey(long userID, long canvasID)
-        {
-            this.userID = userID;
-            this.canvasID = canvasID;
-        }
-    }
-
-    Dictionary<CanvasKey, Note> notes = new Dictionary<CanvasKey, Note>();
+    Dictionary<string, Note> notes = new Dictionary<string, Note>();
 
     // Use this for initialization
     void Start()
@@ -48,7 +37,7 @@ public class NoteManager : Singleton<NoteManager>
         Debug.Log("Received Draw3DStroke.");
 
         long userID = msg.ReadInt64();
-        long noteID = msg.ReadInt64();
+        string noteID = msg.ReadString();
         byte noteType = msg.ReadByte();
         Vector3 localPosition = CustomMessages.Instance.ReadVector3(msg);
         Quaternion localRotation = CustomMessages.Instance.ReadQuaternion(msg);
@@ -59,15 +48,14 @@ public class NoteManager : Singleton<NoteManager>
         }
 
         Note note;
-        CanvasKey key = new CanvasKey(userID, noteID);
+        string key = noteID;
         if (notes.ContainsKey(key))
         {
             note = notes[key];
         }
         else
         {
-            note = CreateNewNote(userID, noteType, localPosition, localRotation);
-            notes.Add(new CanvasKey(userID, noteID), note);
+            note = CreateNewNote(noteID, noteType, localPosition, localRotation);
         }
         note.GetComponentInChildren<DrawCanvas>().DrawLine(list.ToArray());
     }
@@ -78,7 +66,7 @@ public class NoteManager : Singleton<NoteManager>
         Debug.Log("Received voice note.");
 
         long userID = msg.ReadInt64();
-        long noteID = msg.ReadInt64();
+        string noteID = msg.ReadString();
         byte noteType = msg.ReadByte();
         Vector3 localPosition = CustomMessages.Instance.ReadVector3(msg);
         Quaternion localRotation = CustomMessages.Instance.ReadQuaternion(msg);
@@ -88,32 +76,32 @@ public class NoteManager : Singleton<NoteManager>
         {
             data.Add(msg.ReadFloat());
         }
-        Note note;
-        CanvasKey key = new CanvasKey(userID, noteID);
-        if (notes.ContainsKey(key))
-        {
-            note = notes[key];
-        }
-        else
-        {
-            note = CreateNewNote(userID, noteType, localPosition, localRotation);
-            notes.Add(new CanvasKey(userID, noteID), note);
-        }
+        VoiceNote note = CreateVoiceNote(noteID, localPosition, localRotation);
         note.GetComponentInChildren<UnityEngine.UI.Text>().text = text;
-        note.GetComponent<AudioClip>().SetData(data.ToArray(), 0);
+        AudioClip clip = AudioClip.Create(noteID, data.Count, 1, 48000, false);
+        clip.SetData(data.ToArray(), 0);
+        note.dictationAudio.clip = clip;
     }
 
-    public VoiceNote CreateVoiceNote(long userID, Vector3 localPosition, Quaternion localRotation)
+    public VoiceNote CreateVoiceNote(string noteID, Vector3 localPosition, Quaternion localRotation)
     {
         VoiceNote newNoteObject = Instantiate(VoiceNoteObject);
         newNoteObject.transform.SetParent(this.gameObject.transform, false);
         newNoteObject.transform.localPosition = localPosition;
         newNoteObject.transform.localRotation = localRotation;
-        newNoteObject.userID = userID;
+        if (noteID == "")
+        {
+            newNoteObject.noteID = SystemInfo.deviceUniqueIdentifier + "-" + newNoteObject.GetInstanceID();
+        }
+        else
+        {
+            newNoteObject.noteID = noteID;
+        }
+        notes.Add(newNoteObject.noteID, newNoteObject);
         return newNoteObject;
     }
 
-    public Note CreateNewNote(long userID, byte noteType, Vector3 localPosition, Quaternion localRotation)
+    public Note CreateNewNote(string noteID, byte noteType, Vector3 localPosition, Quaternion localRotation)
     {
         Note newNoteObject;
         if (noteType == (byte)Note.NoteType.Draw2D)
@@ -128,8 +116,8 @@ public class NoteManager : Singleton<NoteManager>
         newNoteObject.transform.localPosition = localPosition;
         newNoteObject.transform.localRotation = localRotation;
         newNoteObject.transform.localScale = Vector3.one;
-        newNoteObject.userID = userID;
-        notes.Add(new CanvasKey(CustomMessages.Instance.localUserID, newNoteObject.GetInstanceID()), newNoteObject);
+        newNoteObject.noteID = noteID;
+        notes.Add(noteID, newNoteObject);
         return newNoteObject;
     }
 
@@ -148,7 +136,7 @@ public class NoteManager : Singleton<NoteManager>
         {
             Note note = ActiveNote;
             SetDefaultNote();
-            notes.Remove(new CanvasKey(note.userID, note.GetInstanceID()));
+            notes.Remove(note.noteID);
             Destroy(note.gameObject);
         } else
         {

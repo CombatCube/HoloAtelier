@@ -16,11 +16,10 @@ public class Note : MonoBehaviour {
     private const float timeToCollapse = 0.2f;
     private float timePressed = timeToCollapse;
 
-    public long userID;
+    public string noteID;
 
     // Use this for initialization
     void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -39,7 +38,6 @@ public class Note : MonoBehaviour {
         }
         if (collapsed)
         {
-            handle.material.color = new Color(255, 0, 0, 127);
             scaleTarget.localScale = Vector3.Lerp(Vector3.one, Vector3.zero, timePressed / timeToCollapse);
         }
         else
@@ -57,7 +55,6 @@ public class Note : MonoBehaviour {
             timePressed = 0f;
             collapsed = true;
             NoteManager.Instance.SetDefaultNote();
-            SetColor(new Color(255, 0, 0, 127));
         }
         else
         {
@@ -80,7 +77,7 @@ public class Note : MonoBehaviour {
     {
         DrawCanvas canvas = GetComponentInChildren<DrawCanvas>();
         CustomMessages.Instance.SendDraw3DStroke(
-            GetInstanceID(),
+            noteID,
             (byte)DrawType,
             transform.localPosition,
             transform.localRotation,

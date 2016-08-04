@@ -23,13 +23,9 @@ public class MicrophoneManager : MonoBehaviour
     void Awake()
     {
         dictationRecognizer = new DictationRecognizer();
-        // This event is fired while the user is talking. As the recognizer listens, it provides text of what it's heard so far.
         dictationRecognizer.DictationHypothesis += DictationRecognizer_DictationHypothesis;
-        // This event is fired after the user pauses, typically at the end of a sentence. The full recognized string is returned here.
         dictationRecognizer.DictationResult += DictationRecognizer_DictationResult;
-        // This event is fired when the recognizer stops, whether from Stop() being called, a timeout occurring, or some other error.
         dictationRecognizer.DictationComplete += DictationRecognizer_DictationComplete;
-        // This event is fired when an error occurs.
         dictationRecognizer.DictationError += DictationRecognizer_DictationError;
         
         // Query the maximum frequency of the default microphone. Use 'unused' to ignore the minimum frequency.
@@ -140,11 +136,14 @@ public class MicrophoneManager : MonoBehaviour
 
     private IEnumerator RestartSpeechSystem(KeywordManager keywordToStart)
     {
+        dictationRecognizer.DictationResult -= DictationRecognizer_DictationResult;
+        dictationRecognizer.DictationComplete -= DictationRecognizer_DictationComplete;
+        dictationRecognizer.DictationHypothesis -= DictationRecognizer_DictationHypothesis;
+        dictationRecognizer.DictationError -= DictationRecognizer_DictationError;
         while (dictationRecognizer != null && dictationRecognizer.Status == SpeechSystemStatus.Running)
         {
             yield return null;
         }
-
         keywordToStart.StartKeywordRecognizer();
     }
 }
