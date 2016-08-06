@@ -49,12 +49,11 @@ public class Note : MonoBehaviour {
     // Select note to set active. If note is already active, collapse.
     public void OnSelect()
     {
-        if (NoteManager.Instance.ActiveNote == this
-            && NoteManager.Instance.DefaultNote != this)
+        if (NoteManager.Instance.ActiveNote == this)
         {
             timePressed = 0f;
             collapsed = true;
-            NoteManager.Instance.SetDefaultNote();
+            NoteManager.Instance.SetActiveNote(null);
         }
         else
         {

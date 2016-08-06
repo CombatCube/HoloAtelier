@@ -7,6 +7,8 @@ public partial class ToolManager : Singleton<ToolManager>
 {
     public UnityEngine.UI.Text HudHelpText;
     public UnityEngine.UI.Image HudToolImage;
+    public Tool DefaultTool;
+    private float deltaTime = 0;
 
     public class ToolChangedEventArgs : EventArgs
     {
@@ -30,7 +32,11 @@ public partial class ToolManager : Singleton<ToolManager>
 	
 	// Update is called once per frame
 	void Update () {
-	
+        deltaTime += Time.deltaTime;
+        if (deltaTime > 5)
+        {
+            HudHelpText.enabled = false;
+        }
 	}
 
     void LateUpdate()
@@ -47,6 +53,12 @@ public partial class ToolManager : Singleton<ToolManager>
         if (tool != null)
         {
             tool.gameObject.SetActive(true);
+            SetHUD(tool.HelpText, tool.HudImage);
+        }
+        else
+        {
+            SetHUD(null, null);
+            DefaultTool.gameObject.SetActive(true);
         }
         ActiveTool = tool;
         EventHandler<ToolChangedEventArgs> toolChangedEvent = ToolChanged;
@@ -55,20 +67,19 @@ public partial class ToolManager : Singleton<ToolManager>
         toolChangedEvent(this, tcea);
     }
 
-    public void SetHelpText(string text)
+    public void SetHUD(string text, Sprite image)
     {
+        deltaTime = 0;
         if (text != null)
         {
             HudHelpText.text = text;
+            HudHelpText.enabled = true;
         }
         else
         {
             HudHelpText.text = "";
+            HudHelpText.enabled = false;
         }
-    }
-
-    public void SetHudImage(Sprite image)
-    {
         if (image != null)
         {
             HudToolImage.sprite = image;
@@ -76,8 +87,8 @@ public partial class ToolManager : Singleton<ToolManager>
         }
         else
         {
-            HudToolImage.enabled = false;
             HudToolImage.sprite = null;
+            HudToolImage.enabled = false;
         }
     }
 }

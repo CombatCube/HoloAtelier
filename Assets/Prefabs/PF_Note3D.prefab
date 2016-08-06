@@ -71,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 1000014098158450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.067, y: 0.067, z: 0.067}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children: []
   m_Father: {fileID: 4000013367211576}
   m_RootOrder: 1
@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011426509354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -0.3, z: 3.81}
+  m_LocalPosition: {x: 1.895, y: -0.556, z: 5.741}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000013960809958}
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawType: 0
   collapsed: 0
-  userID: 0
+  noteID: 
 --- !u!114 &114000014279062234
 MonoBehaviour:
   m_ObjectHideFlags: 1

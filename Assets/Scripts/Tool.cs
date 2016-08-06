@@ -10,14 +10,10 @@ public class Tool : MonoBehaviour
         if (ToolManager.Instance.ActiveTool != this)
         {
             ToolManager.Instance.SetActiveTool(this);
-            ToolManager.Instance.SetHelpText(HelpText);
-            ToolManager.Instance.SetHudImage(HudImage);
         }
         else
         {
             ToolManager.Instance.SetActiveTool(null);
-            ToolManager.Instance.SetHelpText(null);
-            ToolManager.Instance.SetHudImage(null);
         }
     }
 }

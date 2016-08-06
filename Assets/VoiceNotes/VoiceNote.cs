@@ -37,6 +37,7 @@ public class VoiceNote : Note
 
     public void Record()
     {
+        NoteManager.Instance.recording = true;
         startAudio = gameObject.AddComponent<AudioSource>();
         stopAudio = gameObject.AddComponent<AudioSource>();
         startAudio.playOnAwake = false;

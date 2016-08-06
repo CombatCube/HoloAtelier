@@ -41,7 +41,7 @@ public class Create3DNote : Tool {
     void OnSelect()
     {
         Note note = NoteManager.Instance.CreateNewNote(
-            SystemInfo.deviceUniqueIdentifier + "-" + GetInstanceID(),
+            "",
             (byte)Note.NoteType.Draw3D,
             NoteManager.Instance.transform.InverseTransformPoint(transform.position),
             Quaternion.Inverse(NoteManager.Instance.transform.rotation) * transform.rotation

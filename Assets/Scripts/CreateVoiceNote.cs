@@ -6,6 +6,7 @@ public class CreateVoiceNote : Tool {
     public VoiceNote VoiceNotePrefab;
     private VoiceNote newVoiceNoteObj;
     private const float planeOffset = 0.02f;
+    private bool startedRecording;
     // Use this for initialization
     void Start () {
 	
@@ -14,20 +15,29 @@ public class CreateVoiceNote : Tool {
     // Update is called once per frame
     void Update()
     {
-        if (!NoteManager.Instance.recording)
+        if (!startedRecording)
         {
             foreach (MeshRenderer mesh in GetComponentsInChildren<MeshRenderer>())
             {
                 mesh.enabled = true;
             }
             gameObject.transform.position = GazeManager.Instance.Position + planeOffset * (-Camera.main.transform.forward);
-            gameObject.transform.LookAt(Camera.main.transform);
+            gameObject.transform.LookAt(Camera.main.transform, Vector3.up);
         }
         else
         {
-            foreach (MeshRenderer mesh in GetComponentsInChildren<MeshRenderer>())
+            if (NoteManager.Instance.recording)
             {
-                mesh.enabled = false;
+                foreach (MeshRenderer mesh in GetComponentsInChildren<MeshRenderer>())
+                {
+                    mesh.enabled = false;
+                }
+            }
+            else
+            {
+                startedRecording = false;
+                newVoiceNoteObj = null;
+                ToolManager.Instance.SetActiveTool(null);
             }
         }
     }
@@ -37,7 +47,7 @@ public class CreateVoiceNote : Tool {
         // Create new voice note. Next tap stops recording.
         if (newVoiceNoteObj == null)
         {
-            NoteManager.Instance.recording = true;
+            startedRecording = true;
             newVoiceNoteObj = NoteManager.Instance.CreateVoiceNote(
                 "",
                 NoteManager.Instance.transform.InverseTransformPoint(transform.position),
@@ -48,8 +58,6 @@ public class CreateVoiceNote : Tool {
         else if (NoteManager.Instance.recording)
         {
             newVoiceNoteObj.RecordStop();
-            newVoiceNoteObj = null;
-            ToolManager.Instance.SetActiveTool(null);
         }
     }
 }

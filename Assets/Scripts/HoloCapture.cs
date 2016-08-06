@@ -23,7 +23,7 @@ public class HoloCapture : Tool {
 
     void OnSelect()
     {
-        ToolManager.Instance.SetActiveTool(null);
+        Activate();
         OnTakePicture();
     }
 

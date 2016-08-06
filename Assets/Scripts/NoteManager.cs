@@ -13,7 +13,6 @@ public class NoteManager : Singleton<NoteManager>
     public Draw3D DrawTool;
     public Material CanvasMaterial;
     public Note ActiveNote;
-    public Note DefaultNote;
     public KeywordManager KeywordManager;
     public bool recording;
 
@@ -116,8 +115,15 @@ public class NoteManager : Singleton<NoteManager>
         newNoteObject.transform.localPosition = localPosition;
         newNoteObject.transform.localRotation = localRotation;
         newNoteObject.transform.localScale = Vector3.one;
-        newNoteObject.noteID = noteID;
-        notes.Add(noteID, newNoteObject);
+        if (noteID == "")
+        {
+            newNoteObject.noteID = SystemInfo.deviceUniqueIdentifier + "-" + newNoteObject.GetInstanceID();
+        }
+        else
+        {
+            newNoteObject.noteID = noteID;
+        }
+        notes.Add(newNoteObject.noteID, newNoteObject);
         return newNoteObject;
     }
 
@@ -126,23 +132,10 @@ public class NoteManager : Singleton<NoteManager>
         ActiveNote = noteObject;
     }
 
-    public void SetDefaultNote()
+    public void ClearCanvas()
     {
-        SetActiveNote(DefaultNote);
+        Note note = ActiveNote;
+        SetActiveNote(null);
+        Destroy(note);
     }
-
-    public void ClearCanvas() {
-        if (ActiveNote != DefaultNote)
-        {
-            Note note = ActiveNote;
-            SetDefaultNote();
-            notes.Remove(note.noteID);
-            Destroy(note.gameObject);
-        } else
-        {
-            ActiveNote.GetComponentInChildren<DrawCanvas>().ClearCanvas();
-        }
-
-    }
-
 }

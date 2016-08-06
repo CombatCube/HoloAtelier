@@ -24,7 +24,7 @@ public class Draw3D : Tool {
 
     // Update is called once per frame
     void Update () {
-        if (HandsManager.Instance.HandDetected) {
+        if (HandsManager.Instance.HandDetected && NoteManager.Instance.ActiveNote != null) {
             GetComponentInChildren<MeshRenderer>().enabled = true;
             Vector3 pos;
             HandsManager.Instance.Hand.properties.location.TryGetPosition(out pos);

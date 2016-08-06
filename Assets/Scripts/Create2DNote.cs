@@ -21,13 +21,13 @@ public class Create2DNote : Tool {
             mesh.enabled = true;
         }
         gameObject.transform.position = GazeManager.Instance.Position + planeOffset * (-Camera.main.transform.forward);
-        gameObject.transform.LookAt(Camera.main.transform);
+        gameObject.transform.LookAt(Camera.main.transform, Vector3.up);
     }
 
     void OnSelect()
     {
         Note note = NoteManager.Instance.CreateNewNote(
-            SystemInfo.deviceUniqueIdentifier + "-" + GetInstanceID(),
+            "",
             (byte)Note.NoteType.Draw2D,
             NoteManager.Instance.transform.InverseTransformPoint(transform.position),
             Quaternion.Inverse(NoteManager.Instance.transform.rotation) * transform.rotation
