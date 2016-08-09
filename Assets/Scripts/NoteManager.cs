@@ -136,6 +136,6 @@ public class NoteManager : Singleton<NoteManager>
     {
         Note note = ActiveNote;
         SetActiveNote(null);
-        Destroy(note);
+        Destroy(note.gameObject);
     }
 }
